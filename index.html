@@ -713,6 +713,9 @@
 
         <form class="contact-form" id="contact-form">
           <p class="contact-lead">Booking Request, Sponsor, Press - Send a Message.</p>
+          <input type="hidden" name="access_key" value="93ff422d-16c1-4fb3-964d-15026cbf0312">
+          <input type="hidden" name="subject" value="New message from valentinablack.com">
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
           <div class="form-row">
             <label for="cf-name">Name</label>
             <input type="text" id="cf-name" name="name" placeholder="Your name" required>
@@ -729,8 +732,8 @@
             <label for="cf-message">Message</label>
             <textarea id="cf-message" name="message" rows="4" placeholder="Your message" required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary">Send Message</button>
-          <p class="contact-note" id="cf-note" hidden>Opening your email app to send this…</p>
+          <button type="submit" class="btn btn-primary" id="cf-submit">Send Message</button>
+          <p class="contact-note" id="cf-note" hidden></p>
         </form>
       </div>
     </div>
@@ -831,20 +834,42 @@
 
   document.getElementById('contact-form').addEventListener('submit', function(e){
     e.preventDefault();
-    var name = document.getElementById('cf-name').value.trim();
-    var company = document.getElementById('cf-company').value.trim();
-    var email = document.getElementById('cf-email').value.trim();
-    var message = document.getElementById('cf-message').value.trim();
-    var to = 'info@valentinablack.com';
-    var subject = 'Website contact from ' + name;
-    var signOff = name + (company ? ' (' + company + ')' : '') + ' — ' + email;
-    var body = message + '\n\n— ' + signOff;
-    var mailto = 'mailto:' + encodeURIComponent(to) +
-      '?subject=' + encodeURIComponent(subject) +
-      '&body=' + encodeURIComponent(body);
+    var form = e.target;
     var note = document.getElementById('cf-note');
+    var btn = document.getElementById('cf-submit');
+    var originalBtnText = btn.textContent;
+
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
     note.hidden = false;
-    window.location.href = mailto;
+    note.style.color = '';
+    note.textContent = 'Sending your message…';
+
+    var formData = new FormData(form);
+    var payload = Object.fromEntries(formData);
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify(payload)
+    })
+      .then(function(res){ return res.json(); })
+      .then(function(data){
+        if (data.success) {
+          note.textContent = 'Thanks! Your message has been sent — I\'ll get back to you soon.';
+          form.reset();
+        } else {
+          throw new Error(data.message || 'Send failed');
+        }
+      })
+      .catch(function(){
+        note.style.color = '#ff6b6b';
+        note.textContent = 'Something went wrong sending your message. Please try again or email info@valentinablack.com directly.';
+      })
+      .finally(function(){
+        btn.disabled = false;
+        btn.textContent = originalBtnText;
+      });
   });
 </script>
 
