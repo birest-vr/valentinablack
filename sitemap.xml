@@ -1,63 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.valentinablack.com/</loc>
-    <lastmod>2026-09-09</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://www.valentinablack.com/assets/hero-bg-wide.jpg</image:loc>
-      <image:title>Valentina Black — official site hero image</image:title>
-      <image:caption>Valentina Black, house music artist from Los Angeles</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.valentinablack.com/assets/is-it-love-cover.jpg</image:loc>
-      <image:title>Is It Love — single cover art by Valentina Black</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.valentinablack.com/assets/about-photo.jpg</image:loc>
-      <image:title>Valentina Black, house music artist</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.valentinablack.com/assets/tour-bg.jpg</image:loc>
-      <image:title>Valentina Black performing live on stage</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.valentinablack.com/assets/merch-hoodie.jpg</image:loc>
-      <image:title>Valentina Black official merch — Angel hoodie</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.valentinablack.com/assets/merch-tshirt.jpg</image:loc>
-      <image:title>Valentina Black official merch — Is It Love t-shirt</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.valentinablack.com/assets/merch-mug.jpg</image:loc>
-      <image:title>Valentina Black official merch — Is It Love mug</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.valentinablack.com/assets/merch-tote.jpg</image:loc>
-      <image:title>Valentina Black official merch — Do It Right tote bag</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.valentinablack.com/assets/merch-look1.jpg</image:loc>
-      <image:title>Valentina Black official merch — apparel look 1</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.valentinablack.com/assets/merch-look2.jpg</image:loc>
-      <image:title>Valentina Black official merch — apparel look 2</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.valentinablack.com/assets/merch-look3.jpg</image:loc>
-      <image:title>Valentina Black official merch — apparel look 3</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.valentinablack.com/assets/merch-look4.jpg</image:loc>
-      <image:title>Valentina Black official merch — apparel look 4</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.valentinablack.com/assets/og-image.jpg</image:loc>
-      <image:title>Valentina Black — house music artist</image:title>
-    </image:image>
   </url>
 </urlset>
