@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Say You Love The World — Valentina Black</title>
+<meta name="robots" content="index, follow">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+<meta name="theme-color" content="#150a1c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff; --accent:#1db954; --accent-2:#0e7a37;
+  --text:#1a1a1a; --text-dim:#6b6b6b; --card:#f4f4f4; --border:#e8e8e8; --maxw:1120px;
+}
+@font-face{ font-family:'Master Victory'; src:url('assets/fonts/MasterVictory-Regular.ttf') format('truetype'); font-weight:400; font-style:normal; font-display:swap; }
+@font-face{ font-family:'Master Victory'; src:url('assets/fonts/MasterVictory-Italic.ttf') format('truetype'); font-weight:400; font-style:italic; font-display:swap; }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:18px 24px;background:#ffffff;border-bottom:1px solid var(--border);height:64px;box-sizing:border-box}
+.nav .wordmark{font-weight:800;letter-spacing:.08em;font-size:15px;color:var(--text)}
+.nav .links{display:flex;gap:22px;font-size:14px;font-weight:600}
+.nav .links a{opacity:.8;transition:opacity .2s;color:var(--text)}
+.nav .links a:hover{opacity:1;color:var(--accent-2)}
+@media (max-width:640px){ .nav .links{display:none} }
+
+.album-hero{padding:120px 24px 56px;text-align:center;background:linear-gradient(180deg, var(--album-c1,#182a1e) 0%, #ffffff 88%)}
+.album-kicker{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.75);display:block;margin-bottom:14px}
+.album-hero h1{font-family:'Master Victory',cursive;font-style:italic;font-weight:400;font-size:clamp(38px,8vw,68px);margin:0 0 40px;color:#fff}
+.album-cover-box{width:min(400px,72vw);aspect-ratio:1/1;margin:0 auto;border-radius:6px;overflow:hidden;box-shadow:0 30px 60px -12px rgba(0,0,0,.35);background:#0f0814;border:1px solid rgba(255,255,255,.14)}
+.album-cover-box img{width:100%;height:100%;object-fit:cover}
+.album-cover-box.placeholder{display:flex;align-items:center;justify-content:center;padding:30px;text-align:center;background:radial-gradient(120% 140% at 20% 0%, rgba(29,185,84,.18), transparent 60%), linear-gradient(150deg,#1b1224,#0c0710)}
+.album-cover-box.placeholder span{font-family:'Master Victory',cursive;font-style:italic;font-size:clamp(22px,4vw,32px);color:#8be9a8}
+.album-cover-box{position:relative;perspective:1200px}
+.album-cover-box .flip-inner{position:relative;width:100%;height:100%;transition:transform .6s cubic-bezier(.4,.2,.2,1);transform-style:preserve-3d}
+.album-cover-box:hover .flip-inner,
+.album-cover-box.is-flipped .flip-inner{transform:rotateY(180deg)}
+.album-cover-box .flip-front,.album-cover-box .flip-back{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;align-items:center;justify-content:center}
+.album-cover-box .flip-front img{width:100%;height:100%;object-fit:cover}
+.album-cover-box .flip-back{transform:rotateY(180deg);background:linear-gradient(135deg,var(--accent),var(--accent-2));padding:18px;text-align:center}
+.album-cover-box .flip-back-title{font-family:'Master Victory',cursive;font-style:italic;font-weight:400;font-size:clamp(22px,4vw,32px);line-height:1.2;color:#fff}
+.album-store-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px;padding:26px 24px;background:#ffffff;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.album-store-bar .label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--text-dim);margin-right:6px;width:100%;text-align:center}
+@media (min-width:640px){ .album-store-bar .label{width:auto;text-align:left} }
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:10px;font-weight:700;font-size:13px;border:1px solid var(--border);transition:transform .15s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;border-color:transparent}
+.btn-ghost{background:#f2f2f2;color:var(--text)}
+.album-body{max-width:720px;margin:0 auto;padding:56px 24px}
+.album-body p{color:var(--text-dim);margin:0 0 16px}
+.album-body p strong{color:var(--text)}
+.meta-row{display:flex;flex-wrap:wrap;gap:10px 28px;margin:0 0 28px;font-size:13px;color:var(--text-dim)}
+.meta-row b{color:var(--text);font-weight:700}
+.note{background:rgba(29,185,84,.07);border:1px solid rgba(29,185,84,.28);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--text-dim);margin:26px 0 0}
+.note strong{color:var(--text)}
+.album-back{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--accent-2);margin-top:6px}
+.lyrics-heading{font-family:'Master Victory',cursive;font-style:italic;font-weight:400;font-size:28px;margin:44px 0 18px;color:var(--text)}
+.lyrics-section{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-2);margin:22px 0 6px}
+.lyrics-section:first-child{margin-top:0}
+.lyrics p{color:var(--text);margin:0 0 4px;line-height:1.55}
+.lyrics-flex{display:flex;align-items:flex-start;gap:36px}
+.lyrics-flex .lyrics{flex:1 1 auto;min-width:0}
+.lyrics-side{flex:0 0 200px;position:sticky;top:96px}
+.lyrics-side .lyrics-video-box{width:100%;aspect-ratio:9/16;border-radius:14px;overflow:hidden;box-shadow:0 20px 40px -10px rgba(0,0,0,.25);border:1px solid var(--border);background:#0f0814}
+.lyrics-side .lyrics-video-box iframe{width:100%;height:100%;border:0;display:block}
+.lyrics-side .lyrics-video-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);text-align:center;margin-top:8px}
+@media (max-width:760px){
+  .lyrics-flex{flex-direction:column}
+  .lyrics-side{position:static;flex:none;width:180px;margin:0 auto 24px}
+}
+footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;color:var(--text-dim);font-size:13px;background:#ffffff}
+
+  .album-hero{--album-c1:#1a2530}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a class="wordmark" href="index.html" style="text-decoration:none">VALENTINA BLACK</a>
+  <div class="links">
+    <a href="index.html#listen">Listen</a>
+    <a href="index.html#music">Music</a>
+    <a href="biography.html">Biography</a>
+    <a href="index.html#gallery">Gallery</a>
+    <a href="index.html#tour">Tour</a>
+    <a href="index.html#merch">Merch</a>
+    <a href="index.html#about">Contact</a>
+  </div>
+</nav>
+
+<div class="album-hero">
+  <span class="album-kicker">Single &middot; Released August 21, 2021</span>
+  <h1>Say You Love The World</h1>
+  <div class="album-cover-box"><div class="flip-inner"><div class="flip-front"><img src="assets/say-you-love-the-world-cover.jpg" alt="Say You Love The World — single cover art"></div><div class="flip-back"><span class="flip-back-title">Say You Love The World</span></div></div></div>
+</div>
+
+<div class="album-store-bar">
+  <span class="label">Buy / Stream / Download</span>
+  <a class="btn btn-primary" href="https://open.spotify.com/intl-it/track/0WZo02Vy467BYZr17jLwaa?si=f7e080ec50bf4e34" target="_blank" rel="noopener">Spotify</a><a class="btn btn-ghost" href="https://music.apple.com/it/album/say-you-love-the-world/1703005682?i=1703005684" target="_blank" rel="noopener">Apple Music</a><a class="btn btn-ghost" href="https://linktr.ee/valentina.black?utm_source=linktree_profile_share&ltsid=0bc20d22-b916-4965-aa54-a6705257c004" target="_blank" rel="noopener">Other Stores</a><a class="btn btn-ghost" href="https://genius.com/Valentina-black-say-you-love-the-world-lyrics" target="_blank" rel="noopener">Lyrics (Genius)</a>
+</div>
+
+<div class="album-body">
+  <div class="meta-row"><div><b>Producers:</b> Valentina Black, Rob Murray</div><div><b>Released:</b> August 21, 2021</div></div>
+  <p>Produced by <strong>Valentina Black</strong> and <strong>Rob Murray</strong> (Poolside Sound, Austin, TX) &mdash; his own professional profile also lists production and mixing work with artists including Rihanna and Sia.</p>
+  <h2 class="lyrics-heading">Credits</h2>
+  <p>
+  <b>Written by:</b> Valentina Black<br>
+  <b>Lyricist:</b> Valentina Black<br>
+  <b>Arranged by:</b> Valentina Black<br>
+  <b>Producers:</b> Valentina Black, Rob Murray<br>
+  <b>Beatmaker, Choirs, Synthesizer, Pre-Mix, Keyboards, Bass:</b> Valentina Black<br>
+  <b>Release Date:</b> August 21, 2021<br>
+  <b>Publisher:</b> Moveubabe Music Publishing Group, JonCrys Music<br>
+  <b>Label:</b> Moveubabe Music<br>
+  <b>Recorded at:</b> Moveubabe Music Studios, JonCrys Music<br>
+  <b>Photography:</b> Ivan Genasi<br>
+  <b>Video Director:</b> Alessandro Guerra
+  </p>
+  <p>Also available in an <a href="album-say-you-love-the-world-acoustic.html">acoustic version</a>, posted to SoundCloud on 20 July 2024.</p><p><a href="https://genius.com/Valentina-black-say-you-love-the-world-lyrics" target="_blank" rel="noopener">Lyrics on Genius</a> &middot; <a href="https://www.discogs.com/artist/1967276-Rob-Murray" target="_blank" rel="noopener">Rob Murray on Discogs</a></p>
+  <h2 class="lyrics-heading">Lyrics</h2>
+<div class="lyrics">
+<div class="lyrics-section">[Intro]</div>
+<p>Love is nothing<br>Without your real love<br>For this world<br>Love is nothing<br>Without your real love<br>For this world<br>Let's just take a chance on life it's time to try<br>What is love for you baby? (keep on moving my baby)<br>Let's just take a chance on life do you wanna try?<br>Keep on moving my baby (Keep on moving my baby)</p>
+<div class="lyrics-section">[Verse I]</div>
+<p>Love is nothing<br>Without your real love<br>For this world<br>(I say it now)<br>It would be nothing<br>Without you young boy<br>You young girl, ah-ah<br>Ah, yeah, right<br>How does it feel my baby?<br>Ah, yeah, right<br>How does it feel my baby?</p>
+<div class="lyrics-section">[Chorus]</div>
+<p>Your love is nothing without your real love for this world<br>Why don't you love the world more?<br>Say you love the world<br>Say you love the world<br>Your love is nothing without your real love for this world<br>Why don't you love the world more?<br>Say you love the world<br>Say you love the world</p>
+<div class="lyrics-section">[Bridge]</div>
+<p>Love is nothing<br>Without your real love<br>For this world<br>Say you love the world<br>Love is nothing<br>Without your real love<br>For this world<br>Say you love the world</p>
+<p>Say you love me baby<br>Don't say you need me<br>You say you want me<br>But do you love me?<br>Say you love yourself<br>Say it now<br>Love is life itself<br>Say with me baby<br>Love is nothing baby<br>Without your real love<br>For this world<br>Say with me<br>Love is nothing baby<br>Without your real love<br>For this world<br>Say with me</p>
+<div class="lyrics-section">[Chorus]</div>
+<p>Your love is nothing without your real love for this world<br>Why don't you love the world more?<br>Say you love the world<br>Say you love the world<br>Your love is nothing without your real love for this world<br>Why don't you love the world more?<br>Say you love the world<br>Say you love the world</p>
+<div class="lyrics-section">[Outro]</div>
+<p>Your love is nothing without<br>Your real love for this world<br>Say you love the world<br>Your love is nothing without (oh yeah)<br>Nothing without (oh right)<br>Your real love for this world<br>Say you love the world</p>
+<p>Say you love the world<br>Say you love the world<br>Ah, ah<br>Say you love the world</p>
+<p style="margin-top:24px;font-size:12px;color:var(--text-dim)">Music &amp; Lyrics by Valentina Black<br>&copy; &#8471; Valentina Black, 2021. All Rights Reserved.</p>
+</div>
+  <p><a class="album-back" href="index.html#listen">&larr; Back to Discography</a></p>
+</div>
+
+<footer>&copy; Valentina Black. All rights reserved. &middot; <a href="index.html">valentinablack.com</a></footer>
+<script>
+(function(){
+  var box = document.querySelector('.album-cover-box');
+  if (!box || !box.querySelector('.flip-inner')) return;
+  var isTouch = window.matchMedia && window.matchMedia('(hover: none)').matches;
+  if (!isTouch) return;
+  box.addEventListener('click', function(e){
+    if (!box.classList.contains('is-flipped')) {
+      e.preventDefault();
+      box.classList.add('is-flipped');
+    }
+  });
+  document.addEventListener('click', function(e){
+    if (!e.target.closest('.album-cover-box')) {
+      box.classList.remove('is-flipped');
+    }
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Press Archive — Valentina Black</title>
+<meta name="robots" content="index, follow">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+<meta name="theme-color" content="#150a1c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff; --accent:#1db954; --accent-2:#0e7a37;
+  --text:#1a1a1a; --text-dim:#6b6b6b; --card:#f7f7f7; --border:#e8e8e8; --maxw:960px;
+}
+@font-face{ font-family:'Master Victory'; src:url('assets/fonts/MasterVictory-Regular.ttf') format('truetype'); font-weight:400; font-style:normal; font-display:swap; }
+@font-face{ font-family:'Master Victory'; src:url('assets/fonts/MasterVictory-Italic.ttf') format('truetype'); font-weight:400; font-style:italic; font-display:swap; }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:18px 24px;background:#ffffff;border-bottom:1px solid var(--border);height:64px;box-sizing:border-box}
+.nav .wordmark{font-weight:800;letter-spacing:.08em;font-size:15px;color:var(--text)}
+.nav .links{display:flex;gap:22px;font-size:14px;font-weight:600}
+.nav .links a{opacity:.8;transition:opacity .2s;color:var(--text);text-decoration:none}
+.nav .links a:hover{opacity:1;color:var(--accent-2)}
+@media (max-width:760px){ .nav .links{display:none} }
+.hero{padding:120px 24px 40px;text-align:center}
+.hero h1{font-family:'Master Victory',cursive;font-style:italic;font-weight:400;font-size:clamp(34px,7vw,56px);margin:0 0 14px}
+.hero p{color:var(--text-dim);max-width:640px;margin:0 auto;font-size:15px}
+.entry{border-top:1px solid var(--border);padding:36px 0;scroll-margin-top:84px}
+.entry:last-child{padding-bottom:80px}
+.entry-num{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.12em;color:#fff;background:var(--accent-2);border-radius:999px;padding:3px 11px;margin-bottom:10px}
+.entry h2{font-size:19px;margin:0 0 4px}
+.entry .meta{font-size:13px;color:var(--text-dim);margin:0 0 18px}
+.entry .meta em{font-style:italic;font-weight:700;color:var(--accent-2);font-size:14px}
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.shots figure{margin:0;background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.shots img{width:100%;height:auto}
+.shots figcaption{padding:10px 12px;font-size:12px;color:var(--text-dim)}
+.shots figcaption em{font-style:italic;font-weight:700;color:var(--accent-2)}
+.note{background:rgba(29,185,84,.07);border:1px solid rgba(29,185,84,.28);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--text-dim);margin:16px 0 0}
+.note strong{color:var(--text)}
+.back{display:inline-flex;gap:8px;font-size:13px;font-weight:700;color:var(--accent-2);margin:0 0 6px;text-decoration:none}
+footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;color:var(--text-dim);font-size:13px}
+.shots img{cursor:zoom-in}
+
+.lightbox-overlay{position:fixed;inset:0;background:rgba(10,8,12,.94);z-index:1000;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .2s ease;overflow:hidden}
+.lightbox-overlay.open{opacity:1;visibility:visible}
+.lightbox-img{position:relative;z-index:1;max-width:90vw;max-height:84vh;object-fit:contain;border-radius:6px;box-shadow:0 30px 70px -20px rgba(0,0,0,.6);cursor:zoom-in;touch-action:none;transform-origin:center center;transition:transform .18s ease;user-select:none}
+.lightbox-img.zoomed{cursor:grab;border-radius:2px}
+.lightbox-img.panning{transition:none;cursor:grabbing}
+.lightbox-close,.lightbox-nav{position:fixed;z-index:2;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:50%;width:46px;height:46px;display:flex;align-items:center;justify-content:center;font-size:24px;line-height:1;cursor:pointer;transition:background .15s ease}
+.lightbox-close:hover,.lightbox-nav:hover{background:rgba(255,255,255,.2)}
+.lightbox-close{top:20px;right:20px}
+.lightbox-nav{top:50%;transform:translateY(-50%)}
+.lightbox-prev{left:16px}
+.lightbox-next{right:16px}
+.lightbox-counter{position:fixed;z-index:2;bottom:22px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.75);font-size:13px;font-weight:600;letter-spacing:.04em}
+.lightbox-hint{position:fixed;z-index:2;bottom:22px;right:22px;color:rgba(255,255,255,.55);font-size:11px;letter-spacing:.03em}
+@media (max-width:640px){
+  .lightbox-close,.lightbox-nav{width:38px;height:38px;font-size:20px}
+  .lightbox-prev{left:6px}
+  .lightbox-next{right:6px}
+  .lightbox-hint{display:none}
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a class="wordmark" href="index.html" style="text-decoration:none">VALENTINA BLACK</a>
+  <div class="links">
+    <a href="index.html#listen">Listen</a>
+    <a href="index.html#music">Music</a>
+    <a href="biography.html">Biography</a>
+    <a href="press-archive.html">Press Archive</a>
+    <a href="index.html#gallery">Gallery</a>
+    <a href="index.html#about">Contact</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>Press Archive</h1>
+  <p>Original scans of the press sources cited in Valentina Black's <a href="biography.html">biography</a>, kept here for reference and independent verification. Each entry is linked from its matching numbered citation.</p>
+</div>
+
+<div class="wrap">
+
+  <div class="entry" id="ref1">
+    <a class="back" href="biography.html#references">&larr; Reference [1]</a>
+    <div><span class="entry-num">CITATION 1</span></div>
+    <h2>&ldquo;Miss Italia. 1939/2009: storia, protagoniste e vincitrici&rdquo;</h2>
+    <p class="meta">Testi di Edmondo Berselli &middot; Arnoldo Mondadori Editore, 2009 &middot; ISBN 978-88-370-6888-2</p>
+    <div class="shots">
+      <figure><img src="assets/press-archive/ref01-cover.jpg" alt="Miss Italia 1939-2009 book cover, Mondadori, testi di Edmondo Berselli"><figcaption>Front cover.</figcaption></figure>
+      <figure><img src="assets/press-archive/ref01-backcover.jpg" alt="Miss Italia 1939-2009 book back cover"><figcaption>Back cover, with ISBN 978-88-370-6888-2.</figcaption></figure>
+      <figure><img src="assets/press-archive/ref01-letter.jpg" alt="Letter from Mondadori Marketing, 9 September 2009, confirming inclusion in the book's Albo d'Oro"><figcaption>Letter from Mondadori's Libri Illustrati marketing department (Stefano Recchi, 9 Sept 2009) notifying her, as a Miss Italia finalist, that her name appears in the book's &ldquo;Albo d'Oro.&rdquo;</figcaption></figure>
+      <figure><img src="assets/press-archive/ref01-albo-doro-2000.jpg" alt="Albo d'Oro page 289 of the book, year 2000, listing Miss Veneto Serugeri Valentina"><figcaption>The book's &ldquo;Albo d'Oro&rdquo; (official roster), p.289, year 2000, entry 6: &ldquo;Miss Veneto &mdash; Serugeri Valentina.&rdquo;</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="entry" id="ref2">
+    <a class="back" href="biography.html#references">&larr; Reference [2]</a>
+    <div><span class="entry-num">CITATION 2</span></div>
+    <h2>&ldquo;Schedina senza veli&rdquo;</h2>
+    <p class="meta">Interview by Chiara Tajoli &middot; <em>L'Arena</em> &middot; Friday 20 December 2002, Spettacoli section, p.45</p>
+    <div class="shots">
+      <figure><img src="assets/press-archive/ref02-schedina-senza-veli.jpg" alt="Schedina senza veli article, 20 December 2002, with photo of Valentina and Robbie Williams"><figcaption>The article, with the photo she is pictured in with Robbie Williams (captioned in the piece as taken backstage at "Quelli Che Il Calcio").</figcaption></figure>
+      <figure><img src="assets/press-archive/ref02-schedina-senza-veli-fullpage.jpg" alt="Schedina senza veli full newspaper page, 20 December 2002"><figcaption>Full page scan, byline Chiara Tajoli: "Valentina Serugeri, ha 20 anni... Due anni fa ha anche partecipato al concorso Miss Italia, conquistando la fascia di miss Veneto."</figcaption></figure>
+      <figure><img src="assets/press-archive/ref02-robbie-williams-photo.jpg" alt="Photo of Valentina with Robbie Williams backstage"><figcaption>Lei con Robbie Williams — the photo referenced in the article ("nella foto è abbracciata a Robbie Williams").</figcaption></figure>
+      <figure><img src="assets/press-archive/ref02-larena-fullpage-p45.jpg" alt="L'Arena full newspaper page, Spettacoli section, 20 December 2002, page 45"><figcaption><em>L'Arena</em> — full page as printed, confirming section ("Spettacoli"), date ("Venerdì 20 Dicembre 2002") and page number ("45") exactly as cited.</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="entry" id="ref3">
+    <a class="back" href="biography.html#references">&larr; Reference [3]</a>
+    <div><span class="entry-num">CITATION 3</span></div>
+    <h2>&ldquo;Il richiamo della passerella&rdquo;</h2>
+    <p class="meta">By Wally Battisti &middot; <em>Un Mese a Verona</em>, Anno 5 n.7, July 2001, p.25</p>
+    <div class="shots">
+      <figure><img src="assets/press-archive/ref03-unmese.jpg" alt="Il richiamo della passerella article, Un Mese a Verona, July 2001"><figcaption>"Una veronese in corsa per Miss Europa" — profile naming Valentina Serugeri ahead of the Miss Europa candidacy.</figcaption></figure>
+      <figure><img src="assets/press-archive/ref03-unmese-cover.jpg" alt="Un Mese a Verona magazine cover, Anno 5 Numero 7, Luglio 2001"><figcaption><em>Un Mese a Verona</em> — cover of the same issue (Anno 5, Numero 7, Luglio 2001), cover-teasing "PERSONAGGI: Una veronese a Miss Europa."</figcaption></figure>
+    </div>
+    <div class="note"><strong>Correction:</strong> the biography previously credited this citation to Chiara Tajoli under a different headline. The scan on file shows the actual byline is Wally Battisti and the headline is "Il richiamo della passerella" — the reference text has been corrected to match.</div>
+  </div>
+
+  <div class="entry" id="ref4">
+    <a class="back" href="biography.html#references">&larr; Reference [4]</a>
+    <div><span class="entry-num">CITATION 4</span></div>
+    <h2>Miss Italia 2000 regional-finalist coverage</h2>
+    <p class="meta"><em>TV Sorrisi e Canzoni</em> n.37 (10&ndash;16 Sept 2000) &middot; <em>Visto</em> (Sept 2000) &middot; <em>Gazzetta di Parma</em>, Thu 7 Sept 2000</p>
+    <div class="shots">
+      <figure><img src="assets/press-archive/ref04-tvsorrisi-cover.jpg" alt="TV Sorrisi e Canzoni cover, n.37, 10-16 September 2000, Miss Italia 2000"><figcaption><em>TV Sorrisi e Canzoni</em>, n.37 &mdash; cover, "Le foto delle 100 finaliste: Miss Italia 2000" (issue dated 10&ndash;16 Sept 2000).</figcaption></figure>
+      <figure><img src="assets/press-archive/ref04-visto.jpg" alt="Visto magazine, September 2000, Inseguono la Zanin"><figcaption><em>Visto</em> — "Valentina Serugeri (miss Veneto)" among the Veneto candidates.</figcaption></figure>
+      <figure><img src="assets/press-archive/ref04-visto-regioni-spread.jpg" alt="Visto magazine, full regional roundup spread, September 2000"><figcaption><em>Visto</em> — the full region-by-region spread this Veneto item appears in, confirming the "sfida delle regioni" feature promised on the cover.</figcaption></figure>
+      <figure><img src="assets/press-archive/ref04-tvsorrisi.jpg" alt="TV Sorrisi e Canzoni, September 2000, Indovina la più bella"><figcaption><em>TV Sorrisi e Canzoni</em> — "006 Valentina Serugeri, Miss Veneto, Verona, 18 anni."</figcaption></figure>
+      <figure><img src="assets/press-archive/ref04-visto-cover.jpg" alt="Visto magazine cover, n.36, 8 September 2000, A Miss Italia la sfida delle regioni"><figcaption><em>Visto</em>, n.36 &mdash; cover, "A Miss Italia la sfida delle regioni" (8 Sept 2000).</figcaption></figure>
+      <figure><img src="assets/press-archive/ref04-gazzettaparma-7sett-frontpage.jpg" alt="Gazzetta di Parma special section front page, 7 September 2000, Verso la finale"><figcaption><em>Gazzetta di Parma</em>, 7 Sept 2000 &mdash; front page of the "Miss Italia 2000" special section this item ran in.</figcaption></figure>
+      <figure><img src="assets/press-archive/ref04-gazzettaparma-7sett.jpg" alt="Gazzetta di Parma, 7 September 2000, Le Cento Pretendenti"><figcaption><em>Gazzetta di Parma</em>, 7 Sept 2000 — "Valentina Serugeri, nata a Verona... 3 febbraio 1982," with her regional-finalist profile.</figcaption></figure>
+      <figure><img src="assets/press-archive/ref04-gazzettaparma-7sett-dettaglio.jpg" alt="Gazzetta di Parma, 7 September 2000, Le Cento Pretendenti, detail with masthead"><figcaption><em>Gazzetta di Parma</em>, 7 Sept 2000 — clearer detail crop, with the masthead ("Gazzetta di Parma, II/III, Giovedì 7 settembre 2000") and Valentina's entry both legible.</figcaption></figure>
+      <figure><img src="assets/press-archive/ref04-gazzettaparma-7sett-valentina.jpg" alt="Gazzetta di Parma, 7 September 2000, close-up of Valentina Serugeri's entry"><figcaption><em>Gazzetta di Parma</em> — close-up: "Valentina Serugeri. E' nata a Verona, dove vive, il 3 febbraio 1982..."</figcaption></figure>
+      <figure><img src="assets/press-archive/ref04-miss-veneto-group-hires.jpg" alt="Group photo of Miss Italia 2000 Veneto regional finalists in sashes, high resolution"><figcaption>Personal photo (provided in high resolution): the Veneto regional finalists in sash, including sashes reading "Concorso Naz. Cotonella Miss Veneto," "Miss Deborah Veneto," "Modella Domani Sasch" and "Concorso Nazionale Miss Veneto" (Wella).</figcaption></figure>
+      <figure><img src="assets/press-archive/ref04-cotonella-closeup-hires.jpg" alt="Close-up of Miss Italia 2000 Veneto finalist wearing the Cotonella sash, high resolution" loading="lazy"><figcaption>Personal photo (high resolution): closer view of the same group, Cotonella and Deborah Veneto sashes visible.</figcaption></figure>
+      <figure><img src="assets/press-archive/ref04-runway-solo-hires.jpg" alt="Solo runway photo, Miss Italia 2000 Veneto regional finalist, high resolution" loading="lazy"><figcaption>Personal photo (high resolution): solo runway shot from the same regional heat.</figcaption></figure>
+    </div>
+    <div class="note">The three photos above are personal photographs (not newspaper clippings) from the Miss Italia 2000 Veneto regional event, the same occasion documented by <em>TV Sorrisi e Canzoni</em>'s regional-finalist feature above. Individual faces in the group shot aren't labeled by name, so no specific position in that photo is asserted here.</div>
+  </div>
+
+  <div class="entry" id="ref4b">
+    <div><span class="entry-num">SUPPORTING</span></div>
+    <h2>Gazzetta di Parma, 12 September 2000</h2>
+    <p class="meta">Front page, Miss Italia 2000 final results</p>
+    <div class="shots">
+      <figure><img src="assets/press-archive/ref04-gazzettaparma-12sett.jpg" alt="Gazzetta di Parma front page, 12 September 2000, Miss Italia final results"><figcaption>Front-page report on the Miss Italia 2000 final at Salsomaggiore — background context for the same pageant cycle; does not name Valentina individually.</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="entry" id="ref5">
+    <a class="back" href="biography.html#references">&larr; Reference [5]</a>
+    <div><span class="entry-num">CITATION 5</span></div>
+    <h2>Miren International / Concorso Nazionale Miss Italia &mdash; official accreditation letter</h2>
+    <p class="meta">Lettera di Accredito &middot; Roma, August 2000</p>
+    <div class="shots">
+      <figure><img src="assets/press-archive/ref05-miren-accredito.jpg" alt="Miren International official Miss Italia accreditation letter, August 2000, addressed to Valentina Serugeri"><figcaption>Official letter from Miren International Srl (organizer of Concorso Nazionale Miss Italia), addressed to &ldquo;Valentina Serugeri,&rdquo; confirming her regional title &ldquo;Miss Cinema Veneto,&rdquo; birth details (Verona, 3-2-82), election date (14-8-00, Bardolino), and admission to the national pre-finals at San Benedetto del Tronto, 23&ndash;27 August 2000.</figcaption></figure>
+    </div>
+    <div class="note">Primary organizational document from the pageant itself (not a press clipping), independently corroborating the regional title, date and location already documented via press coverage in citation 4.</div>
+  </div>
+
+  <div class="entry" id="ref4c">
+    <div><span class="entry-num">SUPPORTING</span></div>
+    <h2>Miss Italia 2000 &mdash; Salsomaggiore Terme finals week</h2>
+    <p class="meta">Personal photos, September 2000 &middot; Salsomaggiore Terme national finals &amp; San Benedetto del Tronto pre-finals</p>
+    <div class="shots">
+      <figure><img src="assets/press-archive/ref04c-salsomaggiore-enzo-mirigliani.jpg" alt="Personal photo with Enzo Mirigliani at the Miss Italia 2000 finals, Salsomaggiore Terme"><figcaption>Personal photo: with Enzo Mirigliani (patron of the Miss Italia pageant) during finals week at Salsomaggiore Terme.</figcaption></figure>
+      <figure><img src="assets/press-archive/ref04c-salsomaggiore-group.jpg" alt="Group photo of Miss Italia 2000 finalists, Salsomaggiore Terme"><figcaption>Personal photo: group shot of finalists at Salsomaggiore Terme; individual faces are not labeled by name.</figcaption></figure>
+      <figure><img src="assets/press-archive/ref04c-miss-cinema-veneto-walk.jpg" alt="Runway photo, Miss Cinema Veneto sash, Miss Italia 2000" loading="lazy"><figcaption>Personal photo: on the runway wearing a "Miss Cinema Veneto" sash.</figcaption></figure>
+      <figure><img src="assets/press-archive/ref04c-sanbenedetto-prefinali.jpg" alt="Photo from the Miss Italia 2000 pre-finals, San Benedetto del Tronto" loading="lazy"><figcaption>Personal photo: from the pre-finals heat at San Benedetto del Tronto, part of the same Miss Italia 2000 cycle documented in citation 4.</figcaption></figure>
+    </div>
+    <div class="note">Personal snapshots (not press clippings) from the same Miss Italia 2000 national cycle as citation 4 above; kept here as supporting material rather than as an independent citation, since they are self-supplied rather than independently published.</div>
+  </div>
+
+  <div class="entry" id="ref4d">
+    <div><span class="entry-num">SUPPORTING</span></div>
+    <h2>Miss Italia 2000 &mdash; Cantalago Festival</h2>
+    <p class="meta">Personal photos, 2000 &middot; Cantalago</p>
+    <div class="shots">
+      <figure><img src="assets/press-archive/ref04d-cantalago-2000-group1.jpg" alt="Group photo, Cantalago 2000, Miss Italia regional selection"><figcaption>Personal photo: group photo at the Cantalago 2000 Festival.</figcaption></figure>
+      <figure><img src="assets/press-archive/ref04d-cantalago-2000-lineup.jpg" alt="Lineup photo, Cantalago 2000, Miss Italia regional selection"><figcaption>Personal photo: contestant lineup, same Cantalago 2000 event.</figcaption></figure>
+      <figure><img src="assets/press-archive/ref04d-cantalago-2000-group2.jpg" alt="Second group photo, Cantalago 2000" loading="lazy"><figcaption>Personal photo: a second group shot from the same event.</figcaption></figure>
+      <figure><img src="assets/press-archive/ref04d-cotonella-closeup.jpg" alt="Close-up wearing a Cotonella sash" loading="lazy"><figcaption>Personal photo: close-up wearing a "Cotonella" sash, consistent with the Cotonella branding also seen in citation 4's high-resolution group photo.</figcaption></figure>
+      <figure><img src="assets/press-archive/ref04d-cotonella-group3.jpg" alt="Group photo with Cotonella branding, event not confirmed" loading="lazy"><figcaption>Personal photo, Cotonella-branded event &mdash; cannot be independently confirmed as the same Cantalago occasion as the photos above.</figcaption></figure>
+      <figure><img src="assets/press-archive/ref04d-cotonella-group4.jpg" alt="Second group photo with Cotonella branding, event not confirmed" loading="lazy"><figcaption>Personal photo, same Cotonella-branded series &mdash; likewise not confirmed as the same Cantalago occasion.</figcaption></figure>
+    </div>
+    <div class="note">Personal snapshots, not press clippings. The first four photos appear to be one Cantalago 2000 occasion; the last two share the Cotonella branding but their date and specific event are not independently confirmed here.</div>
+  </div>
+
+  <div class="entry" id="ref4e">
+    <div><span class="entry-num">SUPPORTING</span></div>
+    <h2>Miss Italia 2000 final &mdash; RAI International broadcast</h2>
+    <p class="meta">Screen captures, RAI International broadcast of the Miss Italia 2000 final</p>
+    <div class="shots">
+      <figure><img src="assets/press-archive/ref04e-rai-miss-italia-2000-crowd1.jpg" alt="Screen capture, RAI International Miss Italia 2000 broadcast, group of finalists"><figcaption>Screen capture from a Facebook repost of RAI International's broadcast of the Miss Italia 2000 final, labeled "MISS ITALIA 2000" on-screen. Group of finalists; individuals are not identified in this frame.</figcaption></figure>
+      <figure><img src="assets/press-archive/ref04e-rai-miss-italia-2000-crowning.jpg" alt="Screen capture, RAI International Miss Italia 2000 broadcast, crowning moment"><figcaption>Same broadcast: the crowning moment, surrounded by fellow finalists and pageant officials.</figcaption></figure>
+      <figure><img src="assets/press-archive/ref04e-rai-miss-italia-2000-crowd2.jpg" alt="Screen capture, RAI International Miss Italia 2000 broadcast, close-up of finalists" loading="lazy"><figcaption>Same broadcast, a closer group shot.</figcaption></figure>
+    </div>
+    <div class="note"><strong>Not independently verified:</strong> these are screen captures of a social-media repost of archival RAI footage, not an original press source. The frames show a group of Miss Italia 2000 finalists; this page does not assert which individual in the crowd is Valentina, since faces aren't independently labeled in the footage. Kept here only as supporting visual context for the same 2000 pageant cycle already documented in citation 4.</div>
+  </div>
+
+  <div class="entry" id="ref4f">
+    <div><span class="entry-num">SUPPORTING</span></div>
+    <h2>Pageant sashes &mdash; personal collection</h2>
+    <p class="meta">Recent photo, not a period document</p>
+    <div class="shots">
+      <figure><img src="assets/press-archive/ref04c-sashes-collection.jpg" alt="Recent staged photo of Valentina's personal collection of pageant sashes"><figcaption>Recent photograph of Valentina's own kept sashes from her pageant appearances, staged for this archive &mdash; not a contemporaneous period photo, included here only to illustrate the range of titles documented above.</figcaption></figure>
+    </div>
+    <div class="note">This is a modern photo, not an artifact from 2000&ndash;2004; it is included for illustrative purposes only and should not be read as a period document.</div>
+  </div>
+
+  <div class="entry" id="ref7">
+    <a class="back" href="biography.html#references">&larr; Reference [7]</a>
+    <div><span class="entry-num">CITATION 7</span></div>
+    <h2>&ldquo;Schedine&rdquo; press coverage</h2>
+    <p class="meta"><em>Stop</em>, Anno 56&deg; n.41, 18 October 2002 &middot; <em>Eva Tremila Express</em>, n.3, 17 January 2003</p>
+    <div class="shots">
+      <figure><img src="assets/press-archive/ref07-stop.jpg" alt="Stop magazine cover, 18 October 2002"><figcaption><em>Stop</em>, Anno 56&deg; n.41, 18 Oct 2002 — masthead and issue details confirmed.</figcaption></figure>
+      <figure><img src="assets/press-archive/ref07-stop-oroscopo.jpg" alt="Stop magazine, page 35, 2003 horoscope special with Schedine in Christmas costumes"><figcaption><em>Stop</em>, p.35 (masthead "stop 35" visible) — 2003 horoscope special, "Speciale oroscopo 2003," photographed with the <em>Quelli Che Il Calcio</em> "Schedine" in the same white/silver Christmas costumes seen in the Robbie Williams photo (citation 2); no individual names captioned here.</figcaption></figure>
+      <figure><img src="assets/press-archive/ref07-schedine-feature.jpg" alt="Quelli Che Il Calcio schedine feature, byline Bruno Giron, listing the nine schedine including Valentina" loading="lazy"><figcaption>"Le magnifiche 9" feature, byline Bruno Giron (masthead not visible in this crop) — caption names "Debora Manoni... Stella Pozzi... Valentina Sevugeri... Elisa Sergi" and body text lists "Debora, Elisa, Stella, Veronica, Sara Cardillo, Delia, Sara Casci, Valentina e Diana" as the nine "Schedine."</figcaption></figure>
+      <figure><img src="assets/press-archive/ref07-evatremila.jpg" alt="Eva Tremila Express, Le Schedine, January 2003"><figcaption><em>Eva Tremila Express</em>, n.3, 17 Jan 2003, p.57 — "Sopra, da sinistra, vediamo: Sara Casci, Bella Degli Innocenti, Valentina Serugari, Elisa Sergi," among the "Schedine" of <em>Quelli Che Il Calcio</em>.</figcaption></figure>
+      <figure><img src="assets/press-archive/ref07-evatremila-cover.jpg" alt="Eva Tremila Express magazine cover, N.3, 17 Gennaio 2003"><figcaption><em>Eva Tremila Express</em> — cover of the same issue, masthead and date confirmed: "N. 3 - 17 Gennaio 2003" (barcode 9 770014 330004); cover-teases "A pag. 56: Letterine e Microfonine — I segreti delle nuove dive."</figcaption></figure>
+      <figure><img src="assets/press-archive/ref07-evatremila-fullpage.jpg" alt="Eva Tremila Express full page, Le dive di domani, page 57"><figcaption><em>Eva Tremila Express</em>, p.57 (masthead "EVA TREMILA 57" visible) — full page, "Le dive di domani," the same feature the citation excerpt above is cropped from.</figcaption></figure>
+      <figure><img src="assets/press-archive/ref07-evatremila-detail.jpg" alt="Close-up crop of the Eva Tremila Express group photo and caption naming Valentina Serugari"><figcaption>Closer crop of the same page's group photo and caption, clearer to read: "Valentina Serugari, Stella Pozzi, Debora Manoni, Sara Cardillo. Sedute: Sara Casci ed Elisa Sergi."</figcaption></figure>
+      <figure><img src="assets/press-archive/ref07-palestra-university-fighting.jpg" alt="Quelli Che Il Calcio schedine visiting Stefania Bianchini's gym, publication not identified"><figcaption>"Anna Mascolo in palestra con le 'schedine' di <em>Quelli che il calcio</em>... sono ospiti di Stefania Bianchini" (photo: Renato Lani) — publication and date not visible in this clipping.</figcaption></figure>
+      <figure><img src="assets/press-archive/ref07-schedine-natale.jpg" alt="Quelli Che Il Calcio schedine in Christmas costumes, publication not identified"><figcaption>"Povere 'schedine'... bucate" — Milan, on the schedine's Santa Claus costume duties; same white/silver Christmas costume as citation 2's Robbie Williams photo and the <em>Stop</em> horoscope page above. Publication and date not visible in this clipping.</figcaption></figure>
+    </div>
+    <div class="note"><strong>Open item:</strong> three of the photos above (the Bruno Giron "magnifiche 9" feature, the gym visit, and the Christmas-costume clipping) don't show a visible masthead or date in the scan — they're kept here because their content and style match the <em>Quelli Che Il Calcio</em> "Schedine" press cycle already documented for this citation, but the specific publication for each is not yet independently confirmed.</div>
+  </div>
+
+  <div class="entry" id="ref7b">
+    <div><span class="entry-num">SUPPORTING</span></div>
+    <h2>Backstage, RAI &mdash; &ldquo;<a href="https://it.wikipedia.org/wiki/Quelli_che_il_calcio" target="_blank" rel="noopener">Quelli Che Il Calcio</a>,&rdquo; Milan (2002/2003, Simona Ventura edition)</h2>
+    <p class="meta">Personal photos &middot; handwritten period label on one print: &ldquo;2002/2003 Milano &ndash; Quelli che il calcio &ndash; RAI&rdquo; &middot; backstage snapshots with guests of the show during Valentina's season as one of the &ldquo;Schedine&rdquo;</p>
+    <div class="shots">
+      <figure><img src="assets/press-archive/ref07-backstage-craig-david.jpg" alt="Personal backstage photo with singer Craig David, November 2002" loading="lazy"><figcaption><strong>Craig David</strong> &mdash; backstage, Nov 2002.</figcaption></figure>
+      <figure><img src="assets/press-archive/ref07-backstage-milly-carlucci.jpg" alt="Personal backstage photo with TV host Milly Carlucci, December 2002" loading="lazy"><figcaption><strong>Milly Carlucci</strong> &mdash; backstage, Dec 2002.</figcaption></figure>
+      <figure><img src="assets/press-archive/ref07-backstage-robbie-williams.jpg" alt="Personal backstage photo with Robbie Williams, December 2002, in the white and silver Christmas Schedine costume" loading="lazy"><figcaption><strong>Robbie Williams</strong> &mdash; backstage, Dec 2002, in the white/silver Christmas &ldquo;Schedine&rdquo; costume. This is the same photo published alongside the <em>L'Arena</em> interview in citation 2 (&ldquo;nella foto &egrave; abbracciata a Robbie Williams&rdquo;), shown here at full quality.</figcaption></figure>
+      <figure><img src="assets/press-archive/ref07-backstage-rai-milano.jpg" alt="Personal backstage photo at RAI Milano, Quelli Che Il Calcio, 2002/2003" loading="lazy"><figcaption><strong>Rai studios, Milan</strong> &mdash; before rehearsals, season 2002/2003. The print itself carries a handwritten label, &ldquo;2002/2003 Milano &ndash; Quelli che il calcio &ndash; RAI,&rdquo; matching the same television period as citation 7's press coverage.</figcaption></figure>
+      <figure><img src="assets/press-archive/ref07-backstage-francesco-renga.jpg" alt="Personal backstage photo with singer Francesco Renga" loading="lazy"><figcaption><strong>Francesco Renga</strong> &mdash; backstage, same 2002/2003 season (exact date not noted on the print).</figcaption></figure>
+      <figure><img src="assets/press-archive/ref07-backstage-marcus-schenkenberg.jpg" alt="Personal backstage photo with model Marcus Schenkenberg" loading="lazy"><figcaption><strong>Marcus Schenkenberg</strong> &mdash; backstage, same 2002/2003 season (exact date not noted on the print).</figcaption></figure>
+    </div>
+    <div class="note">Personal snapshots, not press clippings; dates come from a handwritten annotation on one of the prints and from the <em>L'Arena</em> publication date already on file for the Robbie Williams photo (citation 2) rather than from independently published sources for each photo, so this set is kept here as supporting context for citation 7 &mdash; Valentina's 2002/2003 season as one of the &ldquo;Schedine&rdquo; on Simona Ventura's <em>Quelli Che Il Calcio</em> &mdash; rather than as its own confirmed citation.</div>
+  </div>
+
+  <div class="entry" id="ref8">
+    <a class="back" href="biography.html#references">&larr; Reference [8]</a>
+    <div><span class="entry-num">CITATION 8</span></div>
+    <h2>&ldquo;Elette le sei miss dei mondiali di ciclismo&rdquo;</h2>
+    <p class="meta"><em>Corriere del Veneto</em> (likely) &middot; Tue 4 May 2004 &middot; Hollywood Dance Club, Bardolino</p>
+    <div class="shots">
+      <figure><img src="assets/press-archive/ref08-mondiali-ciclismo.jpg" alt="Elette le sei miss dei mondiali di ciclismo article"><figcaption>Names "Valentina Seruggeri (22 anni di Verona, nominata anche, da Francesco Moser, «Miss in forma Grana Padano»)" among the six selected finalists, judged by Giovanni Rana, Francesco Moser and Fabio Testi; fellow finalist Elisa Basso is named as the sister of cyclist Ivan Basso. Masthead not visible in this clipping.</figcaption></figure>
+      <figure><img src="assets/press-archive/ref08-sfilata-hollywood.jpg" alt="Mondiali, sfilata di miss all'Hollywood article, byline GiBa and Marco Marchesini" loading="lazy"><figcaption>A related follow-up article, "Mondiali, sfilata di miss all'Hollywood" (bylines GiBa. and Marco Marchesini), re-using the same Rana/Testi/Moser group photo — doesn't name Valentina individually (it focuses on finalist Eleonora Sorato), but independently confirms the same venue, judges and contest.</figcaption></figure>
+      <figure><img src="assets/press-archive/ref08-corriere-veneto-fullpage.jpg" alt="Corriere del Veneto full newspaper page, Verona edition, 4 Maggio 2004, page 7" loading="lazy"><figcaption><em>Corriere del Veneto</em> — full page this follow-up article appears on, with masthead, date and page number all legible: "4 MAGGIO 2004... VERONA | 7."</figcaption></figure>
+      <figure><img src="assets/press-archive/ref08-group-photo-enlarged.jpg" alt="Enlarged crop of the Rana/Testi/Moser group photo with the six miss finalists" loading="lazy"><figcaption>Enlarged crop of the same group photo, for a clearer view of the eight people named in the original clipping's caption (left to right: Giovanni Rana, Elisa Basso, Stefania Belotti, Eleonora Sorato, Giada Biasia, Valentina Seruggeri, Letizia Bonente, Francesco Moser) — individual faces aren't independently labeled here, so this crop doesn't identify who is who.</figcaption></figure>
+    </div>
+    <div class="note"><strong>Note on the masthead:</strong> the original "Elette le sei miss" clipping (above) doesn't show its own masthead. It's labeled <em>Corriere del Veneto</em> here because the identical event photo is reused in a Corriere del Veneto page dated 4 May 2004 — the same date already on file for this citation — for the related follow-up article shown alongside it. That's strong circumstantial evidence, not a direct confirmation of the first clipping's own masthead, so it's marked "likely" above.</div>
+  </div>
+
+  <div class="entry" id="ref10">
+    <a class="back" href="biography.html#references">&larr; Reference [10]</a>
+    <div><span class="entry-num">CITATION 10</span></div>
+    <h2>&ldquo;Valentina, la bellezza del rock&rdquo;</h2>
+    <p class="meta"><em>L'Arena</em>, byline Lui.Sa. (Luigi Sabelli) &middot; two separate, identically-headlined pieces: Sat 24 Jan 2009 and Fri 27 Feb 2009, both p.52, Giorno e Notte/Spettacoli</p>
+    <div class="shots">
+      <figure><img src="assets/press-archive/ref10-villavenier-trafiletto.jpg" alt="Valentina, la bellezza del rock trafiletto, L'Arena, 24 January 2009"><figcaption><strong>24 Jan 2009.</strong> Shorter piece: "stasera alle 22,30 a Villa Venier di Sommacampagna... concerto organizzato dall'associazione Lucignolo... Con lei Bruno Marini al sax e Big Caesar alla batteria. In chiusura dj set con The Thief."</figcaption></figure>
+      <figure><img src="assets/press-archive/ref10-larena-fullpage-p52-24gen.jpg" alt="L'Arena full newspaper page, Giorno e Notte, 24 January 2009, page 52" loading="lazy"><figcaption><em>L'Arena</em> &mdash; full page, masthead and date confirmed: "Sabato 24 Gennaio 2009," page "52 Spettacoli."</figcaption></figure>
+      <figure><img src="assets/press-archive/ref10-bellezza-rock-article.jpg" alt="Valentina, la bellezza del rock article, L'Arena, 27 February 2009"><figcaption><strong>27 Feb 2009.</strong> Longer piece, same headline: "Live. Alle Cantine dell'Arena alle 22,30" &mdash; the same organ trio (Bruno Marini, Big Caesar) plus singer Manuel Carli.</figcaption></figure>
+      <figure><img src="assets/press-archive/ref10-larena-fullpage-p52.jpg" alt="L'Arena full newspaper page, Giorno e Notte, 27 February 2009, page 52" loading="lazy"><figcaption><em>L'Arena</em> &mdash; full page, masthead and date confirmed: "Venerdì 27 Febbraio 2009," page "52 Spettacoli."</figcaption></figure>
+    </div>
+    <div class="note"><strong>Resolved:</strong> this citation is actually two separate, independently dated L'Arena pieces that reuse the same headline formula and byline for the same organ trio, five weeks apart: 24 Jan 2009 (Villa Venier, Sommacampagna) and 27 Feb 2009 (Cantine dell'Arena, with Manuel Carli added). Both dates and mastheads are now confirmed by their own full-page scans. A previous caption on this page said "Villa Venier, Sommacampagna" — that text was correct for the 24 Jan piece, but at the time it was illustrated by the WRONG image: a genuine but unrelated L'Arena clipping about a different event, "Majakovskij: Serata funk/rock con il trio Black" (13 Nov 2009, guitarist Simon Beefsat, drummer Chris Tooker, no Bruno Marini or Big Caesar). That image has been moved to its own entry below instead of left misfiled here.</div>
+  </div>
+
+  <div class="entry" id="ref10b">
+    <div><span class="entry-num">SUPPORTING</span></div>
+    <h2>&ldquo;Majakovskij: Serata funk/rock con il trio Black&rdquo;</h2>
+    <p class="meta"><em>L'Arena</em> &middot; Venerdì 13 Nov 2009 &middot; Majakovskij, Verona</p>
+    <div class="shots">
+      <figure><img src="assets/press-archive/ref10-arena-bellezza-rock.jpg" alt="Majakovskij funk/rock evening with il trio Black article, L'Arena, 13 November 2009"><figcaption>"Stasera (alle 22) al Majakovskij, concerto funk/rock con il trio guidato dalla cantante e organista Valentina Black, affiancata dal chitarrista Simon Beefsat e dal batterista Chris Tooker." Masthead and date confirmed in frame.</figcaption></figure>
+    </div>
+    <div class="note">A separate, later 2009 date for the same organ-trio act &mdash; kept here as its own item since the lineup (Simon Beefsat, Chris Tooker) differs from citation 10's Bruno Marini/Big Caesar/Manuel Carli line-up and it was previously (incorrectly) filed as if it were the same clipping.</div>
+  </div>
+
+  <div class="entry" id="ref6">
+    <a class="back" href="biography.html#references">&larr; Reference [6]</a>
+    <div><span class="entry-num">CITATION 6</span></div>
+    <h2>&ldquo;Finalmente... Volti Nuovi&rdquo;</h2>
+    <p class="meta">By Emanuele Dionisi &middot; <em>Domenica Roma</em>, Anno V n.2, March 2009, p.20&ndash;21</p>
+    <div class="shots">
+      <figure><img src="assets/press-archive/ref06-domenicaroma-p01.jpg" alt="Domenica Roma, March 2009, page 1"><figcaption>Front cover — "Domenica Roma," Anno V, n. 2, Marzo 2009, featuring "Valentina" (with Sandra and Elisabetta) on the cover.</figcaption></figure>
+      <figure><img src="assets/press-archive/ref06-domenicaroma-sommario.jpg" alt="Domenica Roma, March 2009, Sommario page"><figcaption>Sommario/masthead page — confirms issue date ("Chiuso in redazione il 07/03/09"), staff list including Emanuele Dionisi, and the article's page numbers (20–21) under "Volti Nuovi per la TV".</figcaption></figure>
+      <figure><img src="assets/press-archive/ref06-domenicaroma-p18-19.jpg" alt="Domenica Roma, March 2009, pages 18-19"><figcaption>Pages 18–19 — opening spread of "Finalmente... Volti Nuovi, talenti per il cinema, la TV e la musica," byline Emanuele Dionisi, introducing the feature on Elisabetta Del Medico, Sandra Liutkeviciute and Valentina Serugeri (in arte Valentina Black).</figcaption></figure>
+      <figure><img src="assets/press-archive/ref06-domenicaroma-p20-21.jpg" alt="Domenica Roma, March 2009, pages 20-21"><figcaption>Pages 20–21 — the profile continues, naming Valentina's TV credits (Domenica In, Wozz Up, Veline, Dolce Amaro, Il Galà dello Sport, Scommettiamo Che, Cantalago, and "Schedina" on Quelli Che Il Calcio 2002-2003) and her music beginnings (piano/organ from age 10, ICE9 in 2005, Freedom Jazz Dance with Jimmy Carl Black, Beat Generator).</figcaption></figure>
+    </div>
+    <div class="note">Only the pages where Valentina appears are shown here (cover, Sommario and the two-page feature spread). Click any image to view it enlarged. The feature profiles three "talenti emergenti" &mdash; Elisabetta Del Medico, Sandra Liutkeviciute and Valentina Black &mdash; and independently corroborates her TV credits and early music history already documented elsewhere in this archive and in the biography.</div>
+  </div>
+
+  <div class="entry" id="ref21">
+    <a class="back" href="biography.html#references">&larr; Reference [21]</a>
+    <div><span class="entry-num">CITATION 21</span></div>
+    <h2>&ldquo;Le miss veronesi in corsa per la più bella d'Europa&rdquo;</h2>
+    <p class="meta"><em>L'Arena</em> &middot; Martedì 4 Settembre 2001 &middot; p.26, Cronaca del Garda-Baldo &middot; Al Garden Circus, Desenzano</p>
+    <div class="shots">
+      <figure><img src="assets/press-archive/ref21-miss-garden-circus-photo.jpg" alt="Le miss premiate a Desenzano, three women in pageant sashes, L'Arena 4 September 2001"><figcaption>"Le miss premiate a Desenzano." Text: "Al Garden Circus di Desenzano, sono state elette tre bellezze che aspirano a diventare la più bella d'Europa... La fascia di «Miss Garden Circus» l'ha portata a casa Valentina Serugeri di Verona."</figcaption></figure>
+      <figure><img src="assets/press-archive/ref21-larena-fullpage-p26.jpg" alt="L'Arena full newspaper page, Cronaca del Garda-Baldo, 4 September 2001, page 26" loading="lazy"><figcaption><em>L'Arena</em> &mdash; full page, masthead and date confirmed: "Martedì 4 Settembre 2001," page "26 Cronaca del Garda-Baldo."</figcaption></figure>
+    </div>
+    <div class="note">Names Valentina Serugeri directly as winner of the "Miss Garden Circus" sash at this Desenzano heat, alongside two other titled finalists ("Lei tra... primo sprint" and "Gambe in primo piano," sash text partly obscured). Individual faces in the group photo aren't labeled by name in the caption, so no specific position in the photo is asserted here beyond the article's own text.</div>
+  </div>
+
+  <div class="entry" id="ref22">
+    <a class="back" href="biography.html#references">&larr; Reference [22]</a>
+    <div><span class="entry-num">CITATION 22</span></div>
+    <h2>&ldquo;Miss Mondiali&rdquo;</h2>
+    <p class="meta"><em>L'Arena</em> &middot; Lunedì 29 Marzo 2004 &middot; p.8, Cronaca &middot; Barcellona Club, Bussolengo</p>
+    <div class="shots">
+      <figure><img src="assets/press-archive/ref22-miss-mondiali-photo.jpg" alt="Miss Mondiali article naming Valentina Seruggeri as top vote-getter, L'Arena 29 March 2004"><figcaption>"La seconda serata del concorso Miss Mondiali, ospitata dal Barcellona Club di Bussolengo, ha portato all'elezione di tre nuove candidate al ruolo di «premiatrici» dei prossimi Mondiali di ciclismo. Il maggior numero di voti è andato alla 22enne veronese Valentina Seruggeri (che ha già partecipato ad alcune importanti trasmissioni tv e alla finale di Miss Italia). Con lei si sono qualificate alla finale del 30 aprile all'Hollywood di Bardolino, la 28enne milanese Ilaria Menegollo e un'altra veronese: Martina Sorio, di 18 anni." Photo caption: "Le tre ragazze elette al Barcelona Club (foto Express)."</figcaption></figure>
+      <figure><img src="assets/press-archive/ref22-larena-fullpage-p8.jpg" alt="L'Arena full newspaper page, Cronaca, 29 March 2004, page 8" loading="lazy"><figcaption><em>L'Arena</em> &mdash; full page, masthead and date confirmed: "Lunedì 29 Marzo 2004," page "8 Cronaca."</figcaption></figure>
+    </div>
+    <div class="note">An earlier, independently-dated companion piece to citation 8's "Elette le sei miss dei mondiali di ciclismo" (4 May 2004): this 29 March 2004 article covers the qualifying heat that put Valentina Seruggeri through, by name and with the most votes, to the 30 April final at the Hollywood in Bardolino that citation 8 then reports on.</div>
+  </div>
+
+  <div class="entry" id="ref23">
+    <a class="back" href="biography.html#references">&larr; Reference [23]</a>
+    <div><span class="entry-num">CITATION 23</span></div>
+    <h2>&ldquo;Miscela di soul e rock in stile Valentina Black&rdquo;</h2>
+    <p class="meta"><em>L'Arena</em>, byline L.S. &middot; Sabato 30 Gennaio 2010 &middot; p.52, Giorno e Notte/Spettacoli &middot; Majakovskji, via Fiumicello 9, Verona</p>
+    <div class="shots">
+      <figure><img src="assets/press-archive/ref23-majakovskji-soul-rock-photo.jpg" alt="Miscela di soul e rock in stile Valentina Black article, L'Arena, 30 January 2010"><figcaption>"MAJAKOVSKJI. Arriva la cantante e organista. Miscela di soul e rock in stile Valentina Black." Previews that evening's concert (22:00) and the in-progress album to be titled "4 U," with the line-up Bruno Marini (sax), Christopher Tooker (drums/voice), Ernesto Da Silva (percussion), Davide Bendazzoli (theremin) and Joao Da Sila "Ticotico" (dance). Also recaps her career: born in Verona, February 1982; early work as a fotomodella and briefly Miss Veneto runner-up; collaborations with Bruno Marini and with Jimmy Carl Black (Frank Zappa's Mothers of Invention drummer, 1965&ndash;71), with whom she recorded as vocalist on <em>Freedom Jazz Dance</em>; singles released via Vibra and Azzurra, including "Round Trip To AC/DC's Gig."</figcaption></figure>
+      <figure><img src="assets/press-archive/ref23-larena-fullpage-p52-30gen.jpg" alt="L'Arena full newspaper page, Giorno e Notte, 30 January 2010, page 52" loading="lazy"><figcaption><em>L'Arena</em> &mdash; full page, masthead and date confirmed: "Sabato 30 Gennaio 2010," page "52 Spettacoli."</figcaption></figure>
+    </div>
+    <div class="note"><strong>Note:</strong> these two scans were sent as possible support for the "SUPPORTING" entry above (13 Nov 2009, "Serata funk/rock con il trio Black"), but on inspection they're a third, separate Majakovskji clipping &mdash; different headline, different date (30 Jan 2010 vs. 13 Nov 2009), and it previews the "4 U" album by name where the Nov 2009 piece doesn't. Given its own confirmed masthead and date, it's kept here as its own citation rather than folded into either the 13 Nov 2009 entry or citation 10.</div>
+  </div>
+
+  <div class="entry" id="ref24">
+    <div><span class="entry-num">SUPPORTING</span></div>
+    <h2>Music Week &ldquo;Women in Music Awards 2024&rdquo;, London</h2>
+    <p class="meta">Personal photos &middot; 2024 &middot; industry gala, London (venue not otherwise identified in the photos)</p>
+    <div class="shots">
+      <figure><img src="assets/press-archive/ref24-wima-placecard.jpg" alt="Table place card reading Valentina Serugeri, Music Week Women in Music Awards 2024"><figcaption>Table place card printed with her name, bearing the event's own branding (SoundCloud, UK Music, AIM) &mdash; documentary evidence she was a named, seated guest.</figcaption></figure>
+      <figure><img src="assets/press-archive/ref24-wima-redcarpet-1.jpg" alt="On the Women in Music Awards 2024 red carpet, sponsor step-and-repeat backdrop"><figcaption>On the official step-and-repeat backdrop (Spotify, SoundCloud, TikTok, PRS Foundation, Downtown, UK Music and other event sponsors visible).</figcaption></figure>
+      <figure><img src="assets/press-archive/ref24-wima-redcarpet-2.jpg" alt="On the Women in Music Awards 2024 red carpet, standing on the event's branded floor decal" loading="lazy"><figcaption>Standing on the event's own branded floor decal, "Music Week Women in Music Awards 2024 &mdash; Headline Partner SoundCloud, in association with UK Music | AIM."</figcaption></figure>
+      <figure><img src="assets/press-archive/ref24-wima-redcarpet-3.jpg" alt="On the Women in Music Awards 2024 red carpet" loading="lazy"><figcaption>A further red-carpet photo against the same step-and-repeat.</figcaption></figure>
+      <figure><img src="assets/press-archive/ref24-wima-venue-selfie.jpg" alt="Photo inside the Women in Music Awards 2024 venue, ballroom visible" loading="lazy"><figcaption>Inside the venue, with the awards-dinner ballroom visible.</figcaption></figure>
+      <figure><img src="assets/press-archive/ref24-wima-ballroom-interior.jpg" alt="Interior of the Women in Music Awards 2024 ballroom, Music Week branded stage screens" loading="lazy"><figcaption>The ballroom itself, with Music Week-branded stage screens and the seated dinner underway.</figcaption></figure>
+    </div>
+    <p class="meta" style="margin-top:-8px;font-style:italic">Personal photos and event place card; independent press coverage not yet found.</p>
+  </div>
+
+</div>
+
+<footer>&copy; Valentina Black. All rights reserved. &middot; <a href="index.html">valentinablack.com</a></footer>
+
+<script>
+(function(){
+  var groups = Array.from(document.querySelectorAll('.shots')).map(function(shots){
+    return Array.from(shots.querySelectorAll('img'));
+  }).filter(function(g){ return g.length; });
+  if(!groups.length) return;
+  var overlay = document.createElement('div');
+  overlay.className = 'lightbox-overlay';
+  overlay.innerHTML = '<button class="lightbox-close" aria-label="Close">&times;</button>' +
+    '<button class="lightbox-nav lightbox-prev" aria-label="Previous image">&#8249;</button>' +
+    '<img class="lightbox-img" src="" alt="">' +
+    '<button class="lightbox-nav lightbox-next" aria-label="Next image">&#8250;</button>' +
+    '<div class="lightbox-counter"></div>' +
+    '<div class="lightbox-hint">Click or scroll on the photo to zoom in</div>';
+  document.body.appendChild(overlay);
+  var imgEl = overlay.querySelector('.lightbox-img');
+  var counterEl = overlay.querySelector('.lightbox-counter');
+  var activeGroup = [];
+  var current = 0;
+
+  // ---- pinch/click/scroll zoom + pan on the enlarged photo ----
+  var ZOOM = 3, scale = 1, tx = 0, ty = 0, pointers = {}, dragging = false, dragStart = null, panStart = null, moved = false, pinchDist = 0, pinchScale = 1;
+  function applyZoom(){
+    imgEl.style.transform = 'translate('+tx+'px,'+ty+'px) scale('+scale+')';
+    imgEl.classList.toggle('zoomed', scale > 1.01);
+  }
+  function clampPan(){
+    if(scale <= 1){ tx = 0; ty = 0; return; }
+    var maxX = (imgEl.clientWidth * (scale-1)) / 2 + 60;
+    var maxY = (imgEl.clientHeight * (scale-1)) / 2 + 60;
+    tx = Math.max(-maxX, Math.min(maxX, tx));
+    ty = Math.max(-maxY, Math.min(maxY, ty));
+  }
+  function resetZoom(){ scale = 1; tx = 0; ty = 0; pointers = {}; dragging = false; imgEl.classList.remove('zoomed','panning'); applyZoom(); }
+  imgEl.addEventListener('pointerdown', function(e){
+    pointers[e.pointerId] = {x:e.clientX, y:e.clientY};
+    moved = false;
+    var ids = Object.keys(pointers);
+    if(ids.length === 1){
+      dragging = true; dragStart = {x:e.clientX, y:e.clientY}; panStart = {tx:tx, ty:ty};
+      imgEl.setPointerCapture(e.pointerId);
+    } else if(ids.length === 2){
+      var pts = ids.map(function(id){ return pointers[id]; });
+      pinchDist = Math.hypot(pts[0].x-pts[1].x, pts[0].y-pts[1].y) || 1;
+      pinchScale = scale;
+    }
+  });
+  imgEl.addEventListener('pointermove', function(e){
+    if(!pointers[e.pointerId]) return;
+    pointers[e.pointerId] = {x:e.clientX, y:e.clientY};
+    var ids = Object.keys(pointers);
+    if(ids.length === 2){
+      var pts = ids.map(function(id){ return pointers[id]; });
+      var dist = Math.hypot(pts[0].x-pts[1].x, pts[0].y-pts[1].y);
+      scale = Math.max(1, Math.min(ZOOM, pinchScale * (dist/pinchDist)));
+      imgEl.classList.add('panning');
+      clampPan(); applyZoom();
+    } else if(dragging && scale > 1){
+      if(Math.abs(e.clientX-dragStart.x) > 3 || Math.abs(e.clientY-dragStart.y) > 3) moved = true;
+      imgEl.classList.add('panning');
+      tx = panStart.tx + (e.clientX - dragStart.x);
+      ty = panStart.ty + (e.clientY - dragStart.y);
+      clampPan(); applyZoom();
+    }
+  });
+  function endPointer(e){
+    delete pointers[e.pointerId];
+    dragging = Object.keys(pointers).length === 1;
+    imgEl.classList.remove('panning');
+  }
+  imgEl.addEventListener('pointerup', endPointer);
+  imgEl.addEventListener('pointercancel', endPointer);
+  imgEl.addEventListener('click', function(e){
+    if(moved){ moved = false; return; }
+    e.stopPropagation();
+    if(scale > 1){ resetZoom(); return; }
+    var rect = imgEl.getBoundingClientRect();
+    scale = ZOOM;
+    tx = (rect.width/2 - (e.clientX-rect.left)) * (scale-1);
+    ty = (rect.height/2 - (e.clientY-rect.top)) * (scale-1);
+    clampPan(); applyZoom();
+  });
+  imgEl.addEventListener('wheel', function(e){
+    e.preventDefault();
+    var rect = imgEl.getBoundingClientRect();
+    var prevScale = scale;
+    scale = Math.max(1, Math.min(ZOOM, scale - e.deltaY*0.0016*scale));
+    var cx = e.clientX - rect.left - rect.width/2;
+    var cy = e.clientY - rect.top - rect.height/2;
+    var factor = scale/prevScale;
+    tx = cx - (cx - tx)*factor;
+    ty = cy - (cy - ty)*factor;
+    clampPan(); applyZoom();
+  }, {passive:false});
+  // ---------------------------------------------------------------
+
+  function show(i){
+    current = (i + activeGroup.length) % activeGroup.length;
+    resetZoom();
+    imgEl.src = activeGroup[current].currentSrc || activeGroup[current].src;
+    imgEl.alt = activeGroup[current].alt || '';
+    counterEl.textContent = (current+1) + ' / ' + activeGroup.length;
+    var navDisplay = activeGroup.length > 1 ? '' : 'none';
+    overlay.querySelector('.lightbox-prev').style.display = navDisplay;
+    overlay.querySelector('.lightbox-next').style.display = navDisplay;
+    counterEl.style.display = navDisplay;
+  }
+  function open(group, i){ activeGroup = group; show(i); overlay.classList.add('open'); document.body.style.overflow='hidden'; }
+  function close(){ resetZoom(); overlay.classList.remove('open'); document.body.style.overflow=''; }
+  groups.forEach(function(group){
+    group.forEach(function(img, i){
+      img.addEventListener('click', function(){ open(group, i); });
+    });
+  });
+  overlay.querySelector('.lightbox-close').addEventListener('click', close);
+  overlay.querySelector('.lightbox-prev').addEventListener('click', function(){ show(current-1); });
+  overlay.querySelector('.lightbox-next').addEventListener('click', function(){ show(current+1); });
+  overlay.addEventListener('click', function(e){ if(e.target === overlay) close(); });
+  document.addEventListener('keydown', function(e){
+    if(!overlay.classList.contains('open')) return;
+    if(e.key === 'Escape') close();
+    if(e.key === 'ArrowLeft' && scale <= 1) show(current-1);
+    if(e.key === 'ArrowRight' && scale <= 1) show(current+1);
+  });
+})();
+</script>
+</body>
+</html>
