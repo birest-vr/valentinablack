@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Valentina Black | Official Site — House Music Artist (Los Angeles)</title>
-<meta name="description" content="Official site of Valentina Black, house music artist from Los Angeles. Stream the latest single 'Is It Love' on Spotify, Apple Music, YouTube &amp; SoundCloud, and follow for tour dates and news.">
-<meta name="keywords" content="Valentina Black, house music, Los Angeles DJ, Is It Love, Valentina Black Spotify, Valentina Black Apple Music, electronic music artist">
+<title>Valentina Black | Official Site — Pop Singer-Songwriter (Los Angeles)</title>
+<meta name="description" content="Official site of Valentina Black, Italian pop singer-songwriter with jazz influences touching electronic music, based in Los Angeles. Stream the latest single 'Is It Love' on Spotify, Apple Music, YouTube &amp; SoundCloud, and follow for tour dates and news.">
+<meta name="keywords" content="Valentina Black, pop singer-songwriter, jazz influences, Los Angeles, Is It Love, Valentina Black Spotify, Valentina Black Apple Music, Italian singer">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="Valentina Black">
 <link rel="canonical" href="https://www.valentinablack.com/">
@@ -13,21 +13,24 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Valentina Black">
-<meta property="og:title" content="Valentina Black | Official Site — House Music Artist">
+<meta property="og:title" content="Valentina Black | Official Site — Pop Singer-Songwriter">
 <meta property="og:description" content="Stream 'Is It Love' and every Valentina Black release on Spotify, Apple Music, YouTube &amp; SoundCloud. Official links, music and tour dates.">
 <meta property="og:image" content="https://www.valentinablack.com/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Valentina Black — house music artist">
+<meta property="og:image:alt" content="Valentina Black — pop singer-songwriter">
 <meta property="og:url" content="https://www.valentinablack.com/">
 <meta property="og:locale" content="en_US">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@Valentina_Black">
-<meta name="twitter:title" content="Valentina Black | Official Site — House Music Artist">
+<meta name="twitter:title" content="Valentina Black | Official Site — Pop Singer-Songwriter">
 <meta name="twitter:description" content="Stream 'Is It Love' and every release. Official links to Spotify, Apple Music, YouTube, SoundCloud and tour dates.">
 <meta name="twitter:image" content="https://www.valentinablack.com/assets/og-image.jpg">
+
+<!-- Facebook Business Manager domain verification -->
+<meta name="facebook-domain-verification" content="x35x65yl46yrsuew25jhlnuvbu2a38" />
 
 <!-- Icons -->
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
@@ -42,7 +45,7 @@
   "@context": "https://schema.org",
   "@type": "MusicGroup",
   "name": "Valentina Black",
-  "genre": ["House", "Electronic Dance Music"],
+  "genre": ["Pop", "Jazz", "Electronic"],
   "url": "https://www.valentinablack.com/",
   "image": "https://www.valentinablack.com/assets/og-image.jpg",
   "foundingLocation": {
@@ -126,20 +129,20 @@
     position:fixed;top:0;left:0;right:0;z-index:50;
     display:flex;align-items:center;justify-content:space-between;
     padding:18px 24px;
-    background:#000000;
+    background:#ffffff;
     height:64px;
     box-sizing:border-box;
   }
-  .nav .wordmark{font-weight:800;letter-spacing:.08em;font-size:15px}
+  .nav .wordmark{font-weight:800;letter-spacing:.08em;font-size:15px;color:#000000}
   .nav .links{display:flex;gap:22px;font-size:14px;font-weight:600}
-  .nav .links a{opacity:.85;transition:opacity .2s}
+  .nav .links a{opacity:.85;transition:opacity .2s;color:#000000}
   .nav .links a:hover{opacity:1;color:var(--accent)}
   .nav .links a.brush{
-    font-family:'Master Victory',cursive;font-style:italic;font-weight:400;font-size:15px;letter-spacing:.01em;line-height:1;padding-top:2px;
-    color:#1db954;opacity:1;display:inline-block;transform:scale(1);
+    font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-style:normal;font-weight:600;font-size:15px;letter-spacing:0;line-height:1;padding-top:0;
+    color:#000000;opacity:1;display:inline-block;transform:scale(1);
     transition:color .25s ease;
   }
-  .nav .links a.brush:hover{color:#c6f24a}
+  .nav .links a.brush:hover{color:#1db954}
   .nav .links a.brush.nav-clicked{animation:navClickPop .45s ease;}
   @keyframes navClickPop{
     0%{transform:scale(1);color:#1db954;text-shadow:none}
@@ -147,6 +150,43 @@
     100%{transform:scale(1);color:#1db954;text-shadow:none}
   }
   @media (max-width:640px){ .nav .links{display:none} }
+
+  /* Mobile nav toggle + menu — shown only when the inline link list is hidden */
+  .nav-toggle{
+    display:none;
+    width:38px;height:38px;padding:0;margin:0;
+    background:transparent;border:none;cursor:pointer;
+    align-items:center;justify-content:center;
+    position:relative;z-index:52;
+  }
+  .nav-toggle span{
+    display:block;position:absolute;left:7px;right:7px;height:2px;background:#000000;border-radius:2px;
+    transition:transform .25s ease,opacity .2s ease,top .25s ease;
+  }
+  .nav-toggle span:nth-child(1){top:13px}
+  .nav-toggle span:nth-child(2){top:19px}
+  .nav-toggle span:nth-child(3){top:25px}
+  .nav-toggle.is-open span:nth-child(1){top:19px;transform:rotate(45deg)}
+  .nav-toggle.is-open span:nth-child(2){opacity:0}
+  .nav-toggle.is-open span:nth-child(3){top:19px;transform:rotate(-45deg)}
+  @media (max-width:640px){ .nav-toggle{display:flex} }
+
+  .mobile-menu{
+    position:fixed;top:64px;left:0;right:0;z-index:49;
+    background:#ffffff;
+    box-shadow:0 14px 26px rgba(0,0,0,.18);
+    max-height:0;overflow:hidden;
+    transition:max-height .32s ease;
+  }
+  .mobile-menu.is-open{max-height:80vh;overflow-y:auto}
+  .mobile-menu a{
+    display:block;padding:16px 24px;
+    font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:16px;font-weight:600;color:#000000;
+    border-bottom:1px solid #ececec;
+  }
+  .mobile-menu a:active,.mobile-menu a:hover{color:#1db954}
+  body.menu-open{overflow:hidden}
 
   /* Hero */
   .hero{
@@ -157,14 +197,14 @@
       linear-gradient(180deg, rgba(8,5,11,.15) 0%, rgba(8,5,11,.55) 55%, var(--bg) 100%),
       url('assets/hero-bg.jpg');
     background-size:cover;
-    background-position:center 20%;
+    background-position:center top;
   }
   @media (min-width:900px){
     .hero{
       background-image:
         linear-gradient(180deg, rgba(8,5,11,.15) 0%, rgba(8,5,11,.55) 55%, var(--bg) 100%),
         url('assets/hero-bg-wide.jpg');
-      background-position:center 25%;
+      background-position:center top;
     }
   }
   .hero-inner{
@@ -190,9 +230,9 @@
     letter-spacing:.01em;
     margin:0 0 26px;
     line-height:1.05;
-    opacity:.82;
-    background:linear-gradient(100deg,#8be9a8 0%,#eaf7a1 45%,#c6f24a 70%,#8be9a8 100%);
-    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#c6f24a;
+    opacity:.96;
+    color:#ffffff;
+    text-shadow:0 2px 20px rgba(0,0,0,.5);
   }
   .tagline{
     font-size:clamp(15px,2.4vw,19px);
@@ -290,6 +330,140 @@
   .stamp-sub{
     font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.08em;font-weight:600;
   }
+
+  /* Discography grid — MJ-style "Listen" cover grid */
+  .discog-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:40px 28px;
+    padding:10px 6px 8px;
+  }
+  @media (max-width:820px){ .discog-grid{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:480px){ .discog-grid{grid-template-columns:1fr} }
+  .discog-card{display:block;transition:transform .25s ease}
+  .discog-card:hover{transform:translateY(-4px)}
+  .discog-cover{
+    position:relative;aspect-ratio:1/1;border-radius:6px;
+    background:transparent;margin-bottom:18px;
+    overflow:visible;
+  }
+  .discog-cover .discog-badge{
+    position:absolute;top:10px;left:10px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    background:rgba(0,0,0,.55);color:var(--text-dim);padding:4px 9px;border-radius:999px;border:1px solid var(--border);
+    z-index:3;
+  }
+
+  /* Vinyl slide-out — hover (desktop) or tap (touch, via .is-open) slides the record out and tilts the cover, MJ "Listen" style */
+  .discog-vinyl{
+    position:absolute;top:5%;left:5%;width:90%;height:90%;
+    border-radius:50%;z-index:1;pointer-events:none;
+    box-shadow:0 12px 30px rgba(0,0,0,.55);
+    transform:translateX(0) rotate(0deg);
+    transition:transform .5s cubic-bezier(.32,.2,.2,1);
+  }
+  .discog-cover-face{
+    position:absolute;inset:0;border-radius:6px;overflow:hidden;z-index:2;
+    border:1px solid var(--border);box-shadow:0 10px 26px rgba(0,0,0,.4);
+    background:#0f0814;
+    transform-origin:30% 50%;
+    transition:transform .5s cubic-bezier(.32,.2,.2,1);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .discog-card:hover .discog-vinyl,
+  .discog-cover.is-open .discog-vinyl{transform:translateX(15%) rotate(-9deg)}
+  .discog-card:hover .discog-cover-face,
+  .discog-cover.is-open .discog-cover-face{transform:rotate(-5deg) translateX(-3%)}
+  .discog-cover-face img{width:100%;height:100%;object-fit:cover;display:block}
+  .discog-cover-face.placeholder{
+    text-align:center;padding:20px;
+    background:
+      radial-gradient(120% 140% at 20% 0%, rgba(29,185,84,.16), transparent 60%),
+      linear-gradient(150deg,#17101f 0%,#0c0710 100%);
+  }
+  .discog-cover-face.placeholder span{
+    font-family:'Master Victory',cursive;font-style:italic;font-weight:400;
+    font-size:clamp(17px,2.6vw,24px);line-height:1.15;color:#8be9a8;opacity:.9;
+  }
+  .discog-title{font-size:17px;font-weight:700;margin:0 0 4px;color:var(--text)}
+  .discog-year{font-size:12px;color:var(--text-dim);margin:0 0 12px}
+  .discog-more{
+    display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);
+  }
+  .discog-more svg{width:13px;height:13px;transition:transform .2s ease}
+  .discog-card:hover .discog-more{color:var(--accent)}
+  .discog-card:hover .discog-more svg{transform:translateX(4px)}
+  .listen-sub-head{margin:0 0 28px;text-align:center}
+  .listen-sub-head span{
+    font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);
+  }
+
+  /* White "Listen" band, matching michaeljackson.com/listen */
+  .section-white{background:#ffffff;color:#1a1a1a}
+  .section-white .discog-title{color:#1a1a1a}
+  .section-white .discog-year{color:#666}
+  .section-white .discog-more{color:#666}
+  .section-white .discog-card:hover .discog-more{color:var(--accent-2)}
+  .section-white .discog-cover-face{background:#f4f4f4;border-color:#e6e6e6;box-shadow:0 10px 24px rgba(0,0,0,.08)}
+  .section-white .discog-cover-face.placeholder{background:linear-gradient(150deg,#f7f7f7,#ececec)}
+  .section-white .discog-cover-face.placeholder span{color:#0e7a37}
+  .section-white .section-head .kicker{color:#0e7a37}
+
+  /* Search + sort toolbar, matching michaeljackson.com/listen */
+  .discog-toolbar{
+    display:flex;flex-wrap:wrap;gap:14px;justify-content:center;
+    margin:0 auto 44px;max-width:760px;
+  }
+  .discog-search{flex:1 1 280px;position:relative}
+  .discog-search input{
+    width:100%;padding:14px 46px 14px 20px;border-radius:999px;border:1px solid #ddd;
+    font-family:inherit;font-size:14px;background:#fff;color:#1a1a1a;box-sizing:border-box;
+  }
+  .discog-search input::placeholder{color:#999}
+  .discog-search input:focus{outline:none;border-color:#0e7a37}
+  .discog-search svg{
+    position:absolute;right:16px;top:50%;transform:translateY(-50%);
+    width:18px;height:18px;color:#999;pointer-events:none;
+  }
+  .discog-sort{position:relative;flex:0 0 auto}
+  .discog-sort select{
+    appearance:none;-webkit-appearance:none;padding:14px 40px 14px 20px;border-radius:999px;
+    border:1px solid #ddd;font-family:inherit;font-size:14px;background:#fff;color:#1a1a1a;cursor:pointer;
+  }
+  .discog-sort select:focus{outline:none;border-color:#0e7a37}
+  .discog-sort svg{position:absolute;right:16px;top:50%;transform:translateY(-50%);width:12px;height:12px;color:#999;pointer-events:none}
+  .discog-card.is-hidden{display:none}
+  .discog-group-heading{
+    grid-column:1/-1;margin:8px 0 -4px;padding-top:24px;border-top:1px solid #ededed;
+    font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#0e7a37;
+  }
+  .discog-group-heading-first{border-top:none;padding-top:0;margin-top:0}
+
+  /* Album page (MJ-style single release page) */
+  .album-hero{
+    padding:120px 24px 56px;text-align:center;
+    background:linear-gradient(180deg, var(--album-c1,#1a2f22) 0%, var(--bg) 78%);
+  }
+  .album-hero h1{
+    font-family:'Master Victory',cursive;font-style:italic;font-weight:400;
+    font-size:clamp(40px,8vw,72px);margin:0 0 40px;color:#fff;opacity:.92;
+  }
+  .album-cover-box{
+    width:min(420px,72vw);aspect-ratio:1/1;margin:0 auto;border-radius:6px;overflow:hidden;
+    box-shadow:0 30px 60px -12px rgba(0,0,0,.6);background:#0f0814;border:1px solid rgba(255,255,255,.14);
+  }
+  .album-cover-box img{width:100%;height:100%;object-fit:cover}
+  .album-cover-box.placeholder{display:flex;align-items:center;justify-content:center;padding:30px;text-align:center;
+    background:radial-gradient(120% 140% at 20% 0%, rgba(29,185,84,.18), transparent 60%), linear-gradient(150deg,#1b1224,#0c0710);}
+  .album-cover-box.placeholder span{font-family:'Master Victory',cursive;font-style:italic;font-size:clamp(22px,4vw,32px);color:#8be9a8}
+  .album-store-bar{
+    display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px;
+    padding:26px 24px;background:#000;border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  }
+  .album-store-bar .label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--text-dim);margin-right:6px}
+  .album-body{max-width:720px;margin:0 auto;padding:56px 24px}
+  .album-body p{color:var(--text-dim)}
+  .album-body .meta-row{display:flex;flex-wrap:wrap;gap:10px 28px;margin:0 0 28px;font-size:13px;color:var(--text-dim)}
+  .album-body .meta-row b{color:var(--text);font-weight:700}
+  .album-back{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--accent);margin-top:8px}
 
   /* Latest release */
   .release{
@@ -458,6 +632,35 @@
   .merch-cta{text-align:center;margin-top:36px}
   @media (max-width:900px){ .merch-grid{grid-template-columns:repeat(2,1fr)} }
   @media (max-width:480px){ .merch-grid{grid-template-columns:1fr;max-width:320px;margin-inline:auto} }
+  .press-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .press-item{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;text-align:center;margin:0}
+  .press-item .press-photo-box{aspect-ratio:3/4;overflow:hidden;background:#0f0814}
+  .press-item .press-photo-box img{width:100%;height:100%;object-fit:cover;display:block}
+  .press-item figcaption{padding:12px 14px 16px;font-size:13px;color:var(--text-dim);line-height:1.4}
+  .press-item figcaption b{color:var(--text)}
+  @media (max-width:900px){ .press-grid{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:480px){ .press-grid{grid-template-columns:1fr;max-width:320px;margin-inline:auto} }
+  .press-item .press-photo-box img{cursor:zoom-in}
+
+  .lightbox-overlay{position:fixed;inset:0;background:rgba(6,4,8,.95);z-index:1000;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .2s ease;overflow:hidden}
+  .lightbox-overlay.open{opacity:1;visibility:visible}
+  .lightbox-img{position:relative;z-index:1;max-width:90vw;max-height:84vh;object-fit:contain;border-radius:6px;box-shadow:0 30px 70px -20px rgba(0,0,0,.7);cursor:zoom-in;touch-action:none;transform-origin:center center;transition:transform .18s ease;user-select:none}
+  .lightbox-img.zoomed{cursor:grab;border-radius:2px}
+  .lightbox-img.panning{transition:none;cursor:grabbing}
+  .lightbox-close,.lightbox-nav{position:fixed;z-index:2;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:50%;width:46px;height:46px;display:flex;align-items:center;justify-content:center;font-size:24px;line-height:1;cursor:pointer;transition:background .15s ease}
+  .lightbox-close:hover,.lightbox-nav:hover{background:rgba(255,255,255,.2)}
+  .lightbox-close{top:20px;right:20px}
+  .lightbox-nav{top:50%;transform:translateY(-50%)}
+  .lightbox-prev{left:16px}
+  .lightbox-next{right:16px}
+  .lightbox-counter{position:fixed;z-index:2;bottom:22px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.75);font-size:13px;font-weight:600;letter-spacing:.04em}
+  .lightbox-hint{position:fixed;z-index:2;bottom:22px;right:22px;color:rgba(255,255,255,.55);font-size:11px;letter-spacing:.03em}
+  @media (max-width:640px){
+    .lightbox-close,.lightbox-nav{width:38px;height:38px;font-size:20px}
+    .lightbox-prev{left:6px}
+    .lightbox-next{right:6px}
+    .lightbox-hint{display:none}
+  }
   @media (max-width:720px){
     .tour-block{padding:28px}
     .tour-photo{max-width:280px}
@@ -483,12 +686,27 @@
   <div class="links">
     <a href="#listen" class="brush">Listen</a>
     <a href="#music" class="brush">Music</a>
-    <a href="#bio" class="brush">Bio</a>
+    <a href="biography.html" class="brush">Biography</a>
+    <a href="press-archive.html" class="brush">Press Archive</a>
+    <a href="#gallery" class="brush">Gallery</a>
     <a href="#tour" class="brush">Tour</a>
     <a href="#merch" class="brush">Merch</a>
     <a href="#about" class="brush">Contact</a>
   </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Apri il menu" aria-expanded="false" aria-controls="mobileMenu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#listen" class="brush">Listen</a>
+  <a href="#music" class="brush">Music</a>
+  <a href="biography.html" class="brush">Biography</a>
+  <a href="press-archive.html" class="brush">Press Archive</a>
+  <a href="#gallery" class="brush">Gallery</a>
+  <a href="#tour" class="brush">Tour</a>
+  <a href="#merch" class="brush">Merch</a>
+  <a href="#about" class="brush">Contact</a>
+</div>
 
 <header class="hero">
   <div class="hero-inner">
@@ -509,10 +727,164 @@
 
 <main>
 
-  <section id="listen" class="wrap">
+  <section id="listen" class="section-white">
+    <div class="wrap">
     <div class="section-head">
-      <span class="kicker">Stream &amp; Follow</span>
-      <h2>Everywhere</h2>
+      <span class="kicker">Discography</span>
+      <h2>Listen</h2>
+    </div>
+
+    <div class="discog-toolbar">
+      <div class="discog-search">
+        <input type="text" id="discog-search-input" placeholder="Search" autocomplete="off">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      </div>
+      <div class="discog-sort">
+        <select id="discog-sort-select">
+          <option value="featured" selected>Featured</option>
+          <option value="newest">Newest</option>
+          <option value="oldest">Oldest</option>
+        </select>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </div>
+    </div>
+
+    <div class="discog-grid" id="discog-grid">
+
+      <div class="discog-group-heading discog-group-heading-first"><span>Valentina Black — Pop Artist</span></div>
+
+      <a class="discog-card" data-order="1" data-year="2021" data-title="Say You Love The World" href="album-say-you-love-the-world.html">
+        <div class="discog-cover"><img class="discog-vinyl" src="assets/vinyl.svg" alt="" aria-hidden="true"><div class="discog-cover-face"><img src="assets/say-you-love-the-world-cover.jpg" alt="Say You Love The World — single cover art"></div></div>
+        <div class="discog-title">Say You Love The World</div>
+        <div class="discog-year">Single · 2021</div>
+        <span class="discog-more">See more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="discog-card" data-order="1b" data-year="2024" data-title="Say You Love The World (Acoustic)" href="album-say-you-love-the-world-acoustic.html">
+        <div class="discog-cover"><img class="discog-vinyl" src="assets/vinyl.svg" alt="" aria-hidden="true"><div class="discog-cover-face"><img src="assets/say-you-love-the-world-cover.jpg" alt="Say You Love The World (Acoustic) — cover art"></div></div>
+        <div class="discog-title">Say You Love The World (Acoustic)</div>
+        <div class="discog-year">Acoustic version · SoundCloud 2024</div>
+        <span class="discog-more">See more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="discog-card" data-order="2" data-year="2023" data-title="Do It Right" href="album-do-it-right.html">
+        <div class="discog-cover"><img class="discog-vinyl" src="assets/vinyl.svg" alt="" aria-hidden="true"><div class="discog-cover-face"><img src="assets/do-it-right-cover.jpg" alt="Do It Right — single cover art"></div></div>
+        <div class="discog-title">Do It Right</div>
+        <div class="discog-year">Single · reg. BMI 2023</div>
+        <span class="discog-more">See more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="discog-card" data-order="3" data-year="2024" data-title="Angel" href="album-angel.html">
+        <div class="discog-cover"><img class="discog-vinyl" src="assets/vinyl.svg" alt="" aria-hidden="true"><div class="discog-cover-face"><img src="assets/angel-cover.jpg" alt="Angel — single cover art"></div></div>
+        <div class="discog-title">Angel</div>
+        <div class="discog-year">Single · reg. BMI 2024</div>
+        <span class="discog-more">See more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="discog-card" data-order="4" data-year="2025" data-title="Is It Love" href="album-is-it-love-single.html">
+        <div class="discog-cover"><img class="discog-vinyl" src="assets/vinyl.svg" alt="" aria-hidden="true"><div class="discog-cover-face"><img src="assets/is-it-love-single-cover.jpg" alt="Is It Love — single cover art"></div></div>
+        <div class="discog-title">Is It Love</div>
+        <div class="discog-year">Single · 2025</div>
+        <span class="discog-more">See more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="discog-card" data-order="4b" data-year="2025" data-title="Is It Love (Acoustic)" href="album-is-it-love.html">
+        <div class="discog-cover"><img class="discog-vinyl" src="assets/vinyl.svg" alt="" aria-hidden="true"><div class="discog-cover-face"><img src="assets/is-it-love-cover.jpg" alt="Is It Love (Acoustic) — single cover art"></div></div>
+        <div class="discog-title">Is It Love (Acoustic)</div>
+        <div class="discog-year">Acoustic version · 2025</div>
+        <span class="discog-more">See more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="discog-card" data-order="5" data-year="2024" data-title="I'm Back" href="album-im-back.html">
+        <div class="discog-cover"><img class="discog-vinyl" src="assets/vinyl.svg" alt="" aria-hidden="true"><div class="discog-cover-face placeholder"><span>I'm Back</span></div></div>
+        <div class="discog-title">I'm Back</div>
+        <div class="discog-year">Single · reg. BMI 2024</div>
+        <span class="discog-more">See more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <div class="discog-group-heading"><span>Valentina Black Trio</span></div>
+
+      <a class="discog-card" data-order="6" data-year="2008" data-title="Beat Generator" href="album-beat-generator.html">
+        <div class="discog-cover"><img class="discog-vinyl" src="assets/vinyl.svg" alt="" aria-hidden="true"><div class="discog-cover-face placeholder"><span>Beat Generator</span></div></div>
+        <div class="discog-title">Beat Generator</div>
+        <div class="discog-year">Valentina Black Trio · 2008</div>
+        <span class="discog-more">See more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="discog-card" data-order="8" data-year="2011" data-title="4 U" href="album-4-u.html">
+        <div class="discog-cover"><img class="discog-vinyl" src="assets/vinyl.svg" alt="" aria-hidden="true"><div class="discog-cover-face placeholder"><span>4 U</span></div></div>
+        <div class="discog-title">4 U</div>
+        <div class="discog-year">Valentina Black Trio · 2011</div>
+        <span class="discog-more">See more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="discog-card" data-order="9" data-year="2025" data-title="Kiss My Hand" href="album-kiss-my-hand.html">
+        <div class="discog-cover"><img class="discog-vinyl" src="assets/vinyl.svg" alt="" aria-hidden="true"><div class="discog-cover-face placeholder"><span>Kiss My Hand</span></div></div>
+        <div class="discog-title">Kiss My Hand</div>
+        <div class="discog-year">EP · 2025 · Valentina Black Trio</div>
+        <span class="discog-more">See more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="discog-card" data-order="10" data-year="2025" data-title="Butterflies" href="album-butterflies.html">
+        <div class="discog-cover"><img class="discog-vinyl" src="assets/vinyl.svg" alt="" aria-hidden="true"><div class="discog-cover-face placeholder"><span>Butterflies</span></div></div>
+        <div class="discog-title">Butterflies</div>
+        <div class="discog-year">Single · 2025 · Valentina Black Trio</div>
+        <span class="discog-more">See more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <div class="discog-group-heading"><span>Jazz-Funk-Rock Project</span></div>
+
+      <a class="discog-card" data-order="11" data-year="2008" data-title="Freedom Jazz Dance" href="album-freedom-jazz-dance.html">
+        <div class="discog-cover"><img class="discog-vinyl" src="assets/vinyl.svg" alt="" aria-hidden="true"><div class="discog-cover-face placeholder"><span>Freedom<br>Jazz Dance</span></div></div>
+        <div class="discog-title">Freedom Jazz Dance</div>
+        <div class="discog-year">with Jimmy Carl Black · Azzurra Music · 2008</div>
+        <span class="discog-more">See more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <div class="discog-group-heading"><span>Electronic Music</span></div>
+
+      <a class="discog-card" data-order="12" data-year="2016" data-title="Let's Move It" href="album-lets-move-it.html">
+        <div class="discog-cover"><img class="discog-vinyl" src="assets/vinyl.svg" alt="" aria-hidden="true"><div class="discog-cover-face placeholder"><span>Let's Move It</span></div></div>
+        <div class="discog-title">Let's Move It</div>
+        <div class="discog-year">Remix (with Less Hate) · Bizarre Music · 2016</div>
+        <span class="discog-more">See more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="discog-card" data-order="13" data-year="" data-title="Blue Heart" href="album-blue-heart.html">
+        <div class="discog-cover"><img class="discog-vinyl" src="assets/vinyl.svg" alt="" aria-hidden="true"><div class="discog-cover-face placeholder"><span>Blue Heart</span></div></div>
+        <div class="discog-title">Blue Heart</div>
+        <div class="discog-year">Single</div>
+        <span class="discog-more">See more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="discog-card" data-order="14" data-year="2016" data-title="Everywhere You Go" href="album-everywhere-you-go.html">
+        <div class="discog-cover"><img class="discog-vinyl" src="assets/vinyl.svg" alt="" aria-hidden="true"><div class="discog-cover-face placeholder"><span>Everywhere<br>You Go</span></div></div>
+        <div class="discog-title">Everywhere You Go</div>
+        <div class="discog-year">Single · D-Vine Sounds · 2016</div>
+        <span class="discog-more">See more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="discog-card" data-order="15" data-year="" data-title="Valentino" href="album-valentino.html">
+        <div class="discog-cover"><img class="discog-vinyl" src="assets/vinyl.svg" alt="" aria-hidden="true"><div class="discog-cover-face placeholder"><span>Valentino</span></div></div>
+        <div class="discog-title">Valentino</div>
+        <div class="discog-year">Single</div>
+        <span class="discog-more">See more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="discog-card" data-order="16" data-year="" data-title="Addicted" href="album-addicted.html">
+        <div class="discog-cover"><img class="discog-vinyl" src="assets/vinyl.svg" alt="" aria-hidden="true"><div class="discog-cover-face placeholder"><span>Addicted</span></div></div>
+        <div class="discog-title">Addicted</div>
+        <div class="discog-year">Single</div>
+        <span class="discog-more">See more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+    </div>
+    </div>
+  </section>
+
+  <section id="follow" class="wrap">
+    <div class="listen-sub-head">
+      <span>Follow &amp; Stream Everywhere</span>
     </div>
     <div class="platform-grid">
 
@@ -596,13 +968,33 @@
         <span class="stamp-sub">@Valentina_Black</span>
       </a>
 
+      <a class="stamp" href="https://www.deezer.com/en/artist/73347" target="_blank" rel="noopener">
+        <span class="stamp-top">
+          <span class="stamp-icon"><svg viewBox="0 0 24 24" fill="#1db954"><path d="M2 15h3.2v3H2v-3zm5.4 0h3.2v3H7.4v-3zm5.4 0h3.2v3h-3.2v-3zm5.4 0H21v3h-3.2v-3zM2 10.2h3.2v3.2H2v-3.2zm5.4 0h3.2v3.2H7.4v-3.2zm5.4 0h3.2v3.2h-3.2v-3.2zm5.4 0H21v3.2h-3.2v-3.2zm-16.2-5h3.2v3.2H2V5.2zm5.4 0h3.2v3.2H7.4V5.2zm5.4 0h3.2v3.2h-3.2V5.2zm5.4 0H21v3.2h-3.2V5.2z"/></svg></span>
+          <span class="stamp-go">↗</span>
+        </span>
+        <span class="stamp-name">Deezer</span>
+        <span class="stamp-underline"></span>
+        <span class="stamp-sub">Follow &amp; stream</span>
+      </a>
+
+      <a class="stamp" href="https://tidal.com/artist/4885669/u" target="_blank" rel="noopener">
+        <span class="stamp-top">
+          <span class="stamp-icon"><svg viewBox="0 0 24 24" fill="#1db954"><path d="M12 2.4 8.4 6l3.6 3.6L15.6 6 12 2.4zM4.8 9.2 1.2 12.8l3.6 3.6 3.6-3.6-3.6-3.6zm7.2 0-3.6 3.6 3.6 3.6 3.6-3.6-3.6-3.6zm7.2 0-3.6 3.6 3.6 3.6 3.6-3.6-3.6-3.6zM12 16.4l-3.6 3.6L12 23.6l3.6-3.6L12 16.4z"/></svg></span>
+          <span class="stamp-go">↗</span>
+        </span>
+        <span class="stamp-name">Tidal</span>
+        <span class="stamp-underline"></span>
+        <span class="stamp-sub">Follow &amp; stream</span>
+      </a>
+
     </div>
   </section>
 
   <section id="music" class="wrap">
     <div class="release">
       <div class="release-embed">
-        <img class="cover-art" src="assets/is-it-love-cover.jpg" alt="Is It Love — single cover art by Valentina Black" loading="lazy">
+        <img class="cover-art" src="assets/is-it-love-single-cover.jpg" alt="Is It Love — single cover art by Valentina Black" loading="lazy">
         <iframe src="https://open.spotify.com/embed/playlist/6SjIDMpC37hjelSfbcAHWY?utm_source=generator&theme=0"
           width="100%" height="352" frameborder="0" allowfullscreen loading="lazy"
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
@@ -613,65 +1005,45 @@
         <h3>Is It Love</h3>
         <p>The newest single from Valentina Black, out now on every major streaming platform — plus an acoustic version and the full back catalogue, from "4 U" to "Angel" and "Do It Right."</p>
         <div class="cta-row">
-          <a class="btn btn-primary" href="https://open.spotify.com/playlist/6SjIDMpC37hjelSfbcAHWY" target="_blank" rel="noopener">Play on Spotify</a>
+          <a class="btn btn-primary" href="https://open.spotify.com/intl-it/track/6s2QDSo5lgK68uD3jqZyMJ?si=bf3b05427d9941be" target="_blank" rel="noopener">Play on Spotify</a>
           <a class="btn btn-ghost" href="https://music.apple.com/us/artist/valentina-black/274276367" target="_blank" rel="noopener">Apple Music</a>
+          <a class="btn btn-ghost" href="https://linktr.ee/valentina.black?utm_source=linktree_profile_share&amp;ltsid=0bc20d22-b916-4965-aa54-a6705257c004" target="_blank" rel="noopener">Other Stores</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="bio" class="wrap">
+  <section id="gallery" class="wrap">
     <div class="section-head">
-      <span class="kicker">About</span>
-      <h2>Her Story</h2>
+      <span class="kicker">Gallery</span>
+      <h2>Studio Photoshoot</h2>
     </div>
-    <div class="about-text" style="max-width:760px;margin:0 auto">
-      <p>Born Valentina Serugeri in Verona, Italy, Valentina Black grew up surrounded by music. Her mother, also a musician, filled the house with Ella Fitzgerald and disco, while a young Valentina gravitated toward James Brown, Michael Jackson and Rihanna. Rock, R&amp;B, pop and funk pulled her in early, and by her teens she was already singing with local bands twice her age.</p>
-      <p>Before music became her career, Valentina worked as a dancer for Italy's main broadcast networks, RAI and Mediaset, and represented Veneto at <a href="https://it.wikipedia.org/wiki/Miss_Italia_2000" target="_blank" rel="noopener">Miss Italia 2000</a>, the national beauty competition.</p>
-      <p>Her professional recording career took off when Jimmy Carl Black — the legendary drummer of Frank Zappa's Mothers of Invention — recruited her as vocalist and Hammond organ player for the "Freedom Jazz Dance" sessions, impressed by what he called "her golden voice, a beautiful little angel." She recorded and co-wrote across the project under the stage name Valentina Black.</p>
-      <p>Since then her voice and rhythmic sensibility have taken her into studios in London, Los Angeles and New York, shaping a sound that blends hip-hop, soul, funk and pop with a rock, dreamlike edge. She has released more than 70 tracks and has opened for international artists such as Fritz Kalkbrenner.</p>
-      <p>Before her music career took over, Valentina built an extensive career in Italian television, theatre and advertising — from national variety shows on Rai and Mediaset to fashion runways for major designers.</p>
-      <p>She continues to reach a global fanbase of more than 2.5 million followers across social media, built organically over the years.</p>
-      <p><strong>Labels:</strong> Toolroom, KMS Records, Moonbootique, Dvine Sounds, Juicy Music, Groove On, Frequenza, King Street Sounds, Moveubabe Music.</p>
-      <p><strong>Radio &amp; charts:</strong> "Everywhere You Go" topped the Shazam and iTunes charts, with airplay on BBC Radio, Pandora, SiriusXM and RadioDJ.</p>
-      <p><strong>Selected production collaborators:</strong> <a href="https://soundbetter.com/profiles/313182-jon-john-robinson%E2%84%A2" target="_blank" rel="noopener">Jon "John" Robinson</a>, <a href="https://soundbetter.com/profiles/136193-guy-furious" target="_blank" rel="noopener">Guy Furious</a>, <a href="https://soundbetter.com/profiles/78126-g%C3%8Bkk%C3%98" target="_blank" rel="noopener">Gëkkø</a>, <a href="https://soundbetter.com/profiles/9945-matty-harris" target="_blank" rel="noopener">Matty Harris</a>, <a href="https://soundbetter.com/profiles/30884-austin-leeds" target="_blank" rel="noopener">Austin Leeds</a>, <a href="https://soundbetter.com/profiles/33504-rob-murray" target="_blank" rel="noopener">Rob Murray</a>.</p>
-    </div>
-
-    <div style="max-width:760px;margin:56px auto 0;display:grid;grid-template-columns:1fr;gap:32px">
-      <div class="credit-group">
-        <h4>Television</h4>
-        <ul class="credit-list">
-          <li><b>2000</b> — Miss Italia (Rai) — Miss Veneto, national finalist</li>
-          <li><b>2000</b> — Let's Miss Again (Rai) — guest appearance</li>
-          <li><b>2001</b> — Il Galà Dello Sport — presenter's assistant ("valletta")</li>
-          <li><b>2001</b> — Gira Gira Mondo — television correspondent</li>
-          <li><b>2001</b> — Domenica In (Rai) — audience host for phone games, with Iva Zanicchi and Carlo Conti</li>
-          <li><b>2001</b> — Scommettiamo Che...? — cast appearance, with Fabrizio Frizzi</li>
-          <li><b>2001</b> — Wazzup! (Mediaset) — guest appearance</li>
-          <li><b>2001</b> — Cantalago (Rai) — presenter's assistant ("valletta")</li>
-          <li><b>2002</b> — Cominciamo Bene (Rai) — role of Giulietta (Shakespeare's <i>Romeo and Juliet</i>)</li>
-          <li><b>2002–2003</b> — Quelli Che Il Calcio (Mediaset) — dancer, edition with Simona Ventura</li>
-          <li><b>2004</b> — Mondiali Del Ciclismo (Rai, Mediaset, Sky) — "La Zingara" and award presenter</li>
-          <li><b>2005</b> — Dolce Amaro — guest, hosted by Silvano Silvi</li>
-          <li><b>2006</b> — Appearance in the music video for Italian band Finley</li>
-        </ul>
-      </div>
-      <div class="credit-group">
-        <h4>Theatre</h4>
-        <ul class="credit-list">
-          <li><b>2002</b> — <i>Antigone &amp; Creonte</i> (Sophocles) — soprano voice, Greek chorus, Scuola di Teatro Rapisarda &amp; Ravazzin</li>
-          <li><b>2002</b> — <i>Giulietta &amp; Romeo</i> (Shakespeare) — role of Giulietta, Teatro Filarmonico di Verona</li>
-        </ul>
-      </div>
-      <div class="credit-group">
-        <h4>Advertising &amp; Runway</h4>
-        <ul class="credit-list">
-          <li><b>2000–2014</b> — Runway shows for Mariella Burani, Versace, Manlio Mallia, Egon Von Furstenberg</li>
-          <li><b>2000–2014</b> — Hair &amp; styling shows for Wella, Revlon, Lisap</li>
-          <li><b>2000–2014</b> — Print &amp; TV campaigns for Fresh Look contact lenses and Guam beauty products</li>
-          <li><b>2000–2014</b> — Short film for Ceva Logistics &amp; Magneti Marelli</li>
-        </ul>
-      </div>
+    <p style="max-width:760px;margin:0 auto 40px;color:var(--text-dim)">A selection of studio portraits from Valentina's photoshoot.</p>
+    <div class="press-grid">
+      <figure class="press-item">
+        <div class="press-photo-box"><img src="assets/gallery/gal-01.jpg" alt="Valentina Black studio photoshoot" loading="lazy"></div>
+      </figure>
+      <figure class="press-item">
+        <div class="press-photo-box"><img src="assets/gallery/gal-02.jpg" alt="Valentina Black studio photoshoot" loading="lazy"></div>
+      </figure>
+      <figure class="press-item">
+        <div class="press-photo-box"><img src="assets/gallery/gal-03.jpg" alt="Valentina Black studio photoshoot" loading="lazy"></div>
+      </figure>
+      <figure class="press-item">
+        <div class="press-photo-box"><img src="assets/gallery/gal-04.jpg" alt="Valentina Black studio photoshoot" loading="lazy"></div>
+      </figure>
+      <figure class="press-item">
+        <div class="press-photo-box"><img src="assets/gallery/gal-05.jpg" alt="Valentina Black studio photoshoot" loading="lazy"></div>
+      </figure>
+      <figure class="press-item">
+        <div class="press-photo-box"><img src="assets/gallery/gal-06.jpg" alt="Valentina Black studio photoshoot" loading="lazy"></div>
+      </figure>
+      <figure class="press-item">
+        <div class="press-photo-box"><img src="assets/gallery/gal-07.jpg" alt="Valentina Black studio photoshoot" loading="lazy"></div>
+      </figure>
+      <figure class="press-item">
+        <div class="press-photo-box"><img src="assets/gallery/gal-08.jpg" alt="Valentina Black studio photoshoot" loading="lazy"></div>
+      </figure>
     </div>
   </section>
 
@@ -771,7 +1143,7 @@
     <div class="about">
       <div class="about-photo-col">
         <div class="about-photo">
-          <img src="assets/about-photo.jpg" alt="Valentina Black, house music artist" loading="lazy">
+          <img src="assets/about-photo.jpg" alt="Valentina Black, pop singer-songwriter" loading="lazy">
         </div>
       </div>
       <div class="about-text">
@@ -821,6 +1193,38 @@
 </footer>
 
 <script>
+  (function(){
+    var toggle = document.getElementById('navToggle');
+    var menu = document.getElementById('mobileMenu');
+    if (!toggle || !menu) return;
+
+    function closeMenu(){
+      toggle.classList.remove('is-open');
+      menu.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded','false');
+      document.body.classList.remove('menu-open');
+    }
+    function openMenu(){
+      toggle.classList.add('is-open');
+      menu.classList.add('is-open');
+      toggle.setAttribute('aria-expanded','true');
+      document.body.classList.add('menu-open');
+    }
+
+    toggle.addEventListener('click', function(){
+      if (menu.classList.contains('is-open')) closeMenu(); else openMenu();
+    });
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', closeMenu);
+    });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape') closeMenu();
+    });
+    window.addEventListener('resize', function(){
+      if (window.innerWidth > 640) closeMenu();
+    });
+  })();
+
   document.querySelectorAll('.stamp').forEach(function(card){
     card.addEventListener('click', function(){
       var el = this;
@@ -937,8 +1341,187 @@
         btn.textContent = originalBtnText;
       });
   });
+
+  // Discography — search + sort (Newest/Oldest), mirroring michaeljackson.com/listen
+  (function(){
+    var grid = document.getElementById('discog-grid');
+    var searchInput = document.getElementById('discog-search-input');
+    var sortSelect = document.getElementById('discog-sort-select');
+    if (!grid || !searchInput || !sortSelect) return;
+    var cards = Array.prototype.slice.call(grid.querySelectorAll('.discog-card'));
+
+    function applyFilter(){
+      var q = searchInput.value.trim().toLowerCase();
+      cards.forEach(function(card){
+        var title = (card.getAttribute('data-title') || '').toLowerCase();
+        card.classList.toggle('is-hidden', q.length > 0 && title.indexOf(q) === -1);
+      });
+    }
+
+    // Curated order exactly as authored (cards AND group-heading dividers, interleaved).
+    var featuredChildren = Array.prototype.slice.call(grid.children);
+    var groupHeadings = Array.prototype.slice.call(grid.querySelectorAll('.discog-group-heading'));
+
+    function applySort(){
+      var mode = sortSelect.value;
+      if (mode === 'featured') {
+        featuredChildren.forEach(function(node){ grid.appendChild(node); });
+        groupHeadings.forEach(function(h){ h.style.display = ''; });
+      } else {
+        var dir = mode === 'oldest' ? 1 : -1;
+        var sorted = cards.slice().sort(function(a, b){
+          var ya = parseInt(a.getAttribute('data-year'), 10) || 0;
+          var yb = parseInt(b.getAttribute('data-year'), 10) || 0;
+          return (ya - yb) * dir;
+        });
+        sorted.forEach(function(card){ grid.appendChild(card); });
+        groupHeadings.forEach(function(h){ h.style.display = 'none'; });
+      }
+    }
+
+    searchInput.addEventListener('input', applyFilter);
+    sortSelect.addEventListener('change', applySort);
+    // No initial applySort() call — the page loads in the curated "Featured" order as authored.
+
+    // Touch devices have no hover: first tap on the cover slides the vinyl out, second tap follows the link.
+    var isTouch = window.matchMedia && window.matchMedia('(hover: none)').matches;
+    if (isTouch) {
+      grid.querySelectorAll('.discog-cover').forEach(function(cover){
+        cover.addEventListener('click', function(e){
+          if (!cover.classList.contains('is-open')) {
+            e.preventDefault();
+            e.stopPropagation();
+            grid.querySelectorAll('.discog-cover.is-open').forEach(function(c){
+              if (c !== cover) c.classList.remove('is-open');
+            });
+            cover.classList.add('is-open');
+          }
+        });
+      });
+      document.addEventListener('click', function(e){
+        if (!e.target.closest('.discog-cover')) {
+          grid.querySelectorAll('.discog-cover.is-open').forEach(function(c){ c.classList.remove('is-open'); });
+        }
+      });
+    }
+  })();
+
+  (function(){
+    var imgs = Array.from(document.querySelectorAll('.press-grid .press-photo-box img'));
+    if(!imgs.length) return;
+    var overlay = document.createElement('div');
+    overlay.className = 'lightbox-overlay';
+    overlay.innerHTML = '<button class="lightbox-close" aria-label="Close">&times;</button>' +
+      '<button class="lightbox-nav lightbox-prev" aria-label="Previous image">&#8249;</button>' +
+      '<img class="lightbox-img" src="" alt="">' +
+      '<button class="lightbox-nav lightbox-next" aria-label="Next image">&#8250;</button>' +
+      '<div class="lightbox-counter"></div>' +
+      '<div class="lightbox-hint">Click or scroll on the photo to zoom in</div>';
+    document.body.appendChild(overlay);
+    var imgEl = overlay.querySelector('.lightbox-img');
+    var counterEl = overlay.querySelector('.lightbox-counter');
+    var current = 0;
+
+    // ---- pinch/click/scroll zoom + pan on the enlarged photo ----
+    var ZOOM = 3, scale = 1, tx = 0, ty = 0, pointers = {}, dragging = false, dragStart = null, panStart = null, moved = false, pinchDist = 0, pinchScale = 1;
+    function applyZoom(){
+      imgEl.style.transform = 'translate('+tx+'px,'+ty+'px) scale('+scale+')';
+      imgEl.classList.toggle('zoomed', scale > 1.01);
+    }
+    function clampPan(){
+      if(scale <= 1){ tx = 0; ty = 0; return; }
+      var maxX = (imgEl.clientWidth * (scale-1)) / 2 + 60;
+      var maxY = (imgEl.clientHeight * (scale-1)) / 2 + 60;
+      tx = Math.max(-maxX, Math.min(maxX, tx));
+      ty = Math.max(-maxY, Math.min(maxY, ty));
+    }
+    function resetZoom(){ scale = 1; tx = 0; ty = 0; pointers = {}; dragging = false; imgEl.classList.remove('zoomed','panning'); applyZoom(); }
+    imgEl.addEventListener('pointerdown', function(e){
+      pointers[e.pointerId] = {x:e.clientX, y:e.clientY};
+      moved = false;
+      var ids = Object.keys(pointers);
+      if(ids.length === 1){
+        dragging = true; dragStart = {x:e.clientX, y:e.clientY}; panStart = {tx:tx, ty:ty};
+        imgEl.setPointerCapture(e.pointerId);
+      } else if(ids.length === 2){
+        var pts = ids.map(function(id){ return pointers[id]; });
+        pinchDist = Math.hypot(pts[0].x-pts[1].x, pts[0].y-pts[1].y) || 1;
+        pinchScale = scale;
+      }
+    });
+    imgEl.addEventListener('pointermove', function(e){
+      if(!pointers[e.pointerId]) return;
+      pointers[e.pointerId] = {x:e.clientX, y:e.clientY};
+      var ids = Object.keys(pointers);
+      if(ids.length === 2){
+        var pts = ids.map(function(id){ return pointers[id]; });
+        var dist = Math.hypot(pts[0].x-pts[1].x, pts[0].y-pts[1].y);
+        scale = Math.max(1, Math.min(ZOOM, pinchScale * (dist/pinchDist)));
+        imgEl.classList.add('panning');
+        clampPan(); applyZoom();
+      } else if(dragging && scale > 1){
+        if(Math.abs(e.clientX-dragStart.x) > 3 || Math.abs(e.clientY-dragStart.y) > 3) moved = true;
+        imgEl.classList.add('panning');
+        tx = panStart.tx + (e.clientX - dragStart.x);
+        ty = panStart.ty + (e.clientY - dragStart.y);
+        clampPan(); applyZoom();
+      }
+    });
+    function endPointer(e){
+      delete pointers[e.pointerId];
+      dragging = Object.keys(pointers).length === 1;
+      imgEl.classList.remove('panning');
+    }
+    imgEl.addEventListener('pointerup', endPointer);
+    imgEl.addEventListener('pointercancel', endPointer);
+    imgEl.addEventListener('click', function(e){
+      if(moved){ moved = false; return; }
+      e.stopPropagation();
+      if(scale > 1){ resetZoom(); return; }
+      var rect = imgEl.getBoundingClientRect();
+      scale = ZOOM;
+      tx = (rect.width/2 - (e.clientX-rect.left)) * (scale-1);
+      ty = (rect.height/2 - (e.clientY-rect.top)) * (scale-1);
+      clampPan(); applyZoom();
+    });
+    imgEl.addEventListener('wheel', function(e){
+      e.preventDefault();
+      var rect = imgEl.getBoundingClientRect();
+      var prevScale = scale;
+      scale = Math.max(1, Math.min(ZOOM, scale - e.deltaY*0.0016*scale));
+      var cx = e.clientX - rect.left - rect.width/2;
+      var cy = e.clientY - rect.top - rect.height/2;
+      var factor = scale/prevScale;
+      tx = cx - (cx - tx)*factor;
+      ty = cy - (cy - ty)*factor;
+      clampPan(); applyZoom();
+    }, {passive:false});
+    // ---------------------------------------------------------------
+
+    function show(i){
+      current = (i + imgs.length) % imgs.length;
+      resetZoom();
+      imgEl.src = imgs[current].currentSrc || imgs[current].src;
+      imgEl.alt = imgs[current].alt || '';
+      counterEl.textContent = (current+1) + ' / ' + imgs.length;
+    }
+    function open(i){ show(i); overlay.classList.add('open'); document.body.style.overflow='hidden'; }
+    function close(){ resetZoom(); overlay.classList.remove('open'); document.body.style.overflow=''; }
+    imgs.forEach(function(img, i){
+      img.addEventListener('click', function(){ open(i); });
+    });
+    overlay.querySelector('.lightbox-close').addEventListener('click', close);
+    overlay.querySelector('.lightbox-prev').addEventListener('click', function(){ show(current-1); });
+    overlay.querySelector('.lightbox-next').addEventListener('click', function(){ show(current+1); });
+    overlay.addEventListener('click', function(e){ if(e.target === overlay) close(); });
+    document.addEventListener('keydown', function(e){
+      if(!overlay.classList.contains('open')) return;
+      if(e.key === 'Escape') close();
+      if(e.key === 'ArrowLeft' && scale <= 1) show(current-1);
+      if(e.key === 'ArrowRight' && scale <= 1) show(current+1);
+    });
+  })();
 </script>
 
 </body>
 </html>
-
