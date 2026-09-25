@@ -21,6 +21,9 @@
 @font-face{ font-family:'Master Victory'; src:url('assets/fonts/MasterVictory-Regular.ttf') format('truetype'); font-weight:400; font-style:normal; font-display:swap; }
 @font-face{ font-family:'Master Victory'; src:url('assets/fonts/MasterVictory-Italic.ttf') format('truetype'); font-weight:400; font-style:italic; font-display:swap; }
 *{box-sizing:border-box}
+img{-webkit-touch-callout:none;-webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;-o-user-drag:none;user-drag:none}
+body{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+input,textarea{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--text);font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
@@ -120,6 +123,14 @@ footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;co
       <p>The story behind the single — a collaboration with two-time Grammy-winning producer Jon-John Robinson.</p>
     </div>
   </a>
+  <a class="post-card" href="blog-tv-sorrisi-e-canzoni.html">
+    <img src="assets/press-archive/ref04-tvsorrisi-cover.jpg" alt="TV Sorrisi e Canzoni cover">
+    <div class="post-card-body">
+      <div class="post-card-date">Press Archive</div>
+      <h2>Valentina Black and Italian Television</h2>
+      <p>From the Mondadori Miss Italia book to TV Sorrisi e Canzoni, Visto, Gazzetta di Parma and backstage at RAI's Quelli Che Il Calcio.</p>
+    </div>
+  </a>
 </div>
 
 <footer>&copy; Valentina Black. All rights reserved. &middot; <a href="index.html">valentinablack.com</a></footer>
@@ -152,6 +163,16 @@ footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;co
     });
     window.addEventListener('resize', function(){
       if (window.innerWidth > 640) closeMenu();
+    });
+  })();
+</script>
+<script>
+  (function(){
+    document.addEventListener('dragstart', function(e){
+      if (e.target && e.target.tagName === 'IMG') e.preventDefault();
+    });
+    document.addEventListener('contextmenu', function(e){
+      if (e.target && e.target.tagName === 'IMG') e.preventDefault();
     });
   })();
 </script>

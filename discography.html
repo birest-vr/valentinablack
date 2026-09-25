@@ -6,7 +6,7 @@
 <title>Valentina Black — Discography</title>
 <meta name="description" content="Full discography of Valentina Black (Valentina Serugeri): singles, EPs and collaborations from 2008 to present.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://www.valentinablack.com/discography.html">
+<link rel="canonical" href="https://valentinablack.com/discography.html">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
@@ -25,6 +25,9 @@
   @font-face{ font-family:'Master Victory'; src:url('assets/fonts/MasterVictory-Regular.ttf') format('truetype'); font-weight:400; font-style:normal; font-display:swap; }
   @font-face{ font-family:'Master Victory'; src:url('assets/fonts/MasterVictory-Italic.ttf') format('truetype'); font-weight:400; font-style:italic; font-display:swap; }
   *{box-sizing:border-box}
+img{-webkit-touch-callout:none;-webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;-o-user-drag:none;user-drag:none}
+body{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+input,textarea{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text}
   html{scroll-behavior:smooth}
   body{
     margin:0; background:var(--bg); color:var(--text);
@@ -179,6 +182,16 @@ body.menu-open{overflow:hidden}
     });
     window.addEventListener('resize', function(){
       if (window.innerWidth > 640) closeMenu();
+    });
+  })();
+</script>
+<script>
+  (function(){
+    document.addEventListener('dragstart', function(e){
+      if (e.target && e.target.tagName === 'IMG') e.preventDefault();
+    });
+    document.addEventListener('contextmenu', function(e){
+      if (e.target && e.target.tagName === 'IMG') e.preventDefault();
     });
   })();
 </script>
