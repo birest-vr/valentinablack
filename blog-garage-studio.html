@@ -51,6 +51,8 @@ body.menu-open{overflow:hidden}
 .post-kicker{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.75);display:block;margin-bottom:14px}
 .post-hero h1{font-family:'Master Victory',cursive;font-style:italic;font-weight:400;font-size:clamp(28px,6.5vw,48px);margin:0 0 8px;color:#fff;max-width:780px;margin-left:auto;margin-right:auto}
 .post-date{color:rgba(255,255,255,.75);font-size:13px}
+.post-photo{width:min(420px,82vw);margin:32px auto 0;border-radius:10px;overflow:hidden;box-shadow:0 30px 60px -12px rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.14)}
+.post-photo img{width:100%;height:auto;display:block}
 
 .post-body{max-width:var(--maxw);margin:0 auto;padding:48px 24px 64px}
 .post-body p{margin:0 0 18px;color:var(--text)}
@@ -59,6 +61,9 @@ body.menu-open{overflow:hidden}
 .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px}
 .tag{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-2);background:rgba(29,185,84,.1);border:1px solid rgba(29,185,84,.25);border-radius:999px;padding:6px 12px}
 .post-back{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--accent-2);margin-top:20px}
+.post-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:36px 0}
+.post-gallery img{width:100%;height:100%;aspect-ratio:3/4;object-fit:cover;border-radius:10px;box-shadow:0 14px 30px -10px rgba(0,0,0,.3)}
+@media (max-width:480px){ .post-gallery{grid-template-columns:1fr 1fr;gap:10px} }
 footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;color:var(--text-dim);font-size:13px;background:#ffffff}
 </style>
 </head>
@@ -99,6 +104,7 @@ footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;co
 <div class="post-hero">
   <span class="post-kicker">Studio Story</span>
   <h1>How the Garage Became a Studio</h1>
+  <div class="post-photo"><img src="assets/garage-studio-valentina.jpg" alt="Valentina Black"></div>
   <div class="post-date">From the Blog</div>
 </div>
 
@@ -122,6 +128,13 @@ footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;co
   <p>Most of what came out of those years has never been published. Valentina draws a firm line between what she does and the music industry's idea of commerce: to her, singing and composing are not a business — they're a way of living connected to something no transaction can offer.</p>
 
   <blockquote>"Music isn't something you can define. It's precisely what escapes definition, because of how immense it is. You feel it in your heart, but it connects to something far beyond ourselves."</blockquote>
+
+  <div class="post-gallery">
+    <img src="assets/garage-studio-2.jpg" alt="Valentina Black">
+    <img src="assets/garage-studio-3.jpg" alt="Valentina Black with bass guitar">
+    <img src="assets/garage-studio-4.jpg" alt="Valentina Black in the studio">
+    <img src="assets/garage-studio-5.jpg" alt="Valentina Black">
+  </div>
 
   <p><a class="post-back" href="blog.html">&larr; Back to Blog</a></p>
 </div>
