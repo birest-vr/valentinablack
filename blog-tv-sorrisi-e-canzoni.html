@@ -21,6 +21,12 @@
 @font-face{ font-family:'Master Victory'; src:url('assets/fonts/MasterVictory-Regular.ttf') format('truetype'); font-weight:400; font-style:normal; font-display:swap; }
 @font-face{ font-family:'Master Victory'; src:url('assets/fonts/MasterVictory-Italic.ttf') format('truetype'); font-weight:400; font-style:italic; font-display:swap; }
 *{box-sizing:border-box}
+@keyframes titleGradientShift{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
 img{-webkit-touch-callout:none;-webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;-o-user-drag:none;user-drag:none}
 body{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
 input,textarea{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text}
@@ -52,7 +58,7 @@ body.menu-open{overflow:hidden}
 
 .post-hero{padding:120px 24px 50px;text-align:center;background:linear-gradient(180deg,#241a30 0%, #ffffff 88%)}
 .post-kicker{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.75);display:block;margin-bottom:14px}
-.post-hero h1{font-family:'Master Victory',cursive;font-style:italic;font-weight:400;font-size:clamp(26px,6vw,44px);margin:0 0 8px;color:#fff;max-width:780px;margin-left:auto;margin-right:auto}
+.post-hero h1{font-family:'Master Victory',cursive;font-style:italic;font-weight:400;font-size:clamp(26px,6vw,44px);margin:0 0 8px;background:linear-gradient(90deg,#1db954,#eafff2,#0e7a37,#0a1f14,#0e7a37,#eafff2,#1db954);background-size:300% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:titleGradientShift 6s ease-in-out infinite;max-width:780px;margin-left:auto;margin-right:auto}
 .post-date{color:rgba(255,255,255,.75);font-size:13px}
 
 .post-body{max-width:var(--maxw);margin:0 auto;padding:48px 24px 64px}
