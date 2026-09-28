@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Blog — Valentina Black</title>
-<meta name="description" content="News, release stories and behind-the-scenes updates from Valentina Black.">
+<title>La Notte d'Infanzia — Valentina Black</title>
+<meta name="description" content="Valentina Black on the night she was eight years old and the sound of an orchestra, drifting from a television broadcast of The Secret of the Sahara, changed how she understood music forever.">
 <meta name="robots" content="index, follow">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
@@ -16,7 +16,7 @@
 <style>
 :root{
   --bg:#ffffff; --accent:#1db954; --accent-2:#0e7a37;
-  --text:#1a1a1a; --text-dim:#6b6b6b; --card:#f4f4f4; --border:#e8e8e8; --maxw:900px;
+  --text:#1a1a1a; --text-dim:#6b6b6b; --card:#f4f4f4; --border:#e8e8e8; --maxw:760px;
 }
 @font-face{ font-family:'Master Victory'; src:url('assets/fonts/MasterVictory-Regular.ttf') format('truetype'); font-weight:400; font-style:normal; font-display:swap; }
 @font-face{ font-family:'Master Victory'; src:url('assets/fonts/MasterVictory-Italic.ttf') format('truetype'); font-weight:400; font-style:italic; font-display:swap; }
@@ -26,18 +26,19 @@
   50%{background-position:100% 50%}
   100%{background-position:0% 50%}
 }
+
 img{-webkit-touch-callout:none;-webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;-o-user-drag:none;user-drag:none}
 body{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
 input,textarea{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--text);font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-2);text-decoration:none}
+a:hover{text-decoration:underline}
 img{max-width:100%;display:block}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
 .nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:18px 24px;background:#ffffff;border-bottom:1px solid var(--border);height:64px;box-sizing:border-box}
-.nav .wordmark{font-weight:800;letter-spacing:.08em;font-size:15px;color:var(--text)}
+.nav .wordmark{font-weight:800;letter-spacing:.08em;font-size:15px;color:var(--text);text-decoration:none}
 .nav .links{display:flex;gap:22px;font-size:14px;font-weight:600}
-.nav .links a{opacity:.8;transition:opacity .2s;color:var(--text)}
+.nav .links a{opacity:.8;transition:opacity .2s;color:var(--text);text-decoration:none}
 .nav .links a:hover{opacity:1;color:var(--accent-2)}
 @media (max-width:640px){ .nav .links{display:none} }
 .nav-toggle{display:none;width:38px;height:38px;padding:0;margin:0;background:transparent;border:none;cursor:pointer;align-items:center;justify-content:center;position:relative;z-index:52}
@@ -55,23 +56,21 @@ img{max-width:100%;display:block}
 .mobile-menu a:active,.mobile-menu a:hover{color:var(--accent-2)}
 body.menu-open{overflow:hidden}
 
-.blog-hero{padding:130px 24px 50px;text-align:center;background:linear-gradient(180deg,#241a30 0%, #ffffff 88%)}
-.blog-hero .kicker{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.75);display:block;margin-bottom:14px}
-.blog-hero h1{font-family:'Master Victory',cursive;font-style:italic;font-weight:400;font-size:clamp(24px,4.5vw,36px);margin:0;background:linear-gradient(90deg,#ff2800,#ffd9cc,#b30000,#140404,#b30000,#ffd9cc,#ff2800);background-size:300% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:titleGradientShift 6s ease-in-out infinite}
+.post-hero{padding:120px 24px 50px;text-align:center;background:linear-gradient(180deg,#241a30 0%, #ffffff 88%)}
+.post-kicker{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.75);display:block;margin-bottom:14px}
+.post-hero h1{font-family:'Master Victory',cursive;font-style:italic;font-weight:400;font-size:clamp(28px,6.5vw,48px);margin:0 0 8px;background:linear-gradient(90deg,#1db954,#eafff2,#0e7a37,#0a1f14,#0e7a37,#eafff2,#1db954);background-size:300% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:titleGradientShift 6s ease-in-out infinite;max-width:780px;margin-left:auto;margin-right:auto}
+.post-date{color:rgba(255,255,255,.75);font-size:13px}
+.post-photo{width:min(560px,86vw);margin:32px auto 0;overflow:hidden;box-shadow:0 30px 60px -12px rgba(0,0,0,.4)}
+.post-photo img{width:100%;height:auto;display:block}
 
-.post-grid{max-width:1160px;margin:0 auto;padding:56px 24px 90px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px 32px}
-.post-tile{display:block;text-decoration:none;color:inherit}
-.post-tile-img{width:100%;aspect-ratio:4/3;overflow:hidden;background:#111}
-.post-tile-img img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .45s ease}
-.post-tile:hover .post-tile-img img{transform:scale(1.07)}
-.post-tile-date{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-2);margin:20px 0 0}
-.post-tile h2{font-family:'Master Victory',cursive;font-style:italic;font-weight:400;font-size:21px;line-height:1.2;margin:8px 0 10px;background:linear-gradient(90deg,#b30000,#1a1a1a,#b30000,#ff2800,#1a1a1a,#b30000);background-size:300% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:titleGradientShift 7s ease-in-out infinite}
-.post-tile p{margin:0 0 16px;color:var(--text-dim);font-size:14px;line-height:1.6}
-.post-tile-cta{font-size:13px;font-weight:800;letter-spacing:.02em;color:var(--text);display:inline-flex;align-items:center;gap:7px;text-transform:uppercase}
-.post-tile-cta .arrow{transition:transform .2s ease;display:inline-block}
-.post-tile:hover .post-tile-cta .arrow{transform:translateX(5px)}
-.post-tile:hover h2{animation-duration:2.5s}
-
+.post-body{max-width:var(--maxw);margin:0 auto;padding:48px 24px 64px}
+.post-body p{margin:0 0 18px;color:var(--text)}
+.post-body h2{font-family:'Master Victory',cursive;font-style:italic;font-weight:400;font-size:26px;margin:38px 0 14px;color:var(--text)}
+.post-body blockquote{margin:28px 0;padding:18px 22px;background:var(--card);border-left:3px solid var(--accent-2);border-radius:0 8px 8px 0;font-style:italic;color:var(--text)}
+.tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px}
+.tag{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-2);background:rgba(29,185,84,.1);border:1px solid rgba(29,185,84,.25);border-radius:999px;padding:6px 12px}
+.post-back{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--accent-2);margin-top:20px}
+.note{background:var(--card);border-left:3px solid var(--border);border-radius:0 8px 8px 0;padding:14px 18px;font-size:13px;color:var(--text-dim);margin:22px 0}
 footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;color:var(--text-dim);font-size:13px;background:#ffffff}
 </style>
 </head>
@@ -109,51 +108,36 @@ footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;co
   <a href="index.html#about">Contact</a>
 </div>
 
-<div class="blog-hero">
-  <span class="kicker">Blog</span>
-  <h1>News &amp; Release Stories</h1>
+<div class="post-hero">
+  <span class="post-kicker">A Childhood Memory</span>
+  <h1>La Notte d'Infanzia</h1>
+  <div class="post-photo"><img src="assets/la-notte-dinfanzia-cover.jpg" alt="Valentina Black"></div>
+  <div class="post-date">From the Blog</div>
 </div>
 
-<div class="post-grid">
-  <a class="post-tile" href="blog-garage-studio.html">
-    <div class="post-tile-img"><img src="assets/garage-studio-blog-cover.jpg" alt="Valentina Black's home studio"></div>
-    <div class="post-tile-date">Studio Story</div>
-    <h2>How the Garage Became a Studio</h2>
-    <p>The story of the dream, the one-day clear-out, and how a family garage became the private studio where most of Valentina's music is written.</p>
-    <span class="post-tile-cta">Read the story <span class="arrow">&rarr;</span></span>
-  </a>
-  <a class="post-tile" href="blog-do-it-right.html">
-    <div class="post-tile-img"><img src="assets/do-it-right-duo-cover.jpg" alt="Valentina Black and Jon-John Robinson — Do It Right"></div>
-    <div class="post-tile-date">February 3, 2024</div>
-    <h2>Do It Right</h2>
-    <p>The story behind the single — a collaboration with two-time Grammy-winning producer Jon-John Robinson.</p>
-    <span class="post-tile-cta">Read the story <span class="arrow">&rarr;</span></span>
-  </a>
-  <a class="post-tile" href="blog-tv-sorrisi-e-canzoni.html">
-    <div class="post-tile-img"><img src="assets/blog-tv-sorrisi-cover-photo.jpg" alt="Valentina Black, Miss Veneto, San Benedetto del Tronto pre-finals, Miss Italia 2000"></div>
-    <div class="post-tile-date">Press Archive</div>
-    <h2>Valentina Black and Italian Television</h2>
-    <p>From the Mondadori Miss Italia book to TV Sorrisi e Canzoni, Visto, Gazzetta di Parma and backstage at RAI's Quelli Che Il Calcio.</p>
-    <span class="post-tile-cta">Read the story <span class="arrow">&rarr;</span></span>
-  </a>
-  <a class="post-tile" href="blog-miss-italia.html">
-    <div class="post-tile-img"><img src="assets/miss-italia-buzzanca-2.jpg" alt="Valentina Black"></div>
-    <div class="post-tile-date">Origin Story</div>
-    <h2>Miss Italia Was Not Intentional</h2>
-    <p>A betrayal by her best friend, a bus marked "Gardaland" in Piazza San Zeno, and how Valentina ended up in the Miss Italia selections at seventeen.</p>
-    <span class="post-tile-cta">Read the story <span class="arrow">&rarr;</span></span>
-  </a>
-  <a class="post-tile" href="blog-la-notte-dinfanzia.html">
-    <div class="post-tile-img"><img src="assets/la-notte-dinfanzia-cover.jpg" alt="Valentina Black"></div>
-    <div class="post-tile-date">A Childhood Memory</div>
-    <h2>La Notte d'Infanzia</h2>
-    <p>At eight years old, a television broadcast of "The Secret of the Sahara" and Ennio Morricone's music taught Valentina what only sound can do.</p>
-    <span class="post-tile-cta">Read the story <span class="arrow">&rarr;</span></span>
-  </a>
+<div class="post-body">
+  <div class="tag-row"><span class="tag">Childhood</span><span class="tag">Music</span><span class="tag">Ennio Morricone</span></div>
+
+  <p>For Valentina Black, the experiences that music has given her have always left a mark she describes as indelible. She was eight years old, sitting in her darkened living room, when the sound of an orchestra suddenly reached her from the television. The set was on, and the film playing that evening was <em><a href="https://en.wikipedia.org/wiki/The_Secret_of_the_Sahara" target="_blank" rel="noopener">The Secret of the Sahara</a></em>, the 1988 Italian television <a href="https://it.wikipedia.org/wiki/Il_segreto_del_Sahara_(miniserie_televisiva)" target="_blank" rel="noopener">miniseries</a> known in Italy as <em>Il Segreto del Sahara</em>.</p>
+
+  <p>The music was "Saharan Dream," the miniseries' main theme, composed by Ennio Morricone with lyrics by Leonie Gane and performed by the singer Amii Stewart. It is a song whose magic, Valentina says, anyone can hear. For her, that evening, it was something closer to a devout illumination than an ordinary night of television. She could no longer separate the room she was sitting in from the dimension the sound seemed to be opening around her.</p>
+
+  <h2>A Sound That Could Move Things</h2>
+
+  <p>From that moment on, as a small child, she became convinced that objects could be moved by the sheer power of sound. She was certain, in the way only a child can be certain of something impossible, that she had travelled somewhere else entirely while that music played. The reality of what she had just lived through felt so inexplicable that she found her own face wet with tears.</p>
+
+  <blockquote>Not tears of sorrow, and not tears of joy — but of something, she says, that only music is capable of producing.</blockquote>
+
+  <h2>Something Only Music Can Do</h2>
+
+  <p>It is a feeling, Valentina says, that cannot be given a verbal definition. It can only be lived, with an open heart — and it is only with that same openness, she believes, that the true scale of this universe can ever be felt.</p>
+
+  <p class="note">"Saharan Dream" is the main theme of the 1988 television miniseries <em>The Secret of the Sahara</em> (<em>Il Segreto del Sahara</em> in Italian), composed by Ennio Morricone, with lyrics by Leonie Gane, performed by Amii Stewart.</p>
+
+  <p><a class="post-back" href="blog.html">&larr; Back to Blog</a></p>
 </div>
 
 <footer>&copy; Valentina Black. All rights reserved. &middot; <a href="index.html">valentinablack.com</a></footer>
-
 <script>
   (function(){
     var toggle = document.getElementById('navToggle');
