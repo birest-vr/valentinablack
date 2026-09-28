@@ -62,6 +62,12 @@ body.menu-open{overflow:hidden}
 .post-date{color:rgba(255,255,255,.75);font-size:13px}
 .post-photo{width:min(560px,86vw);margin:32px auto 0;overflow:hidden;box-shadow:0 30px 60px -12px rgba(0,0,0,.4)}
 .post-photo img{width:100%;height:auto;display:block}
+.post-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:36px 0}
+.post-gallery figure{margin:0}
+.post-gallery .g-box{aspect-ratio:3/4;overflow:hidden;box-shadow:0 20px 40px -14px rgba(0,0,0,.35)}
+.post-gallery .g-box img{width:100%;height:100%;object-fit:cover;display:block}
+.post-gallery figcaption{margin-top:8px;font-size:12px;color:var(--text-dim);text-align:center;line-height:1.4}
+@media (max-width:640px){ .post-gallery{grid-template-columns:1fr;max-width:340px;margin:36px auto} }
 
 .post-body{max-width:var(--maxw);margin:0 auto;padding:48px 24px 64px}
 .post-body p{margin:0 0 18px;color:var(--text)}
@@ -144,6 +150,23 @@ footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;co
   <p>Valentina went home that day lower than she had been in a long time, turning over the same question again and again: why a friend she had trusted had come to resent her so completely, and had ended things so coldly, without a word of explanation. But lying in bed that night, it was Wilma's voice she kept hearing, and the seriousness in it, which had stayed with her more than she expected.</p>
 
   <p>She waited several days before she finally dialled the number on the card. What decided it, in the end, was not the pageant itself. She needed something to fill the space that losing her friend had left behind, and, if she is honest about it now, that was the only real reason she said yes: not ambition, not vanity, but an escape from a very specific kind of grief. Miss Italia, for Valentina Black, was never the plan. It was what happened while she was trying to outrun something else entirely.</p>
+
+  <h2>From the Archive</h2>
+
+  <div class="post-gallery">
+    <figure>
+      <div class="g-box"><img src="assets/miss-italia-press-desenzano.jpg" alt="Newspaper clipping of the winners at Desenzano" loading="lazy"></div>
+      <figcaption>"Le miss premiate a Desenzano" — local press coverage of the regional win that started it all.</figcaption>
+    </figure>
+    <figure>
+      <div class="g-box"><img src="assets/miss-italia-veneto-group.jpg" alt="Group photo from the Miss Italia Veneto regional selections" loading="lazy"></div>
+      <figcaption>The Concorso Nazionale Miss Italia Veneto selections, sashes and all.</figcaption>
+    </figure>
+    <figure>
+      <div class="g-box"><img src="assets/miss-italia-sashes-gold.jpg" alt="Valentina Black with her pageant sashes years later" loading="lazy"></div>
+      <figcaption>The sashes, kept all these years later.</figcaption>
+    </figure>
+  </div>
 
   <p><a class="post-back" href="blog.html">&larr; Back to Blog</a></p>
 </div>
