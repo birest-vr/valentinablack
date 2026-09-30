@@ -59,15 +59,38 @@ img{max-width:100%;display:block}
 .mobile-menu .mobile-social{display:flex;gap:18px;padding:18px 24px}
 .mobile-menu .mobile-social a{padding:0;border-bottom:none;display:flex}
 .mobile-menu .mobile-social svg{width:20px;height:20px;fill:#fff}
+  .nav .nav-newsletter-btn{display:flex;align-items:center;justify-content:center;width:29px;height:29px;border-radius:50%;background:#fff;border:none;color:#1a1512;cursor:pointer;padding:0;transition:transform .15s ease;margin-left:2px}
+  .nav .nav-newsletter-btn:hover{transform:scale(1.08)}
+  .nav .nav-newsletter-btn svg{width:14px;height:14px}
+  .mobile-menu .nav-newsletter-btn{width:34px;height:34px;margin-left:4px}
+  .mobile-menu .nav-newsletter-btn svg{width:16px;height:16px}
+  .newsletter-modal-overlay{position:fixed;inset:0;z-index:1100;background:rgba(6,4,8,.82);display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;visibility:hidden;transition:opacity .25s ease;}
+  .newsletter-modal-overlay.open{opacity:1;visibility:visible}
+  .newsletter-modal{position:relative;width:100%;max-width:440px;background:#fff;border-radius:4px;padding:44px 36px 40px;text-align:center;box-shadow:0 40px 80px -20px rgba(0,0,0,.6)}
+  .newsletter-modal-close{position:absolute;top:14px;right:16px;background:none;border:none;font-size:26px;line-height:1;color:#1a1512;cursor:pointer;padding:4px}
+  .newsletter-modal h3{font-family:'Playfair Display',Georgia,'Times New Roman',serif;font-weight:700;font-size:30px;color:#1a1512;margin:0 0 22px;letter-spacing:.02em;text-transform:uppercase}
+  .newsletter-form{display:flex;flex-direction:column;gap:16px;text-align:left}
+  .newsletter-form label{font-size:13px;color:#1a1512;font-weight:600}
+  .newsletter-form input{width:100%;box-sizing:border-box;padding:11px 13px;border:1px solid #d8d8d8;border-radius:6px;font-size:14px;font-family:inherit;color:#1a1512}
+  .newsletter-form input:focus{outline:none;border-color:#1989ae}
+  .newsletter-required-note{font-size:11px;color:#8a8a8a;font-style:italic;margin:0}
+  .newsletter-submit{margin-top:4px;align-self:center;padding:12px 30px;border-radius:999px;border:1px solid #1a1512;background:#1a1512;color:#fff;font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:opacity .15s ease}
+  .newsletter-submit:hover{opacity:.85}
+  .newsletter-thanks{font-size:15px;color:#1a1512;margin:10px 0 0}
+
 body.menu-open{overflow:hidden}
 
 .album-hero{padding:120px 24px 56px;text-align:center;background:linear-gradient(180deg, var(--album-c1,#182a1e) 0%, #ffffff 88%)}
 .album-kicker{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.75);display:block;margin-bottom:14px}
 .album-hero h1{font-family:'Master Victory',cursive;font-style:italic;font-weight:400;font-size:clamp(38px,8vw,68px);margin:0 0 40px;color:#fff}
-.album-cover-box{width:min(400px,72vw);aspect-ratio:1/1;margin:0 auto;border-radius:6px;overflow:hidden;box-shadow:0 30px 60px -12px rgba(0,0,0,.35);background:#0f0814;border:1px solid rgba(255,255,255,.14)}
-.album-cover-box img{width:100%;height:100%;object-fit:cover;cursor:zoom-in}
-.album-cover-box.placeholder{display:flex;align-items:center;justify-content:center;padding:30px;text-align:center;background:radial-gradient(120% 140% at 20% 0%, rgba(29,185,84,.18), transparent 60%), linear-gradient(150deg,#1b1224,#0c0710)}
+.album-cover-box{width:min(400px,72vw);aspect-ratio:1/1;margin:0 auto;position:relative;overflow:visible}
+.album-cover-box.placeholder{display:flex;align-items:center;justify-content:center;padding:30px;text-align:center;background:radial-gradient(120% 140% at 20% 0%, rgba(29,185,84,.18), transparent 60%), linear-gradient(150deg,#1b1224,#0c0710);border-radius:6px}
 .album-cover-box.placeholder span{font-family:'Master Victory',cursive;font-style:italic;font-size:clamp(22px,4vw,32px);color:#8be9a8}
+.album-cover-box .discog-vinyl{position:absolute;top:5%;left:5%;width:90%;height:90%;border-radius:50%;z-index:1;pointer-events:none;box-shadow:0 12px 30px rgba(0,0,0,.55);transform:translateX(0) rotate(0deg);transition:transform .5s cubic-bezier(.32,.2,.2,1)}
+.album-cover-box .discog-cover-face{position:absolute;inset:0;border-radius:6px;overflow:hidden;z-index:2;border:1px solid rgba(255,255,255,.14);box-shadow:0 30px 60px -12px rgba(0,0,0,.35);background:#0f0814;transform-origin:30% 50%;transition:transform .5s cubic-bezier(.32,.2,.2,1)}
+.album-cover-box:hover .discog-vinyl{transform:translateX(15%) rotate(-9deg)}
+.album-cover-box:hover .discog-cover-face{transform:rotate(-5deg) translateX(-3%)}
+.album-cover-box .discog-cover-face img{width:100%;height:100%;object-fit:cover;cursor:zoom-in;display:block}
 .album-store-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px;padding:26px 24px;background:#ffffff;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .album-store-bar .label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--text-dim);margin-right:6px;width:100%;text-align:center}
 @media (min-width:640px){ .album-store-bar .label{width:auto;text-align:left} }
@@ -143,7 +166,7 @@ footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;co
       <a href="https://www.instagram.com/valentinablackoff" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.012-3.584.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.058 1.645-.07 4.849-.07zm0-2.163c-3.259 0-3.667.014-4.947.07-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
       <a href="https://twitter.com/Valentina_Black" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7.6 8.7L23 22h-6.8l-5.3-6.9L4.8 22H1.7l8.1-9.3L1 2h7l4.8 6.3L18.9 2Zm-1.2 18h1.9L7.4 4H5.4l12.3 16Z"/></svg></a>
       <a href="https://www.tiktok.com/@valentinablackoff" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.31 1.38V7.3s-1.88.09-3.24-1.48z"/></svg></a>
-      <a href="https://www.youtube.com/@ValentinaBlack" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.5V8.5L15.8 12l-6.2 3.5z"/></svg></a>
+      <a href="https://www.youtube.com/@ValentinaBlack" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.5V8.5L15.8 12l-6.2 3.5z"/></svg></a><button type="button" class="nav-newsletter-btn" aria-label="Sign up for the newsletter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></button>
     </div>
   </div>  <div class="links">
     <a href="index.html">Home</a>
@@ -162,6 +185,23 @@ footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;co
     <span></span><span></span><span></span>
   </button>
 </nav>
+<div class="newsletter-modal-overlay" id="newsletterModalOverlay">
+  <div class="newsletter-modal">
+    <button type="button" class="newsletter-modal-close" aria-label="Close">&times;</button>
+    <h3>Sign Up</h3>
+    <form id="newsletterForm" class="newsletter-form">
+      <label for="nl-email">Email Address*</label>
+      <input type="email" id="nl-email" name="email" placeholder="Your email address" required>
+      <label for="nl-firstname">First Name*</label>
+      <input type="text" id="nl-firstname" name="firstname" placeholder="Your first name" required>
+      <label for="nl-country">Country</label>
+      <input type="text" id="nl-country" name="country" placeholder="Your country">
+      <p class="newsletter-required-note">* denotes a required field</p>
+      <button type="submit" class="newsletter-submit">Subscribe</button>
+    </form>
+    <p class="newsletter-thanks" id="newsletterThanks" hidden>Thank you for signing up!</p>
+  </div>
+</div>
 <div class="mobile-menu" id="mobileMenu">
   <a href="index.html">Home</a>
   <a href="index.html#listen">Listen</a>
@@ -179,14 +219,14 @@ footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;co
     <a href="https://www.instagram.com/valentinablackoff" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.012-3.584.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.058 1.645-.07 4.849-.07zm0-2.163c-3.259 0-3.667.014-4.947.07-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
     <a href="https://twitter.com/Valentina_Black" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7.6 8.7L23 22h-6.8l-5.3-6.9L4.8 22H1.7l8.1-9.3L1 2h7l4.8 6.3L18.9 2Zm-1.2 18h1.9L7.4 4H5.4l12.3 16Z"/></svg></a>
     <a href="https://www.tiktok.com/@valentinablackoff" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.31 1.38V7.3s-1.88.09-3.24-1.48z"/></svg></a>
-    <a href="https://www.youtube.com/@ValentinaBlack" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.5V8.5L15.8 12l-6.2 3.5z"/></svg></a>
+    <a href="https://www.youtube.com/@ValentinaBlack" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.5V8.5L15.8 12l-6.2 3.5z"/></svg></a><button type="button" class="nav-newsletter-btn" aria-label="Sign up for the newsletter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></button>
   </div>
 </div>
 
 <div class="album-hero">
   <span class="album-kicker">Valentina Black Trio &middot; 2011</span>
   <h1>4 U</h1>
-  <div class="album-cover-box"><img src="assets/4-u-cover.jpg" alt="4 U by Valentina Black Trio — official cover art"></div>
+  <div class="album-cover-box"><img class="discog-vinyl" src="assets/vinyl.svg" alt="" aria-hidden="true"><div class="discog-cover-face"><img src="assets/4-u-cover.jpg" alt="4 U by Valentina Black Trio — official cover art"></div></div>
 </div>
 
 <div class="album-store-bar">
@@ -247,6 +287,26 @@ footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;co
 
 <footer>&copy; Valentina Black. All rights reserved. &middot; <a href="index.html">valentinablack.com</a></footer>
 
+<script>
+  (function(){
+    var overlay = document.getElementById('newsletterModalOverlay');
+    if (!overlay) return;
+    var openBtns = document.querySelectorAll('.nav-newsletter-btn');
+    var closeBtn = overlay.querySelector('.newsletter-modal-close');
+    var form = document.getElementById('newsletterForm');
+    var thanks = document.getElementById('newsletterThanks');
+    function openModal(){ overlay.classList.add('open'); }
+    function closeModal(){ overlay.classList.remove('open'); }
+    openBtns.forEach(function(b){ b.addEventListener('click', function(e){ e.preventDefault(); openModal(); }); });
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', function(e){ if (e.target === overlay) closeModal(); });
+    if (form) form.addEventListener('submit', function(e){
+      e.preventDefault();
+      form.hidden = true;
+      if (thanks) thanks.hidden = false;
+    });
+  })();
+</script>
 <script>
   (function(){
     var nav = document.getElementById('mainNav');

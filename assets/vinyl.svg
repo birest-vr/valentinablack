@@ -9,6 +9,11 @@
       <stop offset="0%" stop-color="#2c2c2c"/>
       <stop offset="100%" stop-color="#0a0a0a"/>
     </radialGradient>
+    <linearGradient id="vinylShine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity=".55"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
   </defs>
   <circle cx="100" cy="100" r="98" fill="url(#vinylBody)"/>
   <circle cx="100" cy="100" r="98" fill="none" stroke="#000" stroke-width="1" opacity=".4"/>
@@ -29,4 +34,5 @@
   <circle cx="100" cy="100" r="34" fill="none" stroke="#000" stroke-width="1" opacity=".5"/>
   <circle cx="100" cy="100" r="3.4" fill="#0a0a0a"/>
   <ellipse cx="72" cy="66" rx="34" ry="14" fill="#ffffff" opacity=".06" transform="rotate(-28 72 66)"/>
+  <rect x="4" y="98.4" width="192" height="3.2" fill="url(#vinylShine)"/>
 </svg>
