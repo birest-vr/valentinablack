@@ -76,6 +76,14 @@ body.menu-open{overflow:hidden}
 .post-back{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--accent-2);margin-top:20px}
 .post-listen{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:#fff;background:var(--accent-2);border-radius:999px;padding:12px 22px;margin-top:8px}
 .post-listen:hover{background:var(--accent);text-decoration:none}
+.post-gallery{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:32px 0}
+.post-gallery a{display:block;overflow:hidden;box-shadow:0 12px 28px -10px rgba(0,0,0,.3)}
+.post-gallery img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/2;display:block;transition:transform .4s ease}
+.post-gallery a:hover img{transform:scale(1.04)}
+.post-gallery .full{grid-column:1/-1;display:flex;justify-content:center}
+.post-gallery .full a{width:min(360px,70vw)}
+.post-gallery .full img{aspect-ratio:1/1}
+@media (max-width:560px){ .post-gallery{grid-template-columns:1fr} }
 footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;color:var(--text-dim);font-size:13px;background:#ffffff}
 .share-row{display:flex;align-items:center;gap:12px;margin:32px 0 6px;flex-wrap:wrap}
 .share-label{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-dim);margin-right:4px}
@@ -142,6 +150,12 @@ footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;co
   <p>The reshoot took her to Verona, Italy, where she rebuilt the video from the ground up alongside director Alessandro Guerra. This time, the concept was drawn directly from the message at the heart of the song itself.</p>
 
   <p>"Say You Love the World" is, at its core, a plea — a call to notice the quiet neglect the world so often receives from those who claim to love it. In Verona, that idea took visual shape: Valentina Black moving through the city's streets and timeworn corners, an intimate presence set against centuries-old stone, as if in search of something the song itself keeps asking after. The video leans on restraint rather than spectacle, letting the refrain — "say you love the world" — carry the emotional weight, while the imagery works quietly underneath it. It plays less like a narrative than a mood: contemplative and unresolved, true to the improvised, unplanned way the song itself first came into being.</p>
+
+  <div class="post-gallery">
+    <a href="assets/making-of-syltw-photo-1.jpg" target="_blank" rel="noopener"><img src="assets/making-of-syltw-photo-1.jpg" alt="Valentina Black performing &quot;Say You Love the World&quot; live at the microphone"></a>
+    <a href="assets/making-of-syltw-photo-2.jpg" target="_blank" rel="noopener"><img src="assets/making-of-syltw-photo-2.jpg" alt="Valentina Black on stage in a gold-winged costume, part of the visual world around &quot;Say You Love the World&quot;"></a>
+    <div class="full"><a href="assets/making-of-syltw-cover-art.jpg" target="_blank" rel="noopener"><img src="assets/making-of-syltw-cover-art.jpg" alt="Valentina Black — Say You Love the World, official artwork"></a></div>
+  </div>
 
   <h2>Released to the World</h2>
 
