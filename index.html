@@ -212,6 +212,20 @@ input,textarea{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:te
     max-width:var(--maxw);
     margin:0 auto;
   }
+  .hero-card{
+    display:inline-block;
+    max-width:600px;
+    background:rgba(8,5,11,.52);
+    backdrop-filter:blur(18px) saturate(140%);
+    -webkit-backdrop-filter:blur(18px) saturate(140%);
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:22px;
+    padding:36px 38px 38px;
+    box-shadow:0 30px 70px -24px rgba(0,0,0,.55);
+  }
+  @media (max-width:640px){
+    .hero-card{padding:26px 22px 28px;border-radius:18px;max-width:100%}
+  }
   .eyebrow{
     display:inline-block;
     font-size:12px;font-weight:700;letter-spacing:.18em;
@@ -726,17 +740,19 @@ input,textarea{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:te
 
 <header class="hero">
   <div class="hero-inner">
-    <span class="eyebrow"><span class="dot"></span>New single — "Is It Love" out now</span>
-    <h1 class="title">VALENTINA<br>BLACK</h1>
-    <p class="tagline">Stream the latest release everywhere and follow along for new music and shows.</p>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="#listen">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-        Listen Now
-      </a>
-      <a class="btn btn-ghost" href="https://bnds.us/vsk3fb" target="_blank" rel="noopener">
-        Tour Dates
-      </a>
+    <div class="hero-card">
+      <span class="eyebrow"><span class="dot"></span>New single — "Is It Love" out now</span>
+      <h1 class="title">VALENTINA<br>BLACK</h1>
+      <p class="tagline">Stream the latest release everywhere and follow along for new music and shows.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#listen">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          Listen Now
+        </a>
+        <a class="btn btn-ghost" href="https://bnds.us/vsk3fb" target="_blank" rel="noopener">
+          Tour Dates
+        </a>
+      </div>
     </div>
   </div>
 </header>
