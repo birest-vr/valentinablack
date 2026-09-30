@@ -72,6 +72,11 @@ body.menu-open{overflow:hidden}
 .note strong{color:var(--text)}
 .album-back{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--accent-2);margin-top:6px}
 .lyrics-heading{font-family:'Master Victory',cursive;font-style:italic;font-weight:400;font-size:28px;margin:44px 0 18px;color:var(--text)}
+.musicians-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin:8px 0 28px}
+.musicians-grid figure{margin:0}
+.musicians-grid img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:8px;display:block}
+.musicians-grid figcaption{font-size:12px;font-weight:700;text-align:center;margin-top:8px;color:var(--text-dim)}
+@media (max-width:640px){ .musicians-grid{grid-template-columns:repeat(2,1fr)} }
 .lyrics-section{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-2);margin:22px 0 6px}
 .lyrics-section:first-child{margin-top:0}
 .lyrics p{color:var(--text);margin:0 0 4px;line-height:1.55}
@@ -153,6 +158,16 @@ footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;co
   <b>Davide Ghidoni:</b> Trumpet<br>
   <b>Daniele Tedeschi:</b> Drums
   </p>
+  <h2 class="lyrics-heading">Musicians</h2>
+  <div class="musicians-grid">
+    <figure><img src="assets/james-thompson-photo.jpg" alt="James Thompson"><figcaption>James Thompson</figcaption></figure>
+    <figure><img src="assets/daniele-dagaro-photo.jpg" alt="Daniele D&rsquo;Agaro"><figcaption>Daniele D&rsquo;Agaro</figcaption></figure>
+    <figure><img src="assets/bruno-marini-photo.jpg" alt="Bruno Marini"><figcaption>Bruno Marini</figcaption></figure>
+    <figure><img src="assets/daniele-tedeschi-photo.jpg" alt="Daniele Tedeschi"><figcaption>Daniele Tedeschi</figcaption></figure>
+    <figure><img src="assets/cristina-mazza-photo.jpg" alt="Cristina Mazza"><figcaption>Cristina Mazza</figcaption></figure>
+  </div>
+  <p>Daniele D&rsquo;Agaro has collaborated with the legendary U.T. Gandhi and Mark Helias.</p>
+  <p>Cristina Mazza has recorded and released 15 albums as leader or co-leader with a range of artists, including <a href="https://it.wikipedia.org/wiki/Mal_Waldron" target="_blank" rel="noopener">Mal Waldron</a>, <a href="https://it.wikipedia.org/wiki/Reggie_Workman" target="_blank" rel="noopener">Reggie Workman</a>, Sean Bergen, Daniele D&rsquo;Agaro, Jean-Jacques Avenel and Sangoma Everett, and has frequently collaborated with saxophonist and multi-instrumentalist <a href="https://it.wikipedia.org/wiki/Bruno_Marini" target="_blank" rel="noopener">Bruno Marini</a>.</p>
   <div class="share-row">
     <span class="share-label">Share</span>
     <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fvalentinablack.com%2Falbum-4-u.html" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook" title="Share on Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>
