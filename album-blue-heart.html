@@ -88,6 +88,34 @@ body.menu-open{overflow:hidden}
 footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;color:var(--text-dim);font-size:13px;background:#ffffff}
 
   .album-hero{--album-c1:#1a2530}
+.vinyl-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);padding:6px 14px;border-radius:999px;margin:18px 0 0}
+.album-cover-box.is-clickable{cursor:zoom-in;position:relative}
+.album-cover-box.is-clickable::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 50%, transparent 55%, rgba(0,0,0,.18) 100%);opacity:0;transition:opacity .2s ease;pointer-events:none}
+.album-cover-box.is-clickable:hover::after{opacity:1}
+.vinyl-hint{display:block;margin-top:10px;font-size:12px;color:rgba(255,255,255,.6)}
+.vinyl-back-thumb{display:none}
+.tracklist-side{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-2);margin:22px 0 6px}
+.tracklist-side:first-child{margin-top:0}
+.tracklist p{color:var(--text);margin:0 0 4px;line-height:1.55}
+.lightbox-overlay{position:fixed;inset:0;background:rgba(6,4,8,.95);z-index:1000;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .2s ease;overflow:hidden}
+.lightbox-overlay.open{opacity:1;visibility:visible}
+.lightbox-img{position:relative;z-index:1;max-width:90vw;max-height:84vh;object-fit:contain;border-radius:6px;box-shadow:0 30px 70px -20px rgba(0,0,0,.7);cursor:zoom-in;touch-action:none;transform-origin:center center;transition:transform .18s ease;user-select:none}
+.lightbox-img.zoomed{cursor:grab;border-radius:2px}
+.lightbox-img.panning{transition:none;cursor:grabbing}
+.lightbox-close,.lightbox-nav{position:fixed;z-index:2;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:50%;width:46px;height:46px;display:flex;align-items:center;justify-content:center;font-size:24px;line-height:1;cursor:pointer;transition:background .15s ease}
+.lightbox-close:hover,.lightbox-nav:hover{background:rgba(255,255,255,.2)}
+.lightbox-close{top:20px;right:20px}
+.lightbox-nav{top:50%;transform:translateY(-50%)}
+.lightbox-prev{left:16px}
+.lightbox-next{right:16px}
+.lightbox-counter{position:fixed;z-index:2;bottom:22px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.75);font-size:13px;font-weight:600;letter-spacing:.04em}
+.lightbox-hint{position:fixed;z-index:2;bottom:22px;right:22px;color:rgba(255,255,255,.55);font-size:11px;letter-spacing:.03em}
+@media (max-width:640px){
+  .lightbox-close,.lightbox-nav{width:38px;height:38px;font-size:20px}
+  .lightbox-prev{left:6px}
+  .lightbox-next{right:6px}
+  .lightbox-hint{display:none}
+}
 </style>
 </head>
 <body>
@@ -125,19 +153,34 @@ footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;co
 </div>
 
 <div class="album-hero">
-  <span class="album-kicker">Single</span>
+  <span class="album-kicker">Vinyl Single</span>
   <h1>Blue Heart</h1>
-  <div class="album-cover-box placeholder"><span>Blue Heart</span></div>
+  <div class="album-cover-box is-clickable" id="vinylCover" role="button" tabindex="0" aria-label="Enlarge vinyl artwork">
+    <img src="assets/blue-heart-vinyl-front.jpg" alt="Valentina Black — I Found a Blue Heart, 12&quot; vinyl front cover art">
+  </div>
+  <span class="vinyl-badge">12&Prime; Vinyl</span>
+  <img class="vinyl-back-thumb" id="vinylBackThumb" src="assets/blue-heart-vinyl-back.jpg" alt="Valentina Black — I Found a Blue Heart, vinyl label side B">
+  <span class="vinyl-hint">Click the cover to see the vinyl front and back</span>
 </div>
 
 <div class="album-store-bar">
   <span class="label">Buy / Stream / Download</span>
-  <a class="btn btn-primary" href="https://open.spotify.com/artist/4jryrlXweUeaEBMSqma4fV" target="_blank" rel="noopener">Spotify</a><a class="btn btn-ghost" href="https://music.apple.com/us/artist/valentina-black/274276367" target="_blank" rel="noopener">Apple Music</a><a class="btn btn-ghost" href="https://linktr.ee/valentina.black?utm_source=linktree_profile_share&ltsid=0bc20d22-b916-4965-aa54-a6705257c004" target="_blank" rel="noopener">Other Stores</a>
+  <a class="btn btn-primary" href="https://soundcloud.com/valentinablack/sets/valentina-black-i-found-a-blue" target="_blank" rel="noopener">SoundCloud</a><a class="btn btn-ghost" href="https://open.spotify.com/artist/4jryrlXweUeaEBMSqma4fV" target="_blank" rel="noopener">Spotify</a><a class="btn btn-ghost" href="https://music.apple.com/us/artist/valentina-black/274276367" target="_blank" rel="noopener">Apple Music</a><a class="btn btn-ghost" href="https://linktr.ee/valentina.black?utm_source=linktree_profile_share&ltsid=0bc20d22-b916-4965-aa54-a6705257c004" target="_blank" rel="noopener">Other Stores</a>
 </div>
 
 <div class="album-body">
-  <div class="meta-row"><div><b>Artist:</b> Valentina Black</div></div>
-  <div class="note"><strong>Details coming soon.</strong> Release date, credits and cover art for this single have not been added to the site yet.</div>
+  <div class="meta-row"><div><b>Artist:</b> Valentina Black</div><div><b>Format:</b> 12&Prime; Vinyl</div><div><b>Label:</b> Frequenza Limited</div><div><b>Catalog No.:</b> FREQLTD012</div><div><b>Released:</b> 2012</div></div>
+  <p>Valentina&rsquo;s vinyl release <em>I Found a Blue Heart</em>, pressed on 12&Prime; and distributed by Triple Vision, pairs the title track with a remix and two further songs across both sides of the record.</p>
+  <h2 class="lyrics-heading">Tracklist</h2>
+  <div class="tracklist">
+    <div class="tracklist-side">That Side</div>
+    <p>Blue Heart</p>
+    <p>Blue Heart (Aninha vs Antonela Giampietro Remix)</p>
+    <div class="tracklist-side">This Side</div>
+    <p>Dancin&rsquo; Delicious</p>
+    <p>Yo Soy Tu Amigo</p>
+  </div>
+  <div class="note"><strong>Credits:</strong> All tracks written and produced by Valentina Black. Artwork by VB. Special thanks to Mara, Enzo, Bruno M. and Pi.</div>
   <p><a class="album-back" href="index.html#listen">&larr; Back to Discography</a></p>
 </div>
 
@@ -171,6 +214,123 @@ footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;co
     });
     window.addEventListener('resize', function(){
       if (window.innerWidth > 640) closeMenu();
+    });
+  })();
+</script>
+<script>
+  (function(){
+    var frontImg = document.querySelector('#vinylCover img');
+    var backImg = document.getElementById('vinylBackThumb');
+    var coverBox = document.getElementById('vinylCover');
+    if(!frontImg || !backImg || !coverBox) return;
+    var imgs = [frontImg, backImg];
+    var overlay = document.createElement('div');
+    overlay.className = 'lightbox-overlay';
+    overlay.innerHTML = '<button class="lightbox-close" aria-label="Close">&times;</button>' +
+      '<button class="lightbox-nav lightbox-prev" aria-label="Previous image">&#8249;</button>' +
+      '<img class="lightbox-img" src="" alt="">' +
+      '<button class="lightbox-nav lightbox-next" aria-label="Next image">&#8250;</button>' +
+      '<div class="lightbox-counter"></div>' +
+      '<div class="lightbox-hint">Click or scroll on the photo to zoom in</div>';
+    document.body.appendChild(overlay);
+    var imgEl = overlay.querySelector('.lightbox-img');
+    var counterEl = overlay.querySelector('.lightbox-counter');
+    var current = 0;
+
+    var ZOOM = 3, scale = 1, tx = 0, ty = 0, pointers = {}, dragging = false, dragStart = null, panStart = null, moved = false, pinchDist = 0, pinchScale = 1;
+    function applyZoom(){
+      imgEl.style.transform = 'translate('+tx+'px,'+ty+'px) scale('+scale+')';
+      imgEl.classList.toggle('zoomed', scale > 1.01);
+    }
+    function clampPan(){
+      if(scale <= 1){ tx = 0; ty = 0; return; }
+      var maxX = (imgEl.clientWidth * (scale-1)) / 2 + 60;
+      var maxY = (imgEl.clientHeight * (scale-1)) / 2 + 60;
+      tx = Math.max(-maxX, Math.min(maxX, tx));
+      ty = Math.max(-maxY, Math.min(maxY, ty));
+    }
+    function resetZoom(){ scale = 1; tx = 0; ty = 0; pointers = {}; dragging = false; imgEl.classList.remove('zoomed','panning'); applyZoom(); }
+    imgEl.addEventListener('pointerdown', function(e){
+      pointers[e.pointerId] = {x:e.clientX, y:e.clientY};
+      moved = false;
+      var ids = Object.keys(pointers);
+      if(ids.length === 1){
+        dragging = true; dragStart = {x:e.clientX, y:e.clientY}; panStart = {tx:tx, ty:ty};
+        imgEl.setPointerCapture(e.pointerId);
+      } else if(ids.length === 2){
+        var pts = ids.map(function(id){ return pointers[id]; });
+        pinchDist = Math.hypot(pts[0].x-pts[1].x, pts[0].y-pts[1].y) || 1;
+        pinchScale = scale;
+      }
+    });
+    imgEl.addEventListener('pointermove', function(e){
+      if(!pointers[e.pointerId]) return;
+      pointers[e.pointerId] = {x:e.clientX, y:e.clientY};
+      var ids = Object.keys(pointers);
+      if(ids.length === 2){
+        var pts = ids.map(function(id){ return pointers[id]; });
+        var dist = Math.hypot(pts[0].x-pts[1].x, pts[0].y-pts[1].y);
+        scale = Math.max(1, Math.min(ZOOM, pinchScale * (dist/pinchDist)));
+        imgEl.classList.add('panning');
+        clampPan(); applyZoom();
+      } else if(dragging && scale > 1){
+        if(Math.abs(e.clientX-dragStart.x) > 3 || Math.abs(e.clientY-dragStart.y) > 3) moved = true;
+        imgEl.classList.add('panning');
+        tx = panStart.tx + (e.clientX - dragStart.x);
+        ty = panStart.ty + (e.clientY - dragStart.y);
+        clampPan(); applyZoom();
+      }
+    });
+    function endPointer(e){
+      delete pointers[e.pointerId];
+      dragging = Object.keys(pointers).length === 1;
+      imgEl.classList.remove('panning');
+    }
+    imgEl.addEventListener('pointerup', endPointer);
+    imgEl.addEventListener('pointercancel', endPointer);
+    imgEl.addEventListener('click', function(e){
+      if(moved){ moved = false; return; }
+      e.stopPropagation();
+      if(scale > 1){ resetZoom(); return; }
+      var rect = imgEl.getBoundingClientRect();
+      scale = ZOOM;
+      tx = (rect.width/2 - (e.clientX-rect.left)) * (scale-1);
+      ty = (rect.height/2 - (e.clientY-rect.top)) * (scale-1);
+      clampPan(); applyZoom();
+    });
+    imgEl.addEventListener('wheel', function(e){
+      e.preventDefault();
+      var rect = imgEl.getBoundingClientRect();
+      var prevScale = scale;
+      scale = Math.max(1, Math.min(ZOOM, scale - e.deltaY*0.0016*scale));
+      var cx = e.clientX - rect.left - rect.width/2;
+      var cy = e.clientY - rect.top - rect.height/2;
+      var factor = scale/prevScale;
+      tx = cx - (cx - tx)*factor;
+      ty = cy - (cy - ty)*factor;
+      clampPan(); applyZoom();
+    }, {passive:false});
+
+    function show(i){
+      current = (i + imgs.length) % imgs.length;
+      resetZoom();
+      imgEl.src = imgs[current].currentSrc || imgs[current].src;
+      imgEl.alt = imgs[current].alt || '';
+      counterEl.textContent = (current+1) + ' / ' + imgs.length;
+    }
+    function open(i){ show(i); overlay.classList.add('open'); document.body.style.overflow='hidden'; }
+    function close(){ resetZoom(); overlay.classList.remove('open'); document.body.style.overflow=''; }
+    coverBox.addEventListener('click', function(){ open(0); });
+    coverBox.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); open(0); } });
+    overlay.querySelector('.lightbox-close').addEventListener('click', close);
+    overlay.querySelector('.lightbox-prev').addEventListener('click', function(){ show(current-1); });
+    overlay.querySelector('.lightbox-next').addEventListener('click', function(){ show(current+1); });
+    overlay.addEventListener('click', function(e){ if(e.target === overlay) close(); });
+    document.addEventListener('keydown', function(e){
+      if(!overlay.classList.contains('open')) return;
+      if(e.key === 'Escape') close();
+      if(e.key === 'ArrowLeft' && scale <= 1) show(current-1);
+      if(e.key === 'ArrowRight' && scale <= 1) show(current+1);
     });
   })();
 </script>
