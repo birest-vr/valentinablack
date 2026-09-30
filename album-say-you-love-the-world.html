@@ -110,6 +110,9 @@ footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;co
 .musicians-grid img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:8px;display:block;cursor:zoom-in}
 .musicians-grid figcaption{font-size:13px;font-weight:700;text-align:center;margin-top:8px;color:var(--text-dim)}
 @media (max-width:640px){ .musicians-grid{grid-template-columns:repeat(2,1fr);max-width:none} }
+.bts-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:8px 0 28px}
+.bts-gallery img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;display:block;cursor:zoom-in}
+@media (max-width:640px){ .bts-gallery{grid-template-columns:1fr} }
 .lightbox-overlay{position:fixed;inset:0;background:rgba(6,4,8,.95);z-index:1000;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .2s ease;overflow:hidden}
 .lightbox-overlay.open{opacity:1;visibility:visible}
 .lightbox-img{position:relative;z-index:1;max-width:90vw;max-height:84vh;object-fit:contain;border-radius:6px;box-shadow:0 30px 70px -20px rgba(0,0,0,.7);cursor:zoom-in;touch-action:none;transform-origin:center center;transition:transform .18s ease;user-select:none}
@@ -207,6 +210,11 @@ footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;co
     <figure><img src="assets/rob-murray-photo-2.jpg" alt="Rob Murray"><figcaption>Rob Murray</figcaption></figure>
   </div>
   <h2 class="lyrics-heading">Behind the Scenes</h2>
+  <div class="bts-gallery">
+    <img src="assets/say-you-love-the-world-bts-1.jpg" alt="Behind the scenes — Say You Love The World video shoot">
+    <img src="assets/say-you-love-the-world-bts-2.jpg" alt="Behind the scenes — Say You Love The World video shoot">
+    <img src="assets/say-you-love-the-world-bts-3.jpg" alt="Behind the scenes — Say You Love The World video shoot">
+  </div>
   <div class="video-box"><video controls playsinline preload="metadata" poster="assets/say-you-love-the-world-bts-poster.jpg" src="assets/say-you-love-the-world-bts-video.mp4"></video></div>
   <h2 class="lyrics-heading">Lyrics</h2>
 <div class="lyrics">
@@ -257,7 +265,7 @@ footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;co
 (function(){
   var box = document.querySelector('.album-cover-box');
   var coverImg = box ? box.querySelector('.flip-front img') : null;
-  var galleryImgs = Array.from(document.querySelectorAll('.musicians-grid img'));
+  var galleryImgs = Array.from(document.querySelectorAll('.musicians-grid img, .bts-gallery img'));
   var imgs = (coverImg ? [coverImg] : []).concat(galleryImgs);
   if (!imgs.length) return;
   var overlay = document.createElement('div');
