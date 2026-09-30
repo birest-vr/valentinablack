@@ -410,10 +410,10 @@ input,textarea{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:te
   .discog-year{font-size:12px;color:var(--text-dim);margin:0 0 12px}
   .discog-more{
     display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;
-    letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);
+    letter-spacing:.12em;text-transform:uppercase;color:#d6403a;
   }
   .discog-more svg{width:13px;height:13px;transition:transform .2s ease}
-  .discog-card:hover .discog-more{color:var(--accent)}
+  .discog-card:hover .discog-more{color:#ff5c52}
   .discog-card:hover .discog-more svg{transform:translateX(4px)}
   .listen-sub-head{margin:0 0 28px;text-align:center}
   .listen-sub-head span{
@@ -424,8 +424,8 @@ input,textarea{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:te
   .section-white{background:#ffffff;color:#1a1a1a}
   .section-white .discog-title{color:#1a1a1a}
   .section-white .discog-year{color:#666}
-  .section-white .discog-more{color:#666}
-  .section-white .discog-card:hover .discog-more{color:var(--accent-2)}
+  .section-white .discog-more{color:#d6403a}
+  .section-white .discog-card:hover .discog-more{color:#ff5c52}
   .section-white .discog-cover-face{background:#f4f4f4;border-color:#e6e6e6;box-shadow:0 10px 24px rgba(0,0,0,.08)}
   .section-white .discog-cover-face.placeholder{background:linear-gradient(150deg,#f7f7f7,#ececec)}
   .section-white .discog-cover-face.placeholder span{color:#0e7a37}
@@ -456,8 +456,9 @@ input,textarea{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:te
   .discog-sort svg{position:absolute;right:16px;top:50%;transform:translateY(-50%);width:12px;height:12px;color:#999;pointer-events:none}
   .discog-card.is-hidden{display:none}
   .discog-group-heading{
-    grid-column:1/-1;margin:8px 0 -4px;padding-top:24px;border-top:1px solid #ededed;
-    font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#0e7a37;
+    grid-column:1/-1;margin:10px 0 2px;padding-top:30px;border-top:1px solid #ededed;
+    font-family:'Master Victory',cursive;font-style:italic;font-weight:400;
+    font-size:clamp(20px,2.8vw,27px);letter-spacing:.01em;color:#0e7a37;
   }
   .discog-group-heading-first{border-top:none;padding-top:0;margin-top:0}
 
