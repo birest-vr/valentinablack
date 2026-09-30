@@ -66,7 +66,8 @@ body.menu-open{overflow:hidden}
 .album-hero h1{font-family:'Master Victory',cursive;font-style:italic;font-weight:400;font-size:clamp(38px,8vw,68px);margin:0 0 40px;color:#fff}
 .vinyl-wrap{position:relative;width:min(400px,72vw);margin:0 auto}
 .vinyl-disc{position:absolute;top:50%;left:50%;width:132%;aspect-ratio:1/1;transform:translate(-50%,-50%);border-radius:50%;background:repeating-radial-gradient(circle at center,#1c1c1c 0px,#1c1c1c 2px,#0a0a0a 3px,#1c1c1c 4px);box-shadow:0 25px 60px -14px rgba(0,0,0,.55);z-index:0;pointer-events:none}
-.vinyl-disc::after{content:'';position:absolute;top:50%;left:50%;width:24%;height:24%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,#2c2c2c 0%,#111 75%);box-shadow:inset 0 0 0 2px rgba(255,255,255,.08)}
+.vinyl-disc::after{content:'';position:absolute;top:50%;left:50%;width:24%;height:24%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,#2c2c2c 0%,#111 75%);box-shadow:inset 0 0 0 2px rgba(255,255,255,.08);z-index:1}
+.vinyl-disc .vinyl-shine{position:absolute;top:50%;left:0;right:0;height:3px;transform:translateY(-50%);background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,.55) 50%,transparent 100%);z-index:1;pointer-events:none}
 .vinyl-wrap .album-cover-box{width:100%;position:relative;z-index:1}
 .album-cover-box{width:min(400px,72vw);aspect-ratio:1/1;margin:0 auto;border-radius:6px;overflow:hidden;box-shadow:0 30px 60px -12px rgba(0,0,0,.35);background:#0f0814;border:1px solid rgba(255,255,255,.14)}
 .album-cover-box img{width:100%;height:100%;object-fit:cover}
@@ -204,7 +205,7 @@ footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;co
   <span class="album-kicker">Single &middot; Released August 21, 2021</span>
   <h1>Say You Love The World</h1>
   <div class="vinyl-wrap">
-    <div class="vinyl-disc"></div>
+    <div class="vinyl-disc"><span class="vinyl-shine"></span></div>
     <div class="album-cover-box"><div class="flip-inner"><div class="flip-front"><img src="assets/say-you-love-the-world-cover.jpg" alt="Say You Love The World — single cover art"></div><div class="flip-back"><span class="flip-back-title">Say You Love The World</span></div></div></div>
   </div>
 </div>
