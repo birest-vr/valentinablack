@@ -100,6 +100,11 @@ footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;co
 .post-gallery img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/2;display:block;transition:transform .4s ease}
 .post-gallery .g-box:hover img{transform:scale(1.04)}
 @media (max-width:560px){ .post-gallery{grid-template-columns:1fr} }
+.musicians-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin:8px 0 28px}
+.musicians-grid figure{margin:0}
+.musicians-grid img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:8px;display:block;cursor:zoom-in}
+.musicians-grid figcaption{font-size:12px;font-weight:700;text-align:center;margin-top:8px;color:var(--text-dim)}
+@media (max-width:640px){ .musicians-grid{grid-template-columns:repeat(2,1fr)} }
 .lightbox-overlay{position:fixed;inset:0;background:rgba(6,4,8,.95);z-index:1000;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .2s ease;overflow:hidden}
 .lightbox-overlay.open{opacity:1;visibility:visible}
 .lightbox-img{position:relative;z-index:1;max-width:85vw;max-height:80vh;object-fit:contain;box-shadow:0 30px 70px -20px rgba(0,0,0,.7);cursor:zoom-out;user-select:none}
@@ -168,6 +173,18 @@ footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;co
   <div class="meta-row"><div><b>With:</b> Jimmy Carl Black (Frank Zappa &amp; the Mothers of Invention)</div><div><b>Label:</b> Azzurra Music</div><div><b>Released:</b> 2008</div></div>
   <p>Valentina&rsquo;s professional recording debut: Jimmy Carl Black, drummer of Frank Zappa&rsquo;s Mothers of Invention, recruited her as vocalist and Hammond organist, recording under the stage name Valentina Black.</p>
   <p><strong>Credits:</strong> Jimmy Carl Black, Valentina Black, Cristina Mazza, Daniele D&rsquo;Agaro, Bruno Marini, Ella Devil, DJ T &ldquo;The Thief&rdquo;.</p>
+  <h2 class="lyrics-heading">Musicians</h2>
+  <div class="musicians-grid">
+    <figure><img src="assets/valentina-black-fjd-photo.jpg" alt="Valentina Black"><figcaption>Valentina Black</figcaption></figure>
+    <figure><img src="assets/jimmy-carl-black-photo.jpg" alt="Jimmy Carl Black"><figcaption>Jimmy Carl Black</figcaption></figure>
+    <figure><img src="assets/bruno-marini-photo.jpg" alt="Bruno Marini"><figcaption>Bruno Marini</figcaption></figure>
+    <figure><img src="assets/james-thompson-photo.jpg" alt="James Thompson"><figcaption>James Thompson</figcaption></figure>
+    <figure><img src="assets/daniele-dagaro-photo.jpg" alt="Daniele D&rsquo;Agaro"><figcaption>Daniele D&rsquo;Agaro</figcaption></figure>
+    <figure><img src="assets/cristina-mazza-photo.jpg" alt="Cristina Mazza"><figcaption>Cristina Mazza</figcaption></figure>
+    <figure><img src="assets/ella-devil-photo.jpg" alt="Ella Devil"><figcaption>Ella Devil</figcaption></figure>
+  </div>
+  <p>Daniele D&rsquo;Agaro has collaborated with the legendary U.T. Gandhi and Mark Helias.</p>
+  <p>Cristina Mazza has recorded and released 15 albums as leader or co-leader with a range of artists, including <a href="https://it.wikipedia.org/wiki/Mal_Waldron" target="_blank" rel="noopener">Mal Waldron</a>, <a href="https://it.wikipedia.org/wiki/Reggie_Workman" target="_blank" rel="noopener">Reggie Workman</a>, Sean Bergen, Daniele D&rsquo;Agaro, Jean-Jacques Avenel and Sangoma Everett, and has frequently collaborated with saxophonist and multi-instrumentalist <a href="https://it.wikipedia.org/wiki/Bruno_Marini" target="_blank" rel="noopener">Bruno Marini</a>.</p>
   <h2 class="lyrics-heading">Gallery</h2>
   <div class="post-gallery">
     <div class="g-box"><img src="assets/freedom-jazz-dance-photo-1.jpg" alt="Freedom Jazz Dance CD booklet photo 1"></div>
@@ -236,7 +253,7 @@ footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;co
 </script>
 <script>
   (function(){
-    var imgs = Array.from(document.querySelectorAll('.post-gallery .g-box img'));
+    var imgs = Array.from(document.querySelectorAll('.post-gallery .g-box img, .musicians-grid img'));
     if(!imgs.length) return;
     var overlay = document.createElement('div');
     overlay.className = 'lightbox-overlay';
