@@ -196,13 +196,17 @@ input,textarea{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:te
     position:relative;
     min-height:100svh;
     display:flex;align-items:flex-end;
-    background-image: url('assets/hero-bg.jpg');
+    background-image:
+      linear-gradient(180deg, rgba(12,80,120,0) 0%, rgba(12,80,120,0) 42%, rgba(10,90,140,.4) 100%),
+      url('assets/hero-bg.jpg');
     background-size:cover;
     background-position:center top;
   }
   @media (min-width:900px){
     .hero{
-      background-image: url('assets/hero-bg-wide.jpg');
+      background-image:
+        linear-gradient(180deg, rgba(12,80,120,0) 0%, rgba(12,80,120,0) 42%, rgba(10,90,140,.4) 100%),
+        url('assets/hero-bg-wide.jpg');
       background-position:center top;
     }
   }
@@ -253,11 +257,11 @@ input,textarea{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:te
     content:"";
     position:absolute;
     z-index:-1;
-    inset:-5px -24px -8px -20px;
-    background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20600%20130%22%3E%3Cpath%20fill%3D%22%23000%22%20d%3D%22M22%2C62%20C16%2C48%2026%2C34%2048%2C32%20L100%2C24%20L165%2C36%20L235%2C22%20L305%2C34%20L375%2C20%20L445%2C30%20L500%2C25%20C542%2C23%20566%2C38%20572%2C56%20C576%2C70%20565%2C84%20542%2C90%20L475%2C103%20L405%2C92%20L335%2C106%20L265%2C94%20L195%2C108%20L128%2C98%20C90%2C106%2052%2C100%2032%2C86%20C18%2C78%2020%2C70%2022%2C62%20Z%22/%3E%3Ccircle%20cx%3D%2210%22%20cy%3D%2292%22%20r%3D%225%22%20fill%3D%22%23000%22/%3E%3Ccircle%20cx%3D%224%22%20cy%3D%2280%22%20r%3D%222.5%22%20fill%3D%22%23000%22/%3E%3Ccircle%20cx%3D%22586%22%20cy%3D%2246%22%20r%3D%224%22%20fill%3D%22%23000%22/%3E%3Ccircle%20cx%3D%22596%22%20cy%3D%2258%22%20r%3D%222.5%22%20fill%3D%22%23000%22/%3E%3Cpath%20fill%3D%22%23000%22%20fill-opacity%3D%220.55%22%20d%3D%22M60%2C52%20C120%2C40%20200%2C58%20280%2C44%20C360%2C60%20430%2C42%20500%2C50%20L500%2C72%20C430%2C64%20360%2C80%20280%2C66%20C200%2C80%20120%2C64%2060%2C74%20Z%22/%3E%3C/svg%3E");
+    inset:-14px -30px -16px -26px;
+    background-image:url("assets/tagline-brush-stroke.png");
     background-repeat:no-repeat;
     background-size:100% 100%;
-    transform:rotate(-2.2deg);
+    transform:rotate(-2deg);
   }
   .cta-row{display:flex;flex-wrap:wrap;gap:12px}
   .btn{
