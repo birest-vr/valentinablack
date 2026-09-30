@@ -212,27 +212,17 @@ input,textarea{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:te
     max-width:var(--maxw);
     margin:0 auto;
   }
-  .hero-card{
-    display:inline-block;
-    max-width:600px;
-    background:rgba(8,5,11,.52);
-    backdrop-filter:blur(18px) saturate(140%);
-    -webkit-backdrop-filter:blur(18px) saturate(140%);
-    border:1px solid rgba(255,255,255,.14);
-    border-radius:22px;
-    padding:36px 38px 38px;
-    box-shadow:0 30px 70px -24px rgba(0,0,0,.55);
-  }
-  @media (max-width:640px){
-    .hero-card{padding:26px 22px 28px;border-radius:18px;max-width:100%}
-  }
   .eyebrow{
     display:inline-block;
     font-size:12px;font-weight:700;letter-spacing:.18em;
-    color:var(--text-dim);text-transform:uppercase;
-    border:1px solid var(--border);
-    padding:6px 12px;border-radius:999px;
+    color:#f5f2f7;text-transform:uppercase;
+    background:rgba(8,5,11,.55);
+    backdrop-filter:blur(10px) saturate(140%);
+    -webkit-backdrop-filter:blur(10px) saturate(140%);
+    border:1px solid rgba(255,255,255,.16);
+    padding:7px 14px;border-radius:999px;
     margin-bottom:34px;
+    box-shadow:0 8px 20px -10px rgba(0,0,0,.5);
   }
   .eyebrow .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-right:8px}
   h1.title{
@@ -248,11 +238,19 @@ input,textarea{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:te
     text-shadow:0 2px 10px rgba(0,0,0,.4), 0 0 28px rgba(0,0,0,.25);
   }
   .tagline{
-    font-size:clamp(15px,2.4vw,19px);
-    color:var(--text-dim);
-    max-width:520px;
+    display:inline-block;
+    font-size:clamp(14px,2.2vw,17px);
+    color:#f5f2f7;
+    max-width:420px;
     margin:0 0 30px;
-    font-weight:400;
+    font-weight:500;
+    background:rgba(8,5,11,.5);
+    backdrop-filter:blur(10px) saturate(140%);
+    -webkit-backdrop-filter:blur(10px) saturate(140%);
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:14px;
+    padding:12px 18px;
+    box-shadow:0 8px 20px -10px rgba(0,0,0,.5);
   }
   .cta-row{display:flex;flex-wrap:wrap;gap:12px}
   .btn{
@@ -264,8 +262,8 @@ input,textarea{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:te
   }
   .btn:hover{transform:translateY(-2px)}
   .btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;border-color:transparent}
-  .btn-ghost{background:rgba(255,255,255,.04);color:var(--text)}
-  .btn-ghost:hover{border-color:rgba(255,255,255,.3)}
+  .btn-ghost{background:rgba(8,5,11,.5);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:var(--text);border-color:rgba(255,255,255,.22)}
+  .btn-ghost:hover{border-color:rgba(255,255,255,.4);background:rgba(8,5,11,.65)}
   .btn svg{width:18px;height:18px;flex:none}
 
   /* Section shells */
@@ -458,8 +456,10 @@ input,textarea{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:te
   .discog-group-heading{
     grid-column:1/-1;margin:10px 0 2px;padding-top:30px;border-top:1px solid #ededed;
     font-family:'Master Victory',cursive;font-style:italic;font-weight:400;
-    font-size:clamp(20px,2.8vw,27px);letter-spacing:.01em;color:#0e7a37;
+    font-size:clamp(20px,2.8vw,27px);letter-spacing:.01em;color:#1989ae;
+    transition:color .2s ease;cursor:default;
   }
+  .discog-group-heading:hover{color:#000}
   .discog-group-heading-first{border-top:none;padding-top:0;margin-top:0}
 
   /* Album page (MJ-style single release page) */
@@ -741,19 +741,17 @@ input,textarea{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:te
 
 <header class="hero">
   <div class="hero-inner">
-    <div class="hero-card">
-      <span class="eyebrow"><span class="dot"></span>New single — "Is It Love" out now</span>
-      <h1 class="title">VALENTINA<br>BLACK</h1>
-      <p class="tagline">Stream the latest release everywhere and follow along for new music and shows.</p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="#listen">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-          Listen Now
-        </a>
-        <a class="btn btn-ghost" href="https://bnds.us/vsk3fb" target="_blank" rel="noopener">
-          Tour Dates
-        </a>
-      </div>
+    <span class="eyebrow"><span class="dot"></span>New single — "Is It Love" out now</span>
+    <h1 class="title">VALENTINA<br>BLACK</h1>
+    <p class="tagline">Stream the latest release everywhere and follow along for new music and shows.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#listen">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        Listen Now
+      </a>
+      <a class="btn btn-ghost" href="https://bnds.us/vsk3fb" target="_blank" rel="noopener">
+        Tour Dates
+      </a>
     </div>
   </div>
 </header>
