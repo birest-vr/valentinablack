@@ -312,11 +312,6 @@ input,textarea{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:te
   .section-head{margin-bottom:44px;text-align:center}
   #listen{padding-top:32px}
   #listen .section-head{margin-bottom:22px}
-  .twitter-feed-embed{max-width:560px;margin:0 auto}
-  .feed-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;align-items:start}
-  .feed-col-title{text-align:center;font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-dim);margin-bottom:14px}
-  .youtube-feed-embed iframe{width:100%;border-radius:10px}
-  @media (max-width:900px){ .feed-grid{grid-template-columns:1fr;gap:40px} }
   .facebook-follow-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:40px 24px;display:flex;flex-direction:column;align-items:center;text-align:center;min-height:600px;justify-content:center;gap:14px}
   .fb-follow-icon{width:64px;height:64px;border-radius:50%;background:#1877F2;display:flex;align-items:center;justify-content:center}
   .fb-follow-name{font-weight:700;font-size:18px;color:var(--text)}
@@ -415,7 +410,7 @@ input,textarea{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:te
   }
   @media (max-width:820px){ .discog-grid{grid-template-columns:repeat(2,1fr)} }
   @media (max-width:480px){ .discog-grid{grid-template-columns:1fr} }
-  .discog-card{display:block;transition:transform .25s ease}
+  .discog-card{display:block;transition:transform .25s ease;text-align:center}
   .discog-card:hover{transform:translateY(-4px)}
   .discog-cover{
     position:relative;aspect-ratio:1/1;border-radius:6px;
@@ -459,10 +454,10 @@ input,textarea{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:te
     font-family:'Master Victory',cursive;font-style:italic;font-weight:400;
     font-size:clamp(17px,2.6vw,24px);line-height:1.15;color:#8be9a8;opacity:.9;
   }
-  .discog-title{font-family:'Playfair Display',Georgia,'Times New Roman',serif;font-style:normal;font-weight:700;font-size:26px;margin:0 0 10px;color:var(--text)}
+  .discog-title{font-family:'Playfair Display',Georgia,'Times New Roman',serif;font-style:normal;font-weight:700;font-size:clamp(26px,2.6vw,32px);margin:0 0 10px;color:var(--text)}
   .discog-year{display:none}
   .discog-more{
-    display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;font-size:11px;font-weight:600;
     letter-spacing:.14em;text-transform:uppercase;color:#7a7a7a;
   }
   .discog-more svg{width:16px;height:16px;transition:transform .2s ease}
@@ -518,6 +513,39 @@ input,textarea{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:te
   }
   .discog-group-heading:hover{color:#000}
   .discog-group-heading-first{border-top:none;padding-top:0;margin-top:0}
+
+  .listen-footer{padding:56px 24px 40px;text-align:center;border-top:1px solid #ededed}
+  .listen-footer-signup{
+    display:inline-flex;align-items:center;gap:14px;background:none;border:none;cursor:pointer;
+    font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-weight:600;
+    font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:#1a1512;padding:0 0 40px;
+  }
+  .listen-footer-signup-arrow{
+    width:34px;height:34px;border-radius:50%;border:1px solid #cfcfcf;display:flex;align-items:center;
+    justify-content:center;font-size:16px;transition:border-color .2s,transform .2s,background .2s;
+  }
+  .listen-footer-signup:hover .listen-footer-signup-arrow{border-color:#1989ae;color:#1989ae;transform:translateX(3px)}
+  .listen-footer-logo{
+    font-family:'Master Victory',cursive;font-style:italic;font-weight:400;
+    font-size:clamp(30px,5vw,46px);color:#1989ae;margin-bottom:26px;
+  }
+  .listen-footer-social{display:flex;justify-content:center;gap:12px;margin-bottom:30px}
+  .listen-footer-social a{
+    width:42px;height:42px;border-radius:50%;border:1px solid #d8d8d8;display:flex;align-items:center;
+    justify-content:center;transition:border-color .2s,transform .2s;color:#1a1512;
+  }
+  .listen-footer-social svg{width:18px;height:18px;fill:#1a1512}
+  .listen-footer-social a:hover{border-color:#1989ae;transform:translateY(-2px)}
+  .listen-footer-social a:hover svg{fill:#1989ae}
+  .listen-footer-links{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:22px 26px;margin-bottom:26px;
+  }
+  .listen-footer-links a{
+    font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-weight:600;
+    font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#1a1512;text-decoration:none;
+  }
+  .listen-footer-links a:hover{color:#1989ae}
+  .listen-footer-copy{font-size:12px;color:#8a8a8a;margin:0}
 
   /* Album page (MJ-style single release page) */
   .album-hero{
@@ -778,7 +806,6 @@ input,textarea{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:te
     <a href="index.html" class="brush">Home</a>
     <a href="#listen" class="brush">Listen</a>
     <a href="#music" class="brush">Music</a>
-    <a href="#feed" class="brush">Feed</a>
     <a href="blog.html" class="brush">Blog</a>
     <a href="biography.html" class="brush">Biography</a>
     <a href="press-archive.html" class="brush">Press Archive</a>
@@ -812,7 +839,6 @@ input,textarea{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:te
   <a href="index.html" class="brush">Home</a>
   <a href="#listen" class="brush">Listen</a>
   <a href="#music" class="brush">Music</a>
-  <a href="#feed" class="brush">Feed</a>
   <a href="blog.html" class="brush">Blog</a>
   <a href="biography.html" class="brush">Biography</a>
   <a href="press-archive.html" class="brush">Press Archive</a>
@@ -872,7 +898,6 @@ input,textarea{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:te
 
     <div class="discog-grid" id="discog-grid">
 
-      <div class="discog-group-heading discog-group-heading-first"><span>Valentina Black — Pop Artist</span></div>
 
       <a class="discog-card" data-order="1" data-year="2021" data-title="Say You Love The World" href="album-say-you-love-the-world.html">
         <div class="discog-cover"><img class="discog-vinyl" src="assets/vinyl.svg" alt="" aria-hidden="true"><div class="discog-cover-face"><img src="assets/say-you-love-the-world-cover.jpg" alt="Say You Love The World — single cover art"></div></div>
@@ -1031,146 +1056,34 @@ input,textarea{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:te
     </div>
   </section>
 
-  <section id="follow" class="wrap">
-    <div class="listen-sub-head">
-      <span>Follow &amp; Stream Everywhere</span>
+  <section id="listen-footer" class="wrap listen-footer">
+    <button type="button" class="listen-footer-signup nav-newsletter-btn">
+      <span class="listen-footer-signup-arrow" aria-hidden="true">&#8594;</span>
+      <span>Sign Up for Newsletter</span>
+    </button>
+    <div class="listen-footer-logo">Valentina Black</div>
+    <div class="listen-footer-social">
+      <a href="https://www.facebook.com/ValentinaBlackOfficial/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>
+      <a href="https://www.instagram.com/valentinablackoff" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.012-3.584.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.058 1.645-.07 4.849-.07zm0-2.163c-3.259 0-3.667.014-4.947.07-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+      <a href="https://twitter.com/Valentina_Black" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7.6 8.7L23 22h-6.8l-5.3-6.9L4.8 22H1.7l8.1-9.3L1 2h7l4.8 6.3L18.9 2Zm-1.2 18h1.9L7.4 4H5.4l12.3 16Z"/></svg></a>
+      <a href="https://www.tiktok.com/@valentinablackoff" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.31 1.38V7.3s-1.88.09-3.24-1.48z"/></svg></a>
+      <a href="https://www.youtube.com/@ValentinaBlack" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.5V8.5L15.8 12l-6.2 3.5z"/></svg></a>
     </div>
-    <div class="platform-grid">
-
-      <a class="stamp" href="https://open.spotify.com/artist/4jryrlXweUeaEBMSqma4fV" target="_blank" rel="noopener">
-        <span class="stamp-top">
-          <span class="stamp-icon"><svg viewBox="0 0 24 24" fill="#1db954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.52 17.34a.75.75 0 0 1-1.03.25c-2.82-1.72-6.37-2.11-10.55-1.16a.75.75 0 1 1-.33-1.46c4.58-1.04 8.5-.6 11.66 1.34.36.22.47.68.25 1.03zm1.47-3.27a.94.94 0 0 1-1.29.31c-3.23-1.99-8.15-2.56-11.97-1.4a.94.94 0 1 1-.55-1.8c4.37-1.33 9.8-.68 13.5 1.6.44.27.58.85.31 1.29zm.13-3.4C15.98 8.4 9.6 8.18 5.9 9.32a1.13 1.13 0 1 1-.66-2.16c4.25-1.3 11.32-1.05 15.8 1.62a1.13 1.13 0 1 1-1.12 1.96z"/></svg></span>
-          <span class="stamp-go">↗</span>
-        </span>
-        <span class="stamp-name">Spotify</span>
-        <span class="stamp-underline"></span>
-        <span class="stamp-sub">Follow &amp; stream</span>
-      </a>
-
-      <a class="stamp" href="https://music.apple.com/us/artist/valentina-black/274276367" target="_blank" rel="noopener">
-        <span class="stamp-top">
-          <span class="stamp-icon"><svg viewBox="0 0 24 24" fill="#1db954"><path d="M23.99 6.24a5.6 5.6 0 0 0-.14-1.28 4.7 4.7 0 0 0-.44-1.22 4.53 4.53 0 0 0-1.98-1.98 4.7 4.7 0 0 0-1.22-.44 6.35 6.35 0 0 0-1.36-.15c-.06 0-.11-.01-.17-.02H5.32c-.16.01-.32.02-.48.03-.34.02-.68.05-1.01.11-.34.06-.67.16-.98.3-.62.28-1.16.68-1.6 1.19-.44.51-.75 1.1-.92 1.75-.09.32-.14.65-.17.98-.02.24-.03.48-.03.72v13.09c0 .24.01.48.03.72.03.33.08.66.17.98.17.65.48 1.24.92 1.75.44.51.98.91 1.6 1.19.31.14.64.24.98.3.33.06.67.09 1.01.11.16.01.32.02.48.03h13.36c.16-.01.32-.02.48-.03.34-.02.68-.05 1.01-.11.34-.06.67-.16.98-.3.62-.28 1.16-.68 1.6-1.19.44-.51.75-1.1.92-1.75.09-.32.14-.65.17-.98.02-.24.03-.48.03-.72V6.24zM16.6 8.6c.01.86-.28 1.6-.86 2.22-.44.47-1 .75-1.66.83l-.01-.02c-.02-.72.24-1.4.75-1.98.5-.58 1.12-.9 1.78-.95v.01c0-.04 0-.07 0-.11zm-3.68 2.8c.66 0 1.36.28 1.94.79.05.04.09.09.13.13-.05.03-.1.06-.14.09-.62.42-1.03.99-1.03 1.75 0 .87.55 1.47 1.24 1.8-.14.4-.32.79-.55 1.14-.31.48-.63.96-1.13.97-.48.01-.64-.29-1.2-.29-.55 0-.73.28-1.19.3-.48.02-.85-.51-1.16-.99-.63-.98-1.12-2.77-.47-3.98.32-.6.9-.98 1.53-.99.46-.01.9.31 1.19.31.28 0 .82-.38 1.38-.32.05.01.15.02.28.05a2.7 2.7 0 0 0-.82.24z"/></svg></span>
-          <span class="stamp-go">↗</span>
-        </span>
-        <span class="stamp-name">Apple Music</span>
-        <span class="stamp-underline"></span>
-        <span class="stamp-sub">Follow &amp; stream</span>
-      </a>
-
-      <a class="stamp" href="https://www.youtube.com/@ValentinaBlack" target="_blank" rel="noopener">
-        <span class="stamp-top">
-          <span class="stamp-icon"><svg viewBox="0 0 24 24" fill="#1db954"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.55A3.02 3.02 0 0 0 .5 6.19 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.81 3.02 3.02 0 0 0 2.12 2.14C4.5 20.5 12 20.5 12 20.5s7.5 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.81zM9.55 15.57V8.43L15.82 12z"/></svg></span>
-          <span class="stamp-go">↗</span>
-        </span>
-        <span class="stamp-name">YouTube</span>
-        <span class="stamp-underline"></span>
-        <span class="stamp-sub">Videos &amp; visuals</span>
-      </a>
-
-      <a class="stamp" href="https://soundcloud.com/valentinablack" target="_blank" rel="noopener">
-        <span class="stamp-top">
-          <span class="stamp-icon"><svg viewBox="0 0 24 24" fill="#1db954"><path d="M1.5 15.5v-4a.5.5 0 0 1 1 0v4a.5.5 0 0 1-1 0zm2 1.5v-7a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0zm2 .6V9.4a.5.5 0 0 1 1 0v8.2a.5.5 0 0 1-1 0zm2 .2V8.8c0-.28.22-.5.5-.5s.5.22.5.5v9c0 .28-.22.5-.5.5s-.5-.22-.5-.5zm2.2.1V6.6c0-.28.22-.5.5-.5s.5.22.5.5v11.3a.5.5 0 0 1-1 0zm2.4-11.9c-.28 0-.5.22-.5.5v11.4c0 .28.22.5.5.5h8.9c1.93 0 3.5-1.57 3.5-3.5 0-1.8-1.36-3.28-3.11-3.48a4.6 4.6 0 0 0-4.02-4.02c-1.13-.1-2.2.2-3.07.8a4.9 4.9 0 0 0-1.4-1.9 4.6 4.6 0 0 0-.8-.3z"/></svg></span>
-          <span class="stamp-go">↗</span>
-        </span>
-        <span class="stamp-name">SoundCloud</span>
-        <span class="stamp-underline"></span>
-        <span class="stamp-sub">Full discography</span>
-      </a>
-
-      <a class="stamp" href="https://www.instagram.com/valentinablackoff" target="_blank" rel="noopener">
-        <span class="stamp-top">
-          <span class="stamp-icon"><svg viewBox="0 0 24 24" fill="#1db954"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.21 8.8 2.2 12 2.2zm0 1.8c-3.14 0-3.5.01-4.73.07-.96.04-1.48.2-1.83.34-.46.18-.78.39-1.13.73-.34.35-.55.67-.73 1.13-.14.35-.3.87-.34 1.83-.06 1.23-.07 1.6-.07 4.73s.01 3.5.07 4.73c.04.96.2 1.48.34 1.83.18.46.39.78.73 1.13.35.34.67.55 1.13.73.35.14.87.3 1.83.34 1.23.06 1.6.07 4.73.07s3.5-.01 4.73-.07c.96-.04 1.48-.2 1.83-.34.46-.18.78-.39 1.13-.73.34-.35.55-.67.73-1.13.14-.35.3-.87.34-1.83.06-1.23.07-1.6.07-4.73s-.01-3.5-.07-4.73c-.04-.96-.2-1.48-.34-1.83a3 3 0 0 0-.73-1.13 3 3 0 0 0-1.13-.73c-.35-.14-.87-.3-1.83-.34-1.23-.06-1.6-.07-4.73-.07zm0 4.06a5.94 5.94 0 1 1 0 11.88 5.94 5.94 0 0 1 0-11.88zm0 1.8a4.14 4.14 0 1 0 0 8.28 4.14 4.14 0 0 0 0-8.28zm6.17-1.99a1.39 1.39 0 1 1-2.77 0 1.39 1.39 0 0 1 2.77 0z"/></svg></span>
-          <span class="stamp-go">↗</span>
-        </span>
-        <span class="stamp-name">Instagram</span>
-        <span class="stamp-underline"></span>
-        <span class="stamp-sub">@valentinablackoff</span>
-      </a>
-
-      <a class="stamp" href="https://www.tiktok.com/@valentinablackoff" target="_blank" rel="noopener">
-        <span class="stamp-top">
-          <span class="stamp-icon"><svg viewBox="0 0 24 24" fill="#1db954"><path d="M16.6 5.82c-.7-.77-1.09-1.77-1.09-2.82h-3.1v13.44a2.59 2.59 0 1 1-1.83-2.48v-3.16a5.7 5.7 0 1 0 4.93 5.65V9.4a6.9 6.9 0 0 0 4.03 1.29V7.6c-1.06 0-2.05-.32-2.94-.86-.36-.22-.71-.5-1-.92z"/></svg></span>
-          <span class="stamp-go">↗</span>
-        </span>
-        <span class="stamp-name">TikTok</span>
-        <span class="stamp-underline"></span>
-        <span class="stamp-sub">@valentinablackoff</span>
-      </a>
-
-      <a class="stamp" href="https://www.facebook.com/ValentinaBlackOfficial/" target="_blank" rel="noopener">
-        <span class="stamp-top">
-          <span class="stamp-icon"><svg viewBox="0 0 24 24" fill="#1db954"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg></span>
-          <span class="stamp-go">↗</span>
-        </span>
-        <span class="stamp-name">Facebook</span>
-        <span class="stamp-underline"></span>
-        <span class="stamp-sub">Official page</span>
-      </a>
-
-      <a class="stamp" href="https://twitter.com/Valentina_Black" target="_blank" rel="noopener">
-        <span class="stamp-top">
-          <span class="stamp-icon"><svg viewBox="0 0 24 24" fill="#1db954"><path d="M18.24 2H21l-6.5 7.43L22.15 22h-6.4l-5-6.53L4.9 22H2.13l7-8L1.4 2h6.56l4.53 5.98L18.24 2zm-1.12 18.17h1.77L7 3.73H5.1l12.02 16.44z"/></svg></span>
-          <span class="stamp-go">↗</span>
-        </span>
-        <span class="stamp-name">X / Twitter</span>
-        <span class="stamp-underline"></span>
-        <span class="stamp-sub">@Valentina_Black</span>
-      </a>
-
-      <a class="stamp" href="https://www.deezer.com/en/artist/73347" target="_blank" rel="noopener">
-        <span class="stamp-top">
-          <span class="stamp-icon"><svg viewBox="0 0 24 24" fill="#1db954"><path d="M2 15h3.2v3H2v-3zm5.4 0h3.2v3H7.4v-3zm5.4 0h3.2v3h-3.2v-3zm5.4 0H21v3h-3.2v-3zM2 10.2h3.2v3.2H2v-3.2zm5.4 0h3.2v3.2H7.4v-3.2zm5.4 0h3.2v3.2h-3.2v-3.2zm5.4 0H21v3.2h-3.2v-3.2zm-16.2-5h3.2v3.2H2V5.2zm5.4 0h3.2v3.2H7.4V5.2zm5.4 0h3.2v3.2h-3.2V5.2zm5.4 0H21v3.2h-3.2V5.2z"/></svg></span>
-          <span class="stamp-go">↗</span>
-        </span>
-        <span class="stamp-name">Deezer</span>
-        <span class="stamp-underline"></span>
-        <span class="stamp-sub">Follow &amp; stream</span>
-      </a>
-
-      <a class="stamp" href="https://tidal.com/artist/4885669/u" target="_blank" rel="noopener">
-        <span class="stamp-top">
-          <span class="stamp-icon"><svg viewBox="0 0 24 24" fill="#1db954"><path d="M12 2.4 8.4 6l3.6 3.6L15.6 6 12 2.4zM4.8 9.2 1.2 12.8l3.6 3.6 3.6-3.6-3.6-3.6zm7.2 0-3.6 3.6 3.6 3.6 3.6-3.6-3.6-3.6zm7.2 0-3.6 3.6 3.6 3.6 3.6-3.6-3.6-3.6zM12 16.4l-3.6 3.6L12 23.6l3.6-3.6L12 16.4z"/></svg></span>
-          <span class="stamp-go">↗</span>
-        </span>
-        <span class="stamp-name">Tidal</span>
-        <span class="stamp-underline"></span>
-        <span class="stamp-sub">Follow &amp; stream</span>
-      </a>
-
+    <div class="listen-footer-links">
+      <a href="index.html">Home</a>
+      <a href="#listen">Listen</a>
+      <a href="#music">Music</a>
+      <a href="blog.html">Blog</a>
+      <a href="biography.html">Biography</a>
+      <a href="press-archive.html">Press Archive</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#tour">Tour</a>
+      <a href="#merch">Merch</a>
+      <a href="#about">Contact</a>
     </div>
+    <p class="listen-footer-copy">&copy; 2026 Valentina Black. All rights reserved.</p>
   </section>
 
-  <section id="feed" class="wrap">
-    <div class="section-head">
-      <span class="kicker">Live Feed</span>
-      <h2>Latest from X, YouTube &amp; Facebook</h2>
-    </div>
-    <div class="feed-grid">
-      <div class="feed-col">
-        <div class="feed-col-title">X</div>
-        <div class="twitter-feed-embed">
-          <a class="twitter-timeline" data-height="600" data-theme="dark" href="https://twitter.com/Valentina_Black?ref_src=twsrc%5Etfw">Tweets by Valentina_Black</a>
-        </div>
-      </div>
-      <div class="feed-col">
-        <div class="feed-col-title">YouTube</div>
-        <div class="youtube-feed-embed">
-          <iframe width="100%" height="600" src="https://www.youtube.com/embed/videoseries?list=UUz9lU3NhLrutEzZDbXpMqcg" title="Valentina Black — Latest videos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
-        </div>
-      </div>
-      <div class="feed-col">
-        <div class="feed-col-title">Facebook</div>
-        <div class="facebook-follow-card">
-          <div class="fb-follow-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="34" height="34" fill="#fff"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06C2 17.08 5.66 21.23 10.44 22v-7.03H7.9v-2.91h2.54V9.85c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.88h2.78l-.44 2.91h-2.34V22C18.34 21.23 22 17.08 22 12.06z"/></svg>
-          </div>
-          <div class="fb-follow-name">Valentina Black</div>
-          <div class="fb-follow-meta">Pagina ufficiale Facebook · 2,1 mln follower</div>
-          <a class="fb-follow-btn" href="https://www.facebook.com/ValentinaBlackOfficial/" target="_blank" rel="noopener">Segui su Facebook</a>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <section id="music" class="wrap">
     <div class="release">
