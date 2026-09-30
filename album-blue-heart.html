@@ -93,6 +93,9 @@ footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;co
 .album-cover-box.is-clickable::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 50%, transparent 55%, rgba(0,0,0,.18) 100%);opacity:0;transition:opacity .2s ease;pointer-events:none}
 .album-cover-box.is-clickable:hover::after{opacity:1}
 .vinyl-hint{display:block;margin-top:10px;font-size:12px;color:rgba(255,255,255,.6)}
+.post-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:8px 0 28px}
+.post-gallery img{width:100%;height:100%;aspect-ratio:1/1;object-fit:cover;border-radius:8px;box-shadow:0 14px 30px -10px rgba(0,0,0,.3);cursor:zoom-in;display:block}
+@media (max-width:560px){ .post-gallery{grid-template-columns:1fr 1fr} }
 .vinyl-back-thumb{display:none}
 .tracklist-side{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-2);margin:22px 0 6px}
 .tracklist-side:first-child{margin-top:0}
@@ -188,6 +191,12 @@ footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;co
     <p>Yo Soy Tu Amigo</p>
   </div>
   <div class="note"><strong>Credits:</strong> All tracks written and produced by Valentina Black. Artwork by VB. Special thanks to Mara, Enzo, Bruno M. and Pi.</div>
+  <h2 class="lyrics-heading">Gallery</h2>
+  <div class="post-gallery">
+    <img src="assets/blue-heart-photo-1.jpg" alt="Blue Heart vinyl label artwork close-up">
+    <img src="assets/blue-heart-photo-2.jpg" alt="Blue Heart vinyl label artwork close-up">
+    <img src="assets/blue-heart-photo-3.jpg" alt="Blue Heart vinyl label artwork on stones with flower">
+  </div>
   <div class="share-row">
     <span class="share-label">Share</span>
     <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fvalentinablack.com%2Falbum-blue-heart.html" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook" title="Share on Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>
@@ -253,7 +262,8 @@ footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;co
     var backImg = document.getElementById('vinylBackThumb');
     var coverBox = document.getElementById('vinylCover');
     if(!frontImg || !backImg || !coverBox) return;
-    var imgs = [frontImg, backImg];
+    var galleryImgs = Array.from(document.querySelectorAll('.post-gallery img'));
+    var imgs = [frontImg, backImg].concat(galleryImgs);
     var overlay = document.createElement('div');
     overlay.className = 'lightbox-overlay';
     overlay.innerHTML = '<button class="lightbox-close" aria-label="Close">&times;</button>' +
@@ -352,6 +362,9 @@ footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;co
     function close(){ resetZoom(); overlay.classList.remove('open'); document.body.style.overflow=''; }
     coverBox.addEventListener('click', function(){ open(0); });
     coverBox.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); open(0); } });
+    galleryImgs.forEach(function(img, gi){
+      img.addEventListener('click', function(){ open(2 + gi); });
+    });
     overlay.querySelector('.lightbox-close').addEventListener('click', close);
     overlay.querySelector('.lightbox-prev').addEventListener('click', function(){ show(current-1); });
     overlay.querySelector('.lightbox-next').addEventListener('click', function(){ show(current+1); });
