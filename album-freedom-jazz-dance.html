@@ -95,6 +95,28 @@ footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;co
 .share-btn:hover{background:var(--accent-2);border-color:var(--accent-2);color:#fff;transform:translateY(-2px)}
 .share-copied{font-size:12px;font-weight:600;color:var(--accent-2);opacity:0;transition:opacity .25s ease}
 .share-copied.show{opacity:1}
+.post-gallery{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:32px 0}
+.post-gallery .g-box{display:block;overflow:hidden;box-shadow:0 12px 28px -10px rgba(0,0,0,.3);cursor:zoom-in;border-radius:6px}
+.post-gallery img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/2;display:block;transition:transform .4s ease}
+.post-gallery .g-box:hover img{transform:scale(1.04)}
+@media (max-width:560px){ .post-gallery{grid-template-columns:1fr} }
+.lightbox-overlay{position:fixed;inset:0;background:rgba(6,4,8,.95);z-index:1000;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .2s ease;overflow:hidden}
+.lightbox-overlay.open{opacity:1;visibility:visible}
+.lightbox-img{position:relative;z-index:1;max-width:85vw;max-height:80vh;object-fit:contain;box-shadow:0 30px 70px -20px rgba(0,0,0,.7);cursor:zoom-out;user-select:none}
+.lightbox-close,.lightbox-nav{position:fixed;z-index:2;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:50%;width:46px;height:46px;display:flex;align-items:center;justify-content:center;font-size:24px;line-height:1;cursor:pointer;transition:background .15s ease}
+.lightbox-close:hover,.lightbox-nav:hover{background:rgba(255,255,255,.2)}
+.lightbox-close{top:20px;right:20px}
+.lightbox-nav{top:50%;transform:translateY(-50%)}
+.lightbox-prev{left:16px}
+.lightbox-next{right:16px}
+.lightbox-counter{position:fixed;z-index:2;bottom:22px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.75);font-size:13px;font-weight:600;letter-spacing:.04em}
+.lightbox-hint{position:fixed;z-index:2;bottom:22px;right:22px;color:rgba(255,255,255,.55);font-size:11px;letter-spacing:.03em}
+@media (max-width:600px){
+  .lightbox-close,.lightbox-nav{width:38px;height:38px;font-size:20px}
+  .lightbox-prev{left:6px}
+  .lightbox-next{right:6px}
+  .lightbox-hint{display:none}
+}
 </style>
 </head>
 <body>
@@ -134,7 +156,7 @@ footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;co
 <div class="album-hero">
   <span class="album-kicker">with Jimmy Carl Black &middot; Azzurra Music &middot; 2008</span>
   <h1>Freedom Jazz Dance</h1>
-  <div class="album-cover-box placeholder"><span>Freedom<br>Jazz Dance</span></div>
+  <div class="album-cover-box"><img src="assets/freedom-jazz-dance-cover.jpg" alt="Freedom Jazz Dance by Jimmy Carl Black, featuring Valentina Black — official cover art"></div>
 </div>
 
 <div class="album-store-bar">
@@ -144,7 +166,15 @@ footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;co
 
 <div class="album-body">
   <div class="meta-row"><div><b>With:</b> Jimmy Carl Black (Frank Zappa &amp; the Mothers of Invention)</div><div><b>Label:</b> Azzurra Music</div><div><b>Released:</b> 2008</div></div>
-  <p>Valentina&rsquo;s professional recording debut: Jimmy Carl Black, drummer of Frank Zappa&rsquo;s Mothers of Invention, recruited her as vocalist and Hammond organist, recording under the stage name Valentina Black.</p><div class="note"><strong>Cover art not yet on file.</strong> Physical CD booklet photos are documented in the research dossier; a clean product-shot cover has not yet been supplied for the site.</div>
+  <p>Valentina&rsquo;s professional recording debut: Jimmy Carl Black, drummer of Frank Zappa&rsquo;s Mothers of Invention, recruited her as vocalist and Hammond organist, recording under the stage name Valentina Black.</p>
+  <p><strong>Credits:</strong> Jimmy Carl Black, Valentina Black, Cristina Mazza, Daniele D&rsquo;Agaro, Bruno Marini, Ella Devil, DJ T &ldquo;The Thief&rdquo;.</p>
+  <h2 class="lyrics-heading">Gallery</h2>
+  <div class="post-gallery">
+    <div class="g-box"><img src="assets/freedom-jazz-dance-photo-1.jpg" alt="Freedom Jazz Dance CD booklet photo 1"></div>
+    <div class="g-box"><img src="assets/freedom-jazz-dance-photo-2.jpg" alt="Freedom Jazz Dance CD booklet photo 2"></div>
+    <div class="g-box"><img src="assets/freedom-jazz-dance-photo-3.jpg" alt="Freedom Jazz Dance CD booklet photo 3"></div>
+    <div class="g-box"><img src="assets/freedom-jazz-dance-photo-4.jpg" alt="Freedom Jazz Dance CD booklet photo 4"></div>
+  </div>
   <div class="share-row">
     <span class="share-label">Share</span>
     <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fvalentinablack.com%2Falbum-freedom-jazz-dance.html" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook" title="Share on Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>
@@ -202,6 +232,58 @@ footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;co
     window.addEventListener('resize', function(){
       if (window.innerWidth > 640) closeMenu();
     });
+  })();
+</script>
+<script>
+  (function(){
+    var imgs = Array.from(document.querySelectorAll('.post-gallery .g-box img'));
+    if(!imgs.length) return;
+    var overlay = document.createElement('div');
+    overlay.className = 'lightbox-overlay';
+    overlay.innerHTML = '<button class="lightbox-close" aria-label="Close">&times;</button>' +
+      '<button class="lightbox-nav lightbox-prev" aria-label="Previous image">&#8249;</button>' +
+      '<img class="lightbox-img" src="" alt="">' +
+      '<button class="lightbox-nav lightbox-next" aria-label="Next image">&#8250;</button>' +
+      '<div class="lightbox-counter"></div>' +
+      '<div class="lightbox-hint">Click the photo, or anywhere outside it, to close</div>';
+    document.body.appendChild(overlay);
+    var imgEl = overlay.querySelector('.lightbox-img');
+    var counterEl = overlay.querySelector('.lightbox-counter');
+    var current = 0;
+
+    function show(i){
+      current = (i + imgs.length) % imgs.length;
+      imgEl.src = imgs[current].currentSrc || imgs[current].src;
+      imgEl.alt = imgs[current].alt || '';
+      counterEl.textContent = (current+1) + ' / ' + imgs.length;
+    }
+    function open(i){ show(i); overlay.classList.add('open'); document.body.style.overflow='hidden'; }
+    function close(){ overlay.classList.remove('open'); document.body.style.overflow=''; }
+    imgs.forEach(function(img, i){
+      img.closest('.g-box').addEventListener('click', function(){ open(i); });
+    });
+    imgEl.addEventListener('click', close);
+    overlay.querySelector('.lightbox-close').addEventListener('click', close);
+    overlay.querySelector('.lightbox-prev').addEventListener('click', function(e){ e.stopPropagation(); show(current-1); });
+    overlay.querySelector('.lightbox-next').addEventListener('click', function(e){ e.stopPropagation(); show(current+1); });
+    overlay.addEventListener('click', function(e){ if(e.target === overlay) close(); });
+    document.addEventListener('keydown', function(e){
+      if(!overlay.classList.contains('open')) return;
+      if(e.key === 'Escape') close();
+      if(e.key === 'ArrowLeft') show(current-1);
+      if(e.key === 'ArrowRight') show(current+1);
+    });
+    var touchStartX = null;
+    imgEl.addEventListener('touchstart', function(e){ touchStartX = e.touches[0].clientX; }, {passive:true});
+    imgEl.addEventListener('touchend', function(e){
+      if(touchStartX === null) return;
+      var dx = e.changedTouches[0].clientX - touchStartX;
+      if(Math.abs(dx) > 40){
+        e.preventDefault();
+        if(dx > 0) show(current-1); else show(current+1);
+      }
+      touchStartX = null;
+    }, {passive:false});
   })();
 </script>
 <script>
