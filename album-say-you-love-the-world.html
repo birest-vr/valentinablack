@@ -80,7 +80,7 @@ img{max-width:100%;display:block}
 
 body.menu-open{overflow:hidden}
 
-.album-hero{padding:120px 24px 56px;text-align:center;position:relative;background:linear-gradient(180deg, var(--album-c1,#182a1e) 0%, #ffffff 88%)}
+.album-hero{padding:120px 24px 0;text-align:center;position:relative;background:var(--album-c1,#182a1e)}
 .album-back-top{position:absolute;top:78px;left:24px;display:inline-flex;align-items:center;gap:12px;color:#fff;opacity:.9;transition:opacity .2s ease;z-index:2}
 .album-back-top:hover{opacity:1}
 .album-back-top .back-circle{width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.6);display:flex;align-items:center;justify-content:center;flex:none;box-sizing:border-box}
@@ -89,7 +89,8 @@ body.menu-open{overflow:hidden}
 @media (max-width:640px){ .album-back-top{top:76px;left:16px} .album-back-top .back-circle{width:36px;height:36px} .album-back-top .back-circle svg{width:15px;height:15px} }
 .album-kicker{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.75);display:block;margin-bottom:14px}
 .album-hero h1{font-family:'Master Victory',cursive;font-style:italic;font-weight:400;font-size:clamp(38px,8vw,68px);margin:0 0 40px;color:#fff}
-.album-cover-box{width:min(400px,72vw);aspect-ratio:1/1;margin:0 auto;position:relative;overflow:visible}
+.album-cover-box{width:min(400px,72vw);aspect-ratio:1/1;margin:0 auto -190px;position:relative;overflow:visible}
+@media (max-width:640px){ .album-cover-box{margin-bottom:-120px} }
 .album-cover-box.placeholder{display:flex;align-items:center;justify-content:center;padding:30px;text-align:center;background:radial-gradient(120% 140% at 20% 0%, rgba(29,185,84,.18), transparent 60%), linear-gradient(150deg,#1b1224,#0c0710);border-radius:6px}
 .album-cover-box.placeholder span{font-family:'Master Victory',cursive;font-style:italic;font-size:clamp(22px,4vw,32px);color:#8be9a8}
 .album-cover-box .discog-vinyl{position:absolute;top:5%;left:5%;width:90%;height:90%;border-radius:50%;z-index:1;pointer-events:none;box-shadow:0 12px 30px rgba(0,0,0,.55);transform:translateX(0) rotate(0deg);transition:transform .5s cubic-bezier(.32,.2,.2,1)}

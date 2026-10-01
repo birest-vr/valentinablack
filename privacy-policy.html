@@ -42,25 +42,25 @@ input,textarea{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:te
   .nav{
     position:fixed;top:0;left:0;right:0;z-index:50;
     display:flex;align-items:center;justify-content:space-between;
-    padding:18px 24px;background:var(--album-c1,#241a30);border-bottom:1px solid rgba(255,255,255,.14);height:64px;box-sizing:border-box;
+    padding:18px 24px;background:#ffffff;border-bottom:1px solid #ededed;height:64px;box-sizing:border-box;
     transition:background .35s ease,border-color .35s ease;animation:navFadeIn .7s ease;
   }
   @keyframes navFadeIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
-  .nav.is-scrolled{background:var(--album-c1,#241a30);border-bottom:1px solid rgba(255,255,255,.14)}
+  .nav.is-scrolled{background:#ffffff;border-bottom:1px solid #ededed}
   .nav .brand{display:flex;align-items:center;gap:18px}
-  .nav .wordmark{font-weight:800;letter-spacing:.14em;font-size:14px;color:#fff;text-transform:uppercase;transition:opacity .2s ease}
+  .nav .wordmark{font-weight:800;letter-spacing:.14em;font-size:14px;color:#1a1512;text-transform:uppercase;transition:opacity .2s ease}
   .nav .wordmark:hover{opacity:.85}
   .nav .social-icons{display:flex;align-items:center;gap:13px}
-  .nav .social-icons a{color:#fff;opacity:.8;display:flex;transition:opacity .2s ease}
+  .nav .social-icons a{color:#1a1512;opacity:.75;display:flex;transition:opacity .2s ease}
   .nav .social-icons a:hover{opacity:1}
   .nav .social-icons svg{width:15px;height:15px;fill:currentColor;display:block}
   @media (max-width:900px){ .nav .social-icons{display:none} }
   .nav .links{display:flex;gap:26px;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
-  .nav .links a{opacity:.85;transition:opacity .2s;color:#fff;text-decoration:none}
+  .nav .links a{opacity:.85;transition:opacity .2s,color .2s;color:#1a1512;text-decoration:none}
   .nav .links a:hover{opacity:1}
   @media (max-width:640px){ .nav .links{display:none} }
 .nav-toggle{display:none;width:38px;height:38px;padding:0;margin:0;background:transparent;border:none;cursor:pointer;align-items:center;justify-content:center;position:relative;z-index:52}
-.nav-toggle span{display:block;position:absolute;left:7px;right:7px;height:2px;background:#fff;border-radius:2px;transition:transform .25s ease,opacity .2s ease,top .25s ease}
+.nav-toggle span{display:block;position:absolute;left:7px;right:7px;height:2px;background:#1a1512;border-radius:2px;transition:transform .25s ease,opacity .2s ease,top .25s ease}
 .nav-toggle span:nth-child(1){top:13px}
 .nav-toggle span:nth-child(2){top:19px}
 .nav-toggle span:nth-child(3){top:25px}
@@ -68,13 +68,13 @@ input,textarea{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:te
 .nav-toggle.is-open span:nth-child(2){opacity:0}
 .nav-toggle.is-open span:nth-child(3){top:19px;transform:rotate(-45deg)}
 @media (max-width:640px){ .nav-toggle{display:flex} }
-.mobile-menu{position:fixed;top:64px;left:0;right:0;z-index:49;background:var(--album-c1,#241a30);box-shadow:0 14px 26px rgba(0,0,0,.35);max-height:0;overflow:hidden;transition:max-height .32s ease}
+.mobile-menu{position:fixed;top:64px;left:0;right:0;z-index:49;background:#ffffff;box-shadow:0 14px 26px rgba(0,0,0,.12);max-height:0;overflow:hidden;transition:max-height .32s ease}
 .mobile-menu.is-open{max-height:80vh;overflow-y:auto}
-.mobile-menu a{display:block;padding:16px 24px;font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:15px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#fff;border-bottom:1px solid rgba(255,255,255,.14)}
+.mobile-menu a{display:block;padding:16px 24px;font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:15px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#1a1512;border-bottom:1px solid #ededed}
 .mobile-menu a:active,.mobile-menu a:hover{opacity:.8}
 .mobile-menu .mobile-social{display:flex;gap:18px;padding:18px 24px}
 .mobile-menu .mobile-social a{padding:0;border-bottom:none;display:flex}
-.mobile-menu .mobile-social svg{width:20px;height:20px;fill:#fff}
+.mobile-menu .mobile-social svg{width:20px;height:20px;fill:#1a1512}
   .nav .nav-newsletter-btn{display:flex;align-items:center;justify-content:center;width:29px;height:29px;border-radius:50%;background:#fff;border:none;color:#1a1512;cursor:pointer;padding:0;transition:transform .15s ease;margin-left:2px}
   .nav .nav-newsletter-btn:hover{transform:scale(1.08)}
   .nav .nav-newsletter-btn svg{width:14px;height:14px}
