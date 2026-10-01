@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Valentina Black — Contact</title>
+<meta name="description" content="Contact Valentina Black for booking requests, sponsorships and press inquiries.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://valentinablack.com/contact.html">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+<meta name="theme-color" content="#150a1c">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Rubik+Wet+Paint&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#ffffff; --accent:#1db954; --accent-2:#0e7a37;
+    --text:#1a1a1a; --text-dim:#6b6b6b; --card:#f4f4f4;
+    --border:#e8e8e8; --maxw:1120px;
+  }
+  @font-face{ font-family:'Master Victory'; src:url('assets/fonts/MasterVictory-Regular.ttf') format('truetype'); font-weight:400; font-style:normal; font-display:swap; }
+  @font-face{ font-family:'Master Victory'; src:url('assets/fonts/MasterVictory-Italic.ttf') format('truetype'); font-weight:400; font-style:italic; font-display:swap; }
+  *{box-sizing:border-box}
+img{-webkit-touch-callout:none;-webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;-o-user-drag:none;user-drag:none}
+body{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+input,textarea{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent-2)}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
+  @media (max-width:640px){ .wrap{padding:0 28px} }
+
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 24px;background:transparent;border-bottom:1px solid transparent;height:64px;box-sizing:border-box;
+    transition:background .35s ease,border-color .35s ease;animation:navFadeIn .7s ease;
+  }
+  @keyframes navFadeIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+  .nav.is-scrolled{background:var(--album-c1,#241a30);border-bottom:1px solid rgba(255,255,255,.14)}
+  .nav .brand{display:flex;align-items:center;gap:18px}
+  .nav .wordmark{font-weight:800;letter-spacing:.14em;font-size:14px;color:#fff;text-transform:uppercase;transition:opacity .2s ease}
+  .nav .wordmark:hover{opacity:.85}
+  .nav .social-icons{display:flex;align-items:center;gap:13px}
+  .nav .social-icons a{color:#fff;opacity:.8;display:flex;transition:opacity .2s ease}
+  .nav .social-icons a:hover{opacity:1}
+  .nav .social-icons svg{width:15px;height:15px;fill:currentColor;display:block}
+  @media (max-width:900px){ .nav .social-icons{display:none} }
+  .nav .links{display:flex;gap:26px;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+  .nav .links a{opacity:.85;transition:opacity .2s;color:#fff;text-decoration:none}
+  .nav .links a:hover{opacity:1}
+  @media (max-width:640px){ .nav .links{display:none} }
+.nav-toggle{display:none;width:38px;height:38px;padding:0;margin:0;background:transparent;border:none;cursor:pointer;align-items:center;justify-content:center;position:relative;z-index:52}
+.nav-toggle span{display:block;position:absolute;left:7px;right:7px;height:2px;background:#fff;border-radius:2px;transition:transform .25s ease,opacity .2s ease,top .25s ease}
+.nav-toggle span:nth-child(1){top:13px}
+.nav-toggle span:nth-child(2){top:19px}
+.nav-toggle span:nth-child(3){top:25px}
+.nav-toggle.is-open span:nth-child(1){top:19px;transform:rotate(45deg)}
+.nav-toggle.is-open span:nth-child(2){opacity:0}
+.nav-toggle.is-open span:nth-child(3){top:19px;transform:rotate(-45deg)}
+@media (max-width:640px){ .nav-toggle{display:flex} }
+.mobile-menu{position:fixed;top:64px;left:0;right:0;z-index:49;background:var(--album-c1,#241a30);box-shadow:0 14px 26px rgba(0,0,0,.35);max-height:0;overflow:hidden;transition:max-height .32s ease}
+.mobile-menu.is-open{max-height:80vh;overflow-y:auto}
+.mobile-menu a{display:block;padding:16px 24px;font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:15px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#fff;border-bottom:1px solid rgba(255,255,255,.14)}
+.mobile-menu a:active,.mobile-menu a:hover{opacity:.8}
+.mobile-menu .mobile-social{display:flex;gap:18px;padding:18px 24px}
+.mobile-menu .mobile-social a{padding:0;border-bottom:none;display:flex}
+.mobile-menu .mobile-social svg{width:20px;height:20px;fill:#fff}
+  .nav .nav-newsletter-btn{display:flex;align-items:center;justify-content:center;width:29px;height:29px;border-radius:50%;background:#fff;border:none;color:#1a1512;cursor:pointer;padding:0;transition:transform .15s ease;margin-left:2px}
+  .nav .nav-newsletter-btn:hover{transform:scale(1.08)}
+  .nav .nav-newsletter-btn svg{width:14px;height:14px}
+  .mobile-menu .nav-newsletter-btn{width:34px;height:34px;margin-left:4px}
+  .mobile-menu .nav-newsletter-btn svg{width:16px;height:16px}
+  .newsletter-modal-overlay{position:fixed;inset:0;z-index:1100;background:rgba(6,4,8,.82);display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;visibility:hidden;transition:opacity .25s ease;}
+  .newsletter-modal-overlay.open{opacity:1;visibility:visible}
+  .newsletter-modal{position:relative;width:100%;max-width:440px;background:#fff;border-radius:4px;padding:44px 36px 40px;text-align:center;box-shadow:0 40px 80px -20px rgba(0,0,0,.6)}
+  .newsletter-modal-close{position:absolute;top:14px;right:16px;background:none;border:none;font-size:26px;line-height:1;color:#1a1512;cursor:pointer;padding:4px}
+  .newsletter-modal h3{font-family:'Playfair Display',Georgia,'Times New Roman',serif;font-weight:700;font-size:30px;color:#1a1512;margin:0 0 22px;letter-spacing:.02em;text-transform:uppercase}
+  .newsletter-form{display:flex;flex-direction:column;gap:16px;text-align:left}
+  .newsletter-form label{font-size:13px;color:#1a1512;font-weight:600}
+  .newsletter-form input{width:100%;box-sizing:border-box;padding:11px 13px;border:1px solid #d8d8d8;border-radius:6px;font-size:14px;font-family:inherit;color:#1a1512}
+  .newsletter-form input:focus{outline:none;border-color:#1989ae}
+  .newsletter-required-note{font-size:11px;color:#8a8a8a;font-style:italic;margin:0}
+  .newsletter-submit{margin-top:4px;align-self:center;padding:12px 30px;border-radius:999px;border:1px solid #1a1512;background:#1a1512;color:#fff;font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:opacity .15s ease}
+  .newsletter-submit:hover{opacity:.85}
+  .newsletter-thanks{font-size:15px;color:#1a1512;margin:10px 0 0}
+
+body.menu-open{overflow:hidden}
+
+  .page{padding:120px 0 80px}
+  .page-title{font-family:'Master Victory',cursive;font-style:italic;font-weight:400;font-size:clamp(38px,8vw,68px);margin:0 0 10px;color:var(--text)}
+  .page-subtitle{color:var(--text-dim);font-size:16px;margin:0 0 32px;font-style:italic}
+
+  .layout{display:grid;grid-template-columns:1fr 300px;gap:44px;align-items:start}
+  @media (max-width:860px){ .layout{grid-template-columns:1fr} }
+
+  article{font-size:15.5px}
+  article :is(h2,h3){font-family:'Source Serif 4',Georgia,serif;font-weight:600;color:var(--text);scroll-margin-top:84px}
+  article h2{
+    font-size:24px;margin:40px 0 14px;padding-bottom:8px;
+    border-bottom:1px solid var(--border);
+  }
+  article h3{font-size:18px;margin:26px 0 10px}
+  article p{margin:0 0 14px;color:var(--text-dim)}
+  article p strong{color:var(--text)}
+  article ul{margin:0 0 14px;padding-left:22px;color:var(--text-dim)}
+  article li{margin-bottom:6px}
+  article li strong{color:var(--text)}
+  sup.cite{font-size:11px;color:var(--accent-2)}
+  sup.cite a{color:var(--accent-2);text-decoration:none}
+
+  aside{position:sticky;top:96px;display:flex;flex-direction:column;gap:20px}
+  .infobox{
+    background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;
+  }
+  .infobox .ib-photo{aspect-ratio:4/5;overflow:hidden;background:#000}
+  .infobox .ib-photo img{width:100%;height:100%;object-fit:cover}
+  .infobox .ib-name{padding:14px 16px 4px;font-weight:800;font-size:18px;text-align:center}
+  .infobox .ib-desc{padding:0 16px 14px;text-align:center;color:var(--text-dim);font-size:13px;font-style:italic}
+  .infobox dl{margin:0;padding:14px 16px;border-top:1px solid var(--border)}
+  .infobox dt{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--text-dim);margin-top:12px}
+  .infobox dt:first-child{margin-top:0}
+  .infobox dd{margin:2px 0 0;font-size:13.5px;color:var(--text)}
+
+  .toc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px 18px}
+  .toc-title{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--text-dim);margin:0 0 10px;font-weight:700}
+  .toc ol{margin:0;padding-left:18px;font-size:13.5px;color:var(--text-dim)}
+  .toc li{margin-bottom:6px}
+  .toc a{color:var(--text-dim);text-decoration:none}
+  .toc a:hover{color:var(--accent)}
+
+  .refs{font-size:13px;color:var(--text-dim);padding-left:22px}
+  .refs li{margin-bottom:8px}
+  .refs a{word-break:break-word}
+
+  .note{
+    background:rgba(29,185,84,.08);border:1px solid rgba(29,185,84,.3);border-radius:10px;
+    padding:12px 16px;font-size:13px;color:var(--text-dim);margin:0 0 30px;
+  }
+  .note strong{color:var(--text)}
+
+  footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;color:var(--text-dim);font-size:13px;background:var(--bg)}
+
+  .page .section-head{margin-bottom:44px;text-align:center}
+  .page .section-head .kicker{
+    font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+    color:#1989ae;margin-bottom:10px;display:block;
+  }
+  .page .section-head h2{
+    font-family:'Master Victory',cursive;font-style:italic;font-weight:400;
+    font-size:clamp(34px,5.4vw,48px);margin:0;letter-spacing:.01em;
+    background:linear-gradient(115deg,#1989ae 0%,#20acda 28%,#5fc6e8 50%,#b8e6f5 65%,#1989ae 100%);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#20acda;
+    transition:background .35s ease;
+  }
+  .page .section-head h2:hover{
+    background:linear-gradient(115deg,#cdf1ff 0%,#eaf9ff 50%,#cdf1ff 100%);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .about{
+    display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center;
+  }
+  @media (max-width:820px){ .about{grid-template-columns:1fr} }
+  .about-photo-col{display:flex;flex-direction:column}
+  .about-photo{
+    border-radius:18px;overflow:hidden;border:1px solid var(--border);
+    aspect-ratio:4/5;background:#0f0814;position:relative;
+  }
+  .about-photo img{width:100%;height:100%;object-fit:cover}
+  .about-text p{color:var(--text-dim);font-size:16px;max-width:60ch}
+  .contact-form{max-width:420px}
+  .contact-lead{color:var(--text-dim);font-size:15px;margin:0 0 20px}
+  .form-row{margin-bottom:14px;display:flex;flex-direction:column;gap:6px}
+  .form-row label{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-dim)}
+  .form-row input,.form-row textarea{
+    background:var(--card);border:1px solid var(--border);border-radius:10px;
+    padding:12px 14px;color:var(--text);font-family:inherit;font-size:14px;resize:vertical;
+  }
+  .form-row input:focus,.form-row textarea:focus{outline:none;border-color:var(--accent)}
+  .contact-form .btn{border:none;cursor:pointer;font-family:inherit;margin:4px auto 0;display:flex;justify-content:center;width:fit-content}
+  .contact-note{margin:12px 0 0;font-size:13px;color:var(--text-dim)}
+  .contact-title{
+    font-family:'Master Victory',cursive;font-style:italic;font-weight:400;font-size:clamp(32px,5vw,46px);margin:14px 0 16px;
+    color:#10b981;
+    background:linear-gradient(115deg,#065f46 0%,#34d399 28%,#10b981 50%,#6ee7b7 65%,#065f46 100%);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:14px 22px;border-radius:10px;
+    font-weight:700;font-size:14px;
+    border:1px solid var(--border);
+    transition:transform .15s ease, background .2s ease, border-color .2s ease;
+  }
+  .btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;border-color:transparent}
+
+</style>
+</head>
+<body>
+
+<nav class="nav" id="mainNav">
+  <div class="brand">
+    <a class="wordmark" href="index.html" style="text-decoration:none">VALENTINA BLACK</a>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/ValentinaBlackOfficial/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>
+      <a href="https://www.instagram.com/valentinablackoff" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.012-3.584.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.058 1.645-.07 4.849-.07zm0-2.163c-3.259 0-3.667.014-4.947.07-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+      <a href="https://twitter.com/Valentina_Black" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7.6 8.7L23 22h-6.8l-5.3-6.9L4.8 22H1.7l8.1-9.3L1 2h7l4.8 6.3L18.9 2Zm-1.2 18h1.9L7.4 4H5.4l12.3 16Z"/></svg></a>
+      <a href="https://www.tiktok.com/@valentinablackoff" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.31 1.38V7.3s-1.88.09-3.24-1.48z"/></svg></a>
+      <a href="https://www.youtube.com/@ValentinaBlack" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.5V8.5L15.8 12l-6.2 3.5z"/></svg></a><button type="button" class="nav-newsletter-btn" aria-label="Sign up for the newsletter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 5.5A1.5 1.5 0 0 1 3.5 4h17A1.5 1.5 0 0 1 22 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 18.5v-13Zm2.2.5 7.15 5.36a1 1 0 0 0 1.2 0L19.8 6H4.2Zm15.8 1.35-6.98 5.23a3 3 0 0 1-3.6 0L4.2 7.35V18h15.6V7.35Z"/></svg></button>
+    </div>
+  </div>  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="index.html#listen">Listen</a>
+    <a href="music.html">Music</a>
+    <a href="blog.html">Blog</a>
+    <a href="biography.html">Biography</a>
+    <a href="press-archive.html">Press Archive</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="merch.html">Merch</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Apri il menu" aria-expanded="false" aria-controls="mobileMenu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="newsletter-modal-overlay" id="newsletterModalOverlay">
+  <div class="newsletter-modal">
+    <button type="button" class="newsletter-modal-close" aria-label="Close">&times;</button>
+    <h3>Sign Up</h3>
+    <form id="newsletterForm" class="newsletter-form">
+      <label for="nl-email">Email Address*</label>
+      <input type="email" id="nl-email" name="email" placeholder="Your email address" required>
+      <label for="nl-firstname">First Name*</label>
+      <input type="text" id="nl-firstname" name="firstname" placeholder="Your first name" required>
+      <label for="nl-country">Country</label>
+      <input type="text" id="nl-country" name="country" placeholder="Your country">
+      <p class="newsletter-required-note">* denotes a required field</p>
+      <button type="submit" class="newsletter-submit">Subscribe</button>
+    </form>
+    <p class="newsletter-thanks" id="newsletterThanks" hidden>Thank you for signing up!</p>
+  </div>
+</div>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="index.html#listen">Listen</a>
+  <a href="music.html">Music</a>
+  <a href="blog.html">Blog</a>
+  <a href="biography.html">Biography</a>
+  <a href="press-archive.html">Press Archive</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="merch.html">Merch</a>
+  <a href="contact.html">Contact</a>
+  <div class="mobile-social">
+    <a href="https://www.facebook.com/ValentinaBlackOfficial/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>
+    <a href="https://www.instagram.com/valentinablackoff" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.012-3.584.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.058 1.645-.07 4.849-.07zm0-2.163c-3.259 0-3.667.014-4.947.07-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+    <a href="https://twitter.com/Valentina_Black" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7.6 8.7L23 22h-6.8l-5.3-6.9L4.8 22H1.7l8.1-9.3L1 2h7l4.8 6.3L18.9 2Zm-1.2 18h1.9L7.4 4H5.4l12.3 16Z"/></svg></a>
+    <a href="https://www.tiktok.com/@valentinablackoff" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.31 1.38V7.3s-1.88.09-3.24-1.48z"/></svg></a>
+    <a href="https://www.youtube.com/@ValentinaBlack" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.5V8.5L15.8 12l-6.2 3.5z"/></svg></a><button type="button" class="nav-newsletter-btn" aria-label="Sign up for the newsletter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 5.5A1.5 1.5 0 0 1 3.5 4h17A1.5 1.5 0 0 1 22 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 18.5v-13Zm2.2.5 7.15 5.36a1 1 0 0 0 1.2 0L19.8 6H4.2Zm15.8 1.35-6.98 5.23a3 3 0 0 1-3.6 0L4.2 7.35V18h15.6V7.35Z"/></svg></button>
+  </div>
+</div>
+
+<div class="page wrap">
+  <div class="section-head">
+    <span class="kicker">Get in Touch</span>
+    <h2>Contact</h2>
+  </div>
+  <div class="about">
+    <div class="about-photo-col">
+      <div class="about-photo">
+        <img src="assets/about-photo.jpg" alt="Valentina Black, pop singer-songwriter" loading="lazy">
+      </div>
+    </div>
+    <div class="about-text">
+      <form class="contact-form" id="contact-form">
+        <p class="contact-lead">Booking Request, Sponsor, Press - Send a Message.</p>
+        <input type="hidden" name="access_key" value="93ff422d-16c1-4fb3-964d-15026cbf0312">
+        <input type="hidden" name="subject" value="New message from valentinablack.com">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+        <div class="form-row">
+          <label for="cf-name">Name</label>
+          <input type="text" id="cf-name" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-row">
+          <label for="cf-company">Company</label>
+          <input type="text" id="cf-company" name="company" placeholder="Your company" required>
+        </div>
+        <div class="form-row">
+          <label for="cf-email">Email</label>
+          <input type="email" id="cf-email" name="email" placeholder="you@example.com" required>
+        </div>
+        <div class="form-row">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" name="message" rows="4" placeholder="Your message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" id="cf-submit">Send Message</button>
+        <p class="contact-note" id="cf-note" hidden></p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<footer>
+  &copy; Valentina Black. <a href="index.html">Back to home</a>
+</footer>
+
+
+<script>
+  (function(){
+    var overlay = document.getElementById('newsletterModalOverlay');
+    if (!overlay) return;
+    var openBtns = document.querySelectorAll('.nav-newsletter-btn');
+    var closeBtn = overlay.querySelector('.newsletter-modal-close');
+    var form = document.getElementById('newsletterForm');
+    var thanks = document.getElementById('newsletterThanks');
+    function openModal(){ overlay.classList.add('open'); }
+    function closeModal(){ overlay.classList.remove('open'); }
+    openBtns.forEach(function(b){ b.addEventListener('click', function(e){ e.preventDefault(); openModal(); }); });
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', function(e){ if (e.target === overlay) closeModal(); });
+    if (form) form.addEventListener('submit', function(e){
+      e.preventDefault();
+      form.hidden = true;
+      if (thanks) thanks.hidden = false;
+    });
+  })();
+</script>
+<script>
+  (function(){
+    var nav = document.getElementById('mainNav');
+    if (!nav) return;
+    function onScroll(){
+      if (window.scrollY > 40) nav.classList.add('is-scrolled');
+      else nav.classList.remove('is-scrolled');
+    }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+  })();
+</script>
+<script>
+  (function(){
+    var toggle = document.getElementById('navToggle');
+    var menu = document.getElementById('mobileMenu');
+    if (!toggle || !menu) return;
+    function closeMenu(){
+      toggle.classList.remove('is-open');
+      menu.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded','false');
+      document.body.classList.remove('menu-open');
+    }
+    function openMenu(){
+      toggle.classList.add('is-open');
+      menu.classList.add('is-open');
+      toggle.setAttribute('aria-expanded','true');
+      document.body.classList.add('menu-open');
+    }
+    toggle.addEventListener('click', function(){
+      if (menu.classList.contains('is-open')) closeMenu(); else openMenu();
+    });
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', closeMenu);
+    });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape') closeMenu();
+    });
+    window.addEventListener('resize', function(){
+      if (window.innerWidth > 640) closeMenu();
+    });
+  })();
+</script>
+<script>
+  (function(){
+    document.addEventListener('dragstart', function(e){
+      if (e.target && e.target.tagName === 'IMG') e.preventDefault();
+    });
+    document.addEventListener('contextmenu', function(e){
+      if (e.target && e.target.tagName === 'IMG') e.preventDefault();
+    });
+  })();
+</script>
+<script>
+  document.getElementById('contact-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    var form = e.target;
+    var note = document.getElementById('cf-note');
+    var btn = document.getElementById('cf-submit');
+    var originalBtnText = btn.textContent;
+
+    btn.disabled = true;
+    btn.textContent = 'Sending\u2026';
+    note.hidden = false;
+    note.style.color = '';
+    note.textContent = 'Sending your message\u2026';
+
+    var formData = new FormData(form);
+    var payload = Object.fromEntries(formData);
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify(payload)
+    })
+      .then(function(res){ return res.json(); })
+      .then(function(data){
+        if (data.success) {
+          note.textContent = 'Thanks! Your message has been sent \u2014 I\'ll get back to you soon.';
+          form.reset();
+        } else {
+          throw new Error(data.message || 'Send failed');
+        }
+      })
+      .catch(function(){
+        note.style.color = '#ff6b6b';
+        note.textContent = 'Something went wrong sending your message. Please try again or email info@valentinablack.com directly.';
+      })
+      .finally(function(){
+        btn.disabled = false;
+        btn.textContent = originalBtnText;
+      });
+  });
+</script>
+</body>
+</html>
