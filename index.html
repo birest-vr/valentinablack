@@ -1243,46 +1243,6 @@ input,textarea{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:te
     flashObserver.observe(aboutPhoto);
   }
 
-  document.getElementById('contact-form').addEventListener('submit', function(e){
-    e.preventDefault();
-    var form = e.target;
-    var note = document.getElementById('cf-note');
-    var btn = document.getElementById('cf-submit');
-    var originalBtnText = btn.textContent;
-
-    btn.disabled = true;
-    btn.textContent = 'Sending…';
-    note.hidden = false;
-    note.style.color = '';
-    note.textContent = 'Sending your message…';
-
-    var formData = new FormData(form);
-    var payload = Object.fromEntries(formData);
-
-    fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify(payload)
-    })
-      .then(function(res){ return res.json(); })
-      .then(function(data){
-        if (data.success) {
-          note.textContent = 'Thanks! Your message has been sent — I\'ll get back to you soon.';
-          form.reset();
-        } else {
-          throw new Error(data.message || 'Send failed');
-        }
-      })
-      .catch(function(){
-        note.style.color = '#ff6b6b';
-        note.textContent = 'Something went wrong sending your message. Please try again or email info@valentinablack.com directly.';
-      })
-      .finally(function(){
-        btn.disabled = false;
-        btn.textContent = originalBtnText;
-      });
-  });
-
   // Discography — search + sort (Newest/Oldest), mirroring michaeljackson.com/listen
   (function(){
     var grid = document.getElementById('discog-grid');
