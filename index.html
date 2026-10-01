@@ -514,7 +514,7 @@ input,textarea{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:te
   .discog-group-heading:hover{color:#1a1512}
   .discog-group-heading-first{border-top:none;padding-top:0;margin-top:0}
 
-  .listen-footer{padding:56px 24px 40px;text-align:center;border-top:1px solid #ededed;background:#ffffff}
+  .listen-footer{padding:56px 0 40px;text-align:center;border-top:1px solid #ededed;background:#ffffff}
   .listen-footer-signup{
     display:inline-flex;align-items:center;gap:14px;background:none;border:none;cursor:pointer;
     font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-weight:600;
@@ -546,6 +546,12 @@ input,textarea{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:te
   }
   .listen-footer-links a:hover{color:#1989ae}
   .listen-footer-copy{font-size:12px;color:#8a8a8a;margin:0}
+  .legal-bar{margin-top:22px;padding-top:18px;border-top:1px solid #ededed}
+  .legal-bar-copy{font-size:11px;color:#9a9a9a;margin:0 0 10px}
+  .legal-links{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px 10px}
+  .legal-links a{font-size:11px;color:#9a9a9a;text-decoration:none}
+  .legal-links a:hover{color:#1989ae;text-decoration:underline}
+  .legal-links .sep{color:#d8d8d8;font-size:11px}
 
   /* Album page (MJ-style single release page) */
   .album-hero{
@@ -1054,7 +1060,8 @@ input,textarea{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:te
     </div>
   </section>
 
-  <section id="listen-footer" class="wrap listen-footer">
+  <section id="listen-footer" class="listen-footer">
+    <div class="wrap">
     <button type="button" class="listen-footer-signup nav-newsletter-btn">
       <span class="listen-footer-signup-arrow" aria-hidden="true">&#8594;</span>
       <span>Sign Up for Newsletter</span>
@@ -1079,6 +1086,23 @@ input,textarea{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:te
       <a href="contact.html">Contact</a>
     </div>
     <p class="listen-footer-copy">&copy; 2026 Valentina Black. All rights reserved.</p>
+    <div class="legal-bar">
+      <p class="legal-bar-copy">&copy; 2026 Moveubabe Records. Powered by Moveubabe Music Entertainment. All Rights Reserved.</p>
+      <div class="legal-links">
+        <a href="contact.html">Send Us Feedback</a>
+        <span class="sep">&middot;</span>
+        <a href="privacy-policy.html">Privacy Policy/Your Privacy Rights</a>
+        <span class="sep">&middot;</span>
+        <a href="data-usage.html">How We Use Your Data</a>
+        <span class="sep">&middot;</span>
+        <a href="do-not-sell-my-info.html">Do Not Sell My Personal Information</a>
+        <span class="sep">&middot;</span>
+        <a href="ca-privacy-rights.html">Your California Privacy Rights</a>
+        <span class="sep">&middot;</span>
+        <a href="terms-and-conditions.html">Terms and Conditions</a>
+      </div>
+    </div>
+    </div>
   </section>
 
 
@@ -1089,17 +1113,6 @@ input,textarea{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:te
 
 </main>
 
-<footer class="wrap">
-  <div class="footer-row">
-    <div class="social-row">
-      <a href="https://open.spotify.com/artist/4jryrlXweUeaEBMSqma4fV" target="_blank" rel="noopener" aria-label="Spotify"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.52 17.34a.75.75 0 0 1-1.03.25c-2.82-1.72-6.37-2.11-10.55-1.16a.75.75 0 1 1-.33-1.46c4.58-1.04 8.5-.6 11.66 1.34.36.22.47.68.25 1.03zm1.47-3.27a.94.94 0 0 1-1.29.31c-3.23-1.99-8.15-2.56-11.97-1.4a.94.94 0 1 1-.55-1.8c4.37-1.33 9.8-.68 13.5 1.6.44.27.58.85.31 1.29zm.13-3.4C15.98 8.4 9.6 8.18 5.9 9.32a1.13 1.13 0 1 1-.66-2.16c4.25-1.3 11.32-1.05 15.8 1.62a1.13 1.13 0 1 1-1.12 1.96z"/></svg></a>
-      <a href="https://www.instagram.com/valentinablackoff" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.18-.46.39-.78.73-1.13.35-.34.67-.55 1.13-.73.35-.14.87-.3 1.83-.34C8.42 2.21 8.8 2.2 12 2.2zm0 1.8c-3.14 0-3.5.01-4.73.07-.96.04-1.48.2-1.83.34-.46.18-.78.39-1.13.73-.34.35-.55.67-.73 1.13-.14.35-.3.87-.34 1.83-.06 1.23-.07 1.6-.07 4.73s.01 3.5.07 4.73c.04.96.2 1.48.34 1.83.18.46.39.78.73 1.13.35.34.67.55 1.13.73.35.14.87.3 1.83.34 1.23.06 1.6.07 4.73.07s3.5-.01 4.73-.07c.96-.04 1.48-.2 1.83-.34a3 3 0 0 0 1.13-.73 3 3 0 0 0 .73-1.13c.14-.35.3-.87.34-1.83.06-1.23.07-1.6.07-4.73s-.01-3.5-.07-4.73c-.04-.96-.2-1.48-.34-1.83a3 3 0 0 0-.73-1.13 3 3 0 0 0-1.13-.73c-.35-.14-.87-.3-1.83-.34-1.23-.06-1.6-.07-4.73-.07zm0 4.06a5.94 5.94 0 1 1 0 11.88 5.94 5.94 0 0 1 0-11.88zm0 1.8a4.14 4.14 0 1 0 0 8.28 4.14 4.14 0 0 0 0-8.28zm6.17-1.99a1.39 1.39 0 1 1-2.77 0 1.39 1.39 0 0 1 2.77 0z"/></svg></a>
-      <a href="https://www.tiktok.com/@valentinablackoff" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="#fff"><path d="M16.6 5.82c-.7-.77-1.09-1.77-1.09-2.82h-3.1v13.44a2.59 2.59 0 1 1-1.83-2.48v-3.16a5.7 5.7 0 1 0 4.93 5.65V9.4a6.9 6.9 0 0 0 4.03 1.29V7.6c-1.06 0-2.05-.32-2.94-.86-.36-.22-.71-.5-1-.92z"/></svg></a>
-      <a href="https://www.youtube.com/@ValentinaBlack" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="#fff"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.55A3.02 3.02 0 0 0 .5 6.19 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.81 3.02 3.02 0 0 0 2.12 2.14C4.5 20.5 12 20.5 12 20.5s7.5 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.81zM9.55 15.57V8.43L15.82 12z"/></svg></a>
-    </div>
-    <p class="copyright">© 2026 Valentina Black. All rights reserved.</p>
-  </div>
-</footer>
 
 <script>
   (function(){
