@@ -115,6 +115,9 @@ body.menu-open{overflow:hidden}
 .note strong{color:var(--text)}
 .album-back{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--accent-2);margin-top:6px}
 .lyrics-heading{font-family:'Master Victory',cursive;font-style:italic;font-weight:400;font-size:28px;margin:44px 0 18px;color:var(--text)}
+.lyrics-video-box{width:min(640px,92vw);margin:0 auto;aspect-ratio:16/9;border-radius:14px;overflow:hidden;box-shadow:0 20px 40px -10px rgba(0,0,0,.25);border:1px solid var(--border);background:#0f0814}
+.lyrics-video-box iframe{width:100%;height:100%;border:0;display:block}
+.lyrics-video-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);text-align:center;margin:8px 0 32px}
 .lyrics-section{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-2);margin:22px 0 6px}
 .lyrics-section:first-child{margin-top:0}
 .lyrics p{color:var(--text);margin:0 0 4px;line-height:1.55}
@@ -265,6 +268,10 @@ footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;co
     <figure><img src="assets/jon-john-robinson-photo.jpg" alt="Jon-John Robinson"><figcaption>Jon-John Robinson</figcaption></figure>
   </div>
   <h2 class="lyrics-heading">Lyrics</h2>
+<div class="lyrics-video-box">
+  <iframe src="https://www.youtube.com/embed/2Xut8rwpGo4" title="Angel - Valentina Black" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<div class="lyrics-video-label">Watch</div>
 <div class="lyrics">
 <div class="lyrics-section">[Verse 1]</div>
 <p>I don't wanna see the darkness<br>In your soul<br>All the tears are falling down to me<br>Look into your heart can break in<br>Forevermore<br>All of your fears are facing down to me</p>
