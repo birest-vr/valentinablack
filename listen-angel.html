@@ -129,6 +129,8 @@ footer a{text-decoration:underline}
       e.preventDefault();
       var platform = a.getAttribute('data-platform');
       fbq('track', 'Lead', {content_name: 'Angel', platform: platform});
+      // The ad set optimizes for "Contatto" (Contact), so send it too
+      fbq('track', 'Contact', {content_name: 'Angel', platform: platform});
       fbq('trackCustom', 'ListenClick', {song: 'Angel', platform: platform});
       setTimeout(function(){ window.location.href = a.href; }, 300);
     });
