@@ -49,16 +49,18 @@ h1{font-family:'Master Victory',cursive;font-style:italic;font-weight:400;font-s
 .btn svg{width:22px;height:22px;fill:currentColor;flex:none}
 .btn-spotify{background:#1db954;color:#0b1a10}
 .btn-apple{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.55)}
+.btn-follow{background:transparent;color:#1db954;border:1px solid #1db954}
 .btn:hover{opacity:.9}
 .note{margin:22px 0 0;font-size:13px;color:rgba(255,255,255,.62)}
 footer{padding:18px 20px 26px;text-align:center;font-size:11px;color:rgba(255,255,255,.5)}
 footer a{text-decoration:underline}
-.consent{position:fixed;left:12px;right:12px;bottom:12px;z-index:20;max-width:560px;margin:0 auto;background:#fff;color:#1a1512;border-radius:10px;padding:14px 16px;box-shadow:0 18px 40px rgba(0,0,0,.45);display:none;font-size:13px;line-height:1.45}
-.consent.show{display:block}
-.consent p{margin:0 0 10px}
+/* A slim bar at the top, so it never covers the streaming buttons */
+.consent{position:fixed;left:0;right:0;top:0;z-index:20;background:#fff;color:#1a1512;padding:8px 12px;box-shadow:0 6px 18px rgba(0,0,0,.35);display:none;font-size:12px;line-height:1.35}
+.consent.show{display:flex;align-items:center;justify-content:center;gap:10px}
+.consent p{margin:0;max-width:380px}
 .consent a{text-decoration:underline}
-.consent .row{display:flex;gap:10px;justify-content:flex-end}
-.consent button{font:inherit;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:9px 16px;cursor:pointer;border:1px solid #1a1512}
+.consent .row{display:flex;gap:6px;flex:none}
+.consent button{font:inherit;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:7px 12px;cursor:pointer;border:1px solid #1a1512}
 .consent .accept{background:#1a1512;color:#fff}
 .consent .decline{background:#fff;color:#1a1512}
 </style>
@@ -79,6 +81,10 @@ footer a{text-decoration:underline}
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.52 17.34c-.24.36-.66.48-1.02.24-2.82-1.74-6.36-2.1-10.56-1.14-.42.12-.78-.18-.9-.54-.12-.42.18-.78.54-.9 4.56-1.02 8.52-.6 11.64 1.32.42.18.48.66.3 1.02zm1.44-3.3c-.3.42-.84.6-1.26.3-3.24-1.98-8.16-2.58-11.94-1.38-.48.12-1.02-.12-1.14-.6-.12-.48.12-1.02.6-1.14 4.38-1.32 9.78-.66 13.5 1.62.36.18.54.78.24 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.3c-.6.18-1.2-.18-1.38-.72-.18-.6.18-1.2.72-1.38 4.26-1.26 11.28-1.02 15.72 1.62.54.3.72 1.02.42 1.56-.3.42-1.02.6-1.56.3z"/></svg>
       Listen on Spotify
     </a>
+    <a class="btn btn-follow" data-platform="Spotify Follow" href="https://open.spotify.com/artist/4jryrlXweUeaEBMSqma4fV">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.52 17.34c-.24.36-.66.48-1.02.24-2.82-1.74-6.36-2.1-10.56-1.14-.42.12-.78-.18-.9-.54-.12-.42.18-.78.54-.9 4.56-1.02 8.52-.6 11.64 1.32.42.18.48.66.3 1.02zm1.44-3.3c-.3.42-.84.6-1.26.3-3.24-1.98-8.16-2.58-11.94-1.38-.48.12-1.02-.12-1.14-.6-.12-.48.12-1.02.6-1.14 4.38-1.32 9.78-.66 13.5 1.62.36.18.54.78.24 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.3c-.6.18-1.2-.18-1.38-.72-.18-.6.18-1.2.72-1.38 4.26-1.26 11.28-1.02 15.72 1.62.54.3.72 1.02.42 1.56-.3.42-1.02.6-1.56.3z"/></svg>
+      Follow on Spotify
+    </a>
     <a class="btn btn-apple" data-platform="Apple Music" href="https://music.apple.com/us/album/do-it-right/1758388244?i=1758388245">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 1.43c0 1.14-.42 2.2-1.12 2.98-.84.94-2.2 1.66-3.3 1.57-.14-1.1.42-2.27 1.12-3.01.78-.85 2.12-1.5 3.3-1.54zM20.5 17.1c-.55 1.27-.82 1.84-1.53 2.96-1 1.56-2.4 3.5-4.14 3.52-1.55.01-1.95-1.01-4.05-1-2.1.01-2.54 1.02-4.09 1-1.74-.02-3.07-1.77-4.07-3.33C-.17 15.9-.47 10.86 1.3 8.18c1.25-1.9 3.22-3.02 5.07-3.02 1.89 0 3.07 1.04 4.63 1.04 1.51 0 2.43-1.04 4.62-1.04 1.65 0 3.4.9 4.64 2.45-4.08 2.23-3.42 8.05.24 9.49z"/></svg>
       Apple Music
@@ -90,7 +96,7 @@ footer a{text-decoration:underline}
 <footer>&copy; 2026 Valentina Black &middot; <a href="privacy-policy.html">Privacy</a> &middot; <a href="#" id="cookie-settings">Cookie settings</a></footer>
 
 <div class="consent" id="consent" role="dialog" aria-live="polite" aria-label="Cookie consent">
-  <p>We use cookies from Meta to measure our ads. You can accept or decline. <a href="privacy-policy.html">Privacy policy</a></p>
+  <p>We use Meta cookies to measure our ads. <a href="privacy-policy.html#cookies">Privacy</a></p>
   <div class="row"><button class="decline" type="button" id="consent-decline">Decline</button><button class="accept" type="button" id="consent-accept">Accept</button></div>
 </div>
 
@@ -99,27 +105,46 @@ footer a{text-decoration:underline}
   var PIXEL_ID = '4410231599219512';
   var KEY = 'vb_ads_consent';
   var box = document.getElementById('consent');
-  var pixelOn = false;
+  var loaded = false, pixelOn = false;
+  // Visitors from the EU/EEA, the UK and Switzerland must opt in; elsewhere (e.g. the USA)
+  // the pixel runs by default and "Cookie settings" lets them opt out
+  var OPT_IN = ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH'];
 
   function read(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
   function save(v){ try{ localStorage.setItem(KEY, v); }catch(e){} }
 
-  // The Meta pixel only loads after the visitor accepts
+  // Loads the Meta pixel, or turns it back on after an opt-out
   function loadPixel(){
-    if (pixelOn) return;
     pixelOn = true;
+    if (loaded) { fbq('consent', 'grant'); return; }
+    loaded = true;
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', PIXEL_ID);
     fbq('track', 'PageView');
     fbq('track', 'ViewContent', {content_name: 'Do It Right', content_category: 'Music'});
   }
 
-  var choice = read();
-  if (choice === 'granted') loadPixel();
-  else if (choice !== 'denied') box.classList.add('show');
+  function stopPixel(){
+    if (loaded && pixelOn) fbq('consent', 'revoke');
+    pixelOn = false;
+  }
+
+  function start(country){
+    var choice = read();
+    if (choice === 'granted') loadPixel();
+    else if (choice === 'denied') return;
+    else if (country && OPT_IN.indexOf(country) < 0) loadPixel();
+    else box.classList.add('show');
+  }
+
+  // Cloudflare tells us the visitor's country; if it can't, we ask for consent
+  fetch('/cdn-cgi/trace').then(function(r){ return r.text(); }).then(function(t){
+    var m = t.match(/^loc=([A-Z]{2})$/m);
+    start(m ? m[1] : null);
+  }).catch(function(){ start(null); });
 
   document.getElementById('consent-accept').addEventListener('click', function(){ save('granted'); box.classList.remove('show'); loadPixel(); });
-  document.getElementById('consent-decline').addEventListener('click', function(){ save('denied'); box.classList.remove('show'); });
+  document.getElementById('consent-decline').addEventListener('click', function(){ save('denied'); box.classList.remove('show'); stopPixel(); });
   document.getElementById('cookie-settings').addEventListener('click', function(e){ e.preventDefault(); box.classList.add('show'); });
 
   // A click on a streaming button is the conversion the Meta campaign optimizes for
