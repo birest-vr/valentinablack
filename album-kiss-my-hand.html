@@ -77,6 +77,15 @@ img{max-width:100%;display:block}
   .newsletter-submit{margin-top:4px;align-self:center;padding:12px 30px;border-radius:999px;border:1px solid #1a1512;background:#1a1512;color:#fff;font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:opacity .15s ease}
   .newsletter-submit:hover{opacity:.85}
   .newsletter-thanks{font-size:15px;color:#1a1512;margin:10px 0 0}
+  .newsletter-intro{font-size:14px;line-height:1.55;color:#5a524d;margin:-8px 0 24px}
+  .newsletter-fields{display:flex;flex-direction:column;gap:16px}
+  .newsletter-optional{font-weight:400;color:#8a8a8a}
+  .newsletter-consent{font-size:11.5px;line-height:1.5;color:#8a8a8a;margin:0}
+  .newsletter-consent a{color:#8a8a8a;text-decoration:underline}
+  .newsletter-form .formkit-alert-error{list-style:none;margin:0;padding:0;color:#b3261e;font-size:13px}
+  .newsletter-form .formkit-alert-error:empty{display:none}
+  .newsletter-form .formkit-alert-success{font-size:15px;line-height:1.55;color:#1a1512;text-align:center;margin:4px 0 0}
+  .newsletter-submit[data-active]{opacity:.55;pointer-events:none}
 
 body.menu-open{overflow:hidden}
 
@@ -198,18 +207,19 @@ footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;co
 <div class="newsletter-modal-overlay" id="newsletterModalOverlay">
   <div class="newsletter-modal">
     <button type="button" class="newsletter-modal-close" aria-label="Close">&times;</button>
-    <h3>Sign Up</h3>
-    <form id="newsletterForm" class="newsletter-form">
-      <label for="nl-email">Email Address*</label>
-      <input type="email" id="nl-email" name="email" placeholder="Your email address" required>
-      <label for="nl-firstname">First Name*</label>
-      <input type="text" id="nl-firstname" name="firstname" placeholder="Your first name" required>
-      <label for="nl-country">Country</label>
-      <input type="text" id="nl-country" name="country" placeholder="Your country">
-      <p class="newsletter-required-note">* denotes a required field</p>
-      <button type="submit" class="newsletter-submit">Subscribe</button>
+    <h3>Join the inner circle</h3>
+    <p class="newsletter-intro">New releases before anyone else, music videos, behind-the-scenes moments and exclusive merch drops.</p>
+    <form id="newsletterForm" class="newsletter-form" action="https://app.kit.com/forms/10106613/subscriptions" method="post" data-sv-form="10106613" data-uid="1442c670c5" data-format="inline" data-version="5" data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Almost there! Check your inbox and tap the button in the email to confirm your subscription. 🖤","redirect_url":""},"recaptcha":{"enabled":false},"return_visitor":{"action":"show","custom_content":""},"powered_by":{"show":false,"url":""},"analytics":{"google":null,"fathom":null,"facebook":null,"segment":null,"pinterest":null,"sparkloop":null,"googletagmanager":null}},"version":"5"}'>
+      <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
+      <div class="newsletter-fields" data-element="fields">
+        <label for="nl-email">Email Address</label>
+        <input type="email" id="nl-email" name="email_address" placeholder="Your email address" autocomplete="email" required>
+        <label for="nl-firstname">First Name <span class="newsletter-optional">(optional)</span></label>
+        <input type="text" id="nl-firstname" name="fields[first_name]" placeholder="Your first name" autocomplete="given-name">
+        <p class="newsletter-consent">By subscribing you agree to receive emails from Valentina Black. You can unsubscribe at any time. <a href="privacy-policy.html#newsletter-privacy">Privacy Policy</a></p>
+        <button type="submit" class="newsletter-submit" data-element="submit">Subscribe</button>
+      </div>
     </form>
-    <p class="newsletter-thanks" id="newsletterThanks" hidden>Thank you for signing up!</p>
   </div>
 </div>
 <div class="mobile-menu" id="mobileMenu">
@@ -289,18 +299,23 @@ footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;co
     if (!overlay) return;
     var openBtns = document.querySelectorAll('.nav-newsletter-btn');
     var closeBtn = overlay.querySelector('.newsletter-modal-close');
-    var form = document.getElementById('newsletterForm');
-    var thanks = document.getElementById('newsletterThanks');
-    function openModal(){ overlay.classList.add('open'); }
+    var kitLoaded = false;
+    function loadKit(){
+      if (kitLoaded) return;
+      kitLoaded = true;
+      var s = document.createElement('script');
+      s.src = 'https://f.convertkit.com/ckjs/ck.5.js';
+      s.async = true;
+      document.body.appendChild(s);
+    }
+    function openModal(){ loadKit(); overlay.classList.add('open'); }
     function closeModal(){ overlay.classList.remove('open'); }
     openBtns.forEach(function(b){ b.addEventListener('click', function(e){ e.preventDefault(); openModal(); }); });
     if (closeBtn) closeBtn.addEventListener('click', closeModal);
     overlay.addEventListener('click', function(e){ if (e.target === overlay) closeModal(); });
-    if (form) form.addEventListener('submit', function(e){
-      e.preventDefault();
-      form.hidden = true;
-      if (thanks) thanks.hidden = false;
-    });
+    function openFromHash(){ if (location.hash === '#newsletter') openModal(); }
+    window.addEventListener('hashchange', openFromHash);
+    openFromHash();
   })();
 </script>
 <script>
