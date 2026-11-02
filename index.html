@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Valentina Black | Official Site — Italian Pop Singer-Songwriter</title>
-<meta name="description" content="Official site of Valentina Black, Italian pop singer-songwriter with jazz influences touching electronic music, born in Verona, Italy. Stream the latest single 'Is It Love' on Spotify, Apple Music, YouTube &amp; SoundCloud, and follow for tour dates and news.">
+<meta name="description" content="Official site of Valentina Black, Italian pop singer, songwriter, dancer and producer, born in Verona, Italy. Stream the latest single 'Is It Love' on Spotify, Apple Music, YouTube &amp; SoundCloud, and follow for tour dates and news.">
 <meta name="keywords" content="Valentina Black, pop singer-songwriter, jazz influences, Verona Italy, Is It Love, Valentina Black Spotify, Valentina Black Apple Music, Italian singer">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="Valentina Black">
@@ -42,48 +42,114 @@
 <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
 <meta name="theme-color" content="#150a1c">
 
-<!-- Structured data: MusicGroup -->
+<!-- Structured data: artist, label and main releases -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "MusicGroup",
-  "name": "Valentina Black",
-  "genre": ["Pop", "Jazz", "Electronic"],
-  "url": "https://valentinablack.com/",
-  "image": "https://valentinablack.com/assets/og-image.jpg",
-  "foundingLocation": {
-    "@type": "Place",
-    "name": "Verona, Italy"
-  },
-  "sameAs": [
-    "https://open.spotify.com/artist/4jryrlXweUeaEBMSqma4fV",
-    "https://music.apple.com/us/artist/valentina-black/274276367",
-    "https://www.youtube.com/@ValentinaBlack",
-    "https://soundcloud.com/valentinablack",
-    "https://www.instagram.com/valentinablackoff",
-    "https://www.tiktok.com/@valentinablackoff",
-    "https://www.facebook.com/ValentinaBlackOfficial/",
-    "https://twitter.com/Valentina_Black",
-    "https://soundbetter.com/profiles/164410-valentina-black",
-    "https://www.discogs.com/artist/3162799-Valentina-Black",
-    "https://ra.co/dj/valentinablack",
-    "https://www.beatport.com/it/artist/valentina-black/299739"
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://valentinablack.com/#person",
+      "name": "Valentina Black",
+      "alternateName": "Valentina Serugeri",
+      "url": "https://valentinablack.com/",
+      "image": "https://valentinablack.com/assets/og-image.jpg",
+      "description": "Italian pop singer, songwriter, dancer, producer and TV personality from Verona, Italy.",
+      "jobTitle": ["Singer", "Songwriter", "Dancer", "Record producer", "Television personality"],
+      "birthPlace": {
+        "@type": "Place",
+        "name": "Verona, Italy"
+      },
+      "nationality": {
+        "@type": "Country",
+        "name": "Italy"
+      },
+      "sameAs": [
+        "https://www.youtube.com/@ValentinaBlack",
+        "https://open.spotify.com/artist/4jryrlXweUeaEBMSqma4fV",
+        "https://music.apple.com/us/artist/valentina-black/274276367",
+        "https://www.instagram.com/valentinablackoff",
+        "https://www.imdb.com/name/nm19058393/",
+        "https://soundcloud.com/valentinablack",
+        "https://www.tiktok.com/@valentinablackoff",
+        "https://www.facebook.com/ValentinaBlackOfficial/",
+        "https://twitter.com/Valentina_Black",
+        "https://www.discogs.com/artist/3162799-Valentina-Black",
+        "https://soundbetter.com/profiles/164410-valentina-black"
+      ]
+    },
+    {
+      "@type": "MusicGroup",
+      "@id": "https://valentinablack.com/#artist",
+      "name": "Valentina Black",
+      "url": "https://valentinablack.com/",
+      "genre": ["Pop", "Dance"],
+      "member": { "@id": "https://valentinablack.com/#person" },
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Verona, Italy"
+      },
+      "sameAs": [
+        "https://www.youtube.com/@ValentinaBlack",
+        "https://open.spotify.com/artist/4jryrlXweUeaEBMSqma4fV"
+      ],
+      "album": [
+        { "@id": "https://valentinablack.com/album-say-you-love-the-world.html#release" },
+        { "@id": "https://valentinablack.com/album-angel.html#release" },
+        { "@id": "https://valentinablack.com/album-do-it-right.html#release" },
+        { "@id": "https://valentinablack.com/album-is-it-love-single.html#release" }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://valentinablack.com/#label",
+      "name": "Moveubabe Records",
+      "founder": { "@id": "https://valentinablack.com/#person" }
+    },
+    {
+      "@type": "MusicAlbum",
+      "@id": "https://valentinablack.com/album-say-you-love-the-world.html#release",
+      "name": "Say You Love the World",
+      "url": "https://valentinablack.com/album-say-you-love-the-world.html",
+      "datePublished": "2021-08-21",
+      "genre": "Pop",
+      "byArtist": { "@id": "https://valentinablack.com/#artist" },
+      "recordLabel": { "@id": "https://valentinablack.com/#label" }
+    },
+    {
+      "@type": "MusicAlbum",
+      "@id": "https://valentinablack.com/album-angel.html#release",
+      "name": "Angel",
+      "albumReleaseType": "https://schema.org/SingleRelease",
+      "url": "https://valentinablack.com/album-angel.html",
+      "datePublished": "2024-09-27",
+      "genre": "Pop",
+      "byArtist": { "@id": "https://valentinablack.com/#artist" },
+      "recordLabel": { "@id": "https://valentinablack.com/#label" }
+    },
+    {
+      "@type": "MusicAlbum",
+      "@id": "https://valentinablack.com/album-do-it-right.html#release",
+      "name": "Do It Right",
+      "albumReleaseType": "https://schema.org/SingleRelease",
+      "url": "https://valentinablack.com/album-do-it-right.html",
+      "datePublished": "2024-02-03",
+      "genre": "Pop",
+      "byArtist": { "@id": "https://valentinablack.com/#artist" },
+      "recordLabel": { "@id": "https://valentinablack.com/#label" }
+    },
+    {
+      "@type": "MusicAlbum",
+      "@id": "https://valentinablack.com/album-is-it-love-single.html#release",
+      "name": "Is It Love",
+      "albumReleaseType": "https://schema.org/SingleRelease",
+      "url": "https://valentinablack.com/album-is-it-love-single.html",
+      "datePublished": "2025-10-22",
+      "genre": "Pop",
+      "byArtist": { "@id": "https://valentinablack.com/#artist" },
+      "recordLabel": { "@id": "https://valentinablack.com/#label" }
+    }
   ]
-}
-</script>
-
-<!-- Structured data: latest release -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "MusicRecording",
-  "name": "Is It Love",
-  "byArtist": {
-    "@type": "MusicGroup",
-    "name": "Valentina Black"
-  },
-  "datePublished": "2025",
-  "url": "https://open.spotify.com/artist/4jryrlXweUeaEBMSqma4fV"
 }
 </script>
 
